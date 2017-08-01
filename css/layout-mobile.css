@@ -889,7 +889,7 @@ h2.b-title{
 				margin-bottom: 0px;
 			}
 		.b-advice {
-		margin-bottom: 22px;
+		margin-bottom: 0;
 		}
 			.b-text .b-advice ul {
 			}
@@ -915,7 +915,7 @@ h2.b-title{
 			}
 		.b-text .b-types {
 			max-width: 984px;
-			margin-bottom: 50px;
+			margin-bottom: 30px;
 		}
 			.b-text .b-types .b-img {
 				width: 176px;
