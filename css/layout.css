@@ -1,0 +1,1824 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'ubuntu-bold';
+    src: url('../fonts/ubuntu-bold.eot');
+    src: url('../fonts/ubuntu-bold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-bold.woff2') format('woff2'),
+         url('../fonts/ubuntu-bold.woff') format('woff'),
+         url('../fonts/ubuntu-bold.ttf') format('truetype'),
+         url('../fonts/ubuntu-bold.svg#ubuntu-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-light';
+    src: url('../fonts/ubuntu-light.eot');
+    src: url('../fonts/ubuntu-light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-light.woff2') format('woff2'),
+         url('../fonts/ubuntu-light.woff') format('woff'),
+         url('../fonts/ubuntu-light.ttf') format('truetype'),
+         url('../fonts/ubuntu-light.svg#ubuntu-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-medium';
+    src: url('../fonts/ubuntu-medium.eot');
+    src: url('../fonts/ubuntu-medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-medium.woff2') format('woff2'),
+         url('../fonts/ubuntu-medium.woff') format('woff'),
+         url('../fonts/ubuntu-medium.ttf') format('truetype'),
+         url('../fonts/ubuntu-medium.svg#ubuntu-medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('../fonts/ubuntu-regular.eot');
+    src: url('../fonts/ubuntu-regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-regular.woff2') format('woff2'),
+         url('../fonts/ubuntu-regular.woff') format('woff'),
+         url('../fonts/ubuntu-regular.ttf') format('truetype'),
+         url('../fonts/ubuntu-regular.svg#ubuntu-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'icomoon';
+	src:  url('../fonts/icomoon.eot');
+	src:  url('../fonts/icomoon.eot#iefix') format('embedded-opentype'),
+  		  url('../fonts/icomoon.ttf') format('truetype'),
+  		  url('../fonts/icomoon.woff') format('woff'),
+  		  url('../fonts/icomoon.svg#icomoon') format('svg');
+  	font-weight: normal;
+  	font-style: normal;
+}
+
+html{
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-image: url('../i/problems-back.jpg');
+	background-size: cover;
+}
+
+html,
+body {
+	position: relative;
+}
+body {
+	min-width: 1240px;
+	font-size: 16px;
+	line-height: 28px;
+	text-align: center;
+	font-family: 'ubuntu-light';
+	overflow-x: hidden;
+	-webkit-text-size-adjust: none;
+	color: #484848;
+}
+a{
+	text-decoration: none;
+	color: #484848;
+}
+ul>li{
+	list-style: none;
+}
+h1,h2,h3,h4,h5,h6,b{
+	font-weight: normal;
+}
+label.error{
+	display: none !important;
+}
+input.error,textarea.error{
+	border: 1px solid #F00 !important;
+	box-shadow: 0 0px 0px 1px #F00;
+}
+.ps-lines{
+
+}
+	.ps-lines li.v{
+		position: fixed;
+		left: 50%;
+		height: 100%;
+		width: 1px;
+		top: 0px;
+		background-color: #00ffff;
+		opacity: 0.8;
+		z-index: 9999;
+	}
+	.ps-lines li.g{
+		position: absolute;
+		left: 0px;
+		width: 100%;
+		height: 1px;
+		background-color: #00ffff;
+		opacity: 0.8;
+		z-index: 9999;
+	}
+[class^="icon-"], [class*=" icon-"],
+.b-service>a:after {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ok:before {
+  content: "\e905";
+}
+.icon-vk:before {
+  content: "\e906";
+}
+.icon-ig:before {
+  content: "\e907";
+}
+.icon-menu:before {
+  content: "\e904";
+}
+.icon-cross:before {
+	content: "\e901";
+}
+.icon-arrow-bottom:before {
+	content: "\e900";
+}
+.icon-arrow-right:before {
+	content: "\e902";
+}
+.icon-arrow-left:before {
+	content: "\e903";
+}
+.fancybox-inner{
+	overflow: visible !important;
+}
+.bold{
+	font-family: 'PFM';
+}
+.underline{
+	text-decoration: underline;
+}
+.white{
+	color: #FFF;
+}
+.b{
+	position: relative;
+}
+.b-wide-block{
+	position: relative;
+	max-width: 1600px;
+	width: 100%;
+	min-width: 1160px;
+	margin: 0px auto;
+	background-color: #FFF;
+}
+.b-block{
+	text-align: left;
+	position: relative;
+	width: 1160px;
+	margin: 0px auto;
+}
+.b-absolute{
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	margin-left: -600px;
+}
+input::-webkit-input-placeholder {
+	color: #434343;
+}
+input:-moz-placeholder {
+	color: #434343;
+}
+.b-link{
+	color: #75C1BA;
+	border-bottom: 1px solid transparent;
+	position: relative;
+}
+	.b-link:hover{
+		border-bottom: 1px solid #75C1BA;
+	}
+	.b-link:after{
+		text-decoration: none;
+		position: absolute;
+		right: -20px;
+		content: " →";
+		top: -3px;
+	}
+.b-btn{
+	-webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
+	transform: translateZ(0) translateX(0) rotateY(0deg);
+	display: inline-block;
+	padding: 3px 24px 4px;
+	font-size: 14px;
+	line-height: 24px;
+	border-radius: 100px;
+	position: relative;
+	overflow: hidden;
+	top: 0px;
+	-webkit-transition: box-shadow 150ms ease-out, top 50ms ease-out;
+	   -moz-transition: box-shadow 150ms ease-out, top 50ms ease-out;
+	    -ms-transition: box-shadow 150ms ease-out, top 50ms ease-out;
+	   	 -o-transition: box-shadow 150ms ease-out, top 50ms ease-out;
+			transition: box-shadow 150ms ease-out, top 50ms ease-out;
+}
+	.b-btn:before{
+		position: absolute;
+		content: "s";
+		font-size: 0px;
+		width: 0;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		border-radius: 0px 100px 100px 0px;
+		z-index: 1;
+		-webkit-transition: width 150ms ease-out, opacity 150ms ease-out;
+		   -moz-transition: width 150ms ease-out, opacity 150ms ease-out;
+		    -ms-transition: width 150ms ease-out, opacity 150ms ease-out;
+		   	 -o-transition: width 150ms ease-out, opacity 150ms ease-out;
+				transition: width 150ms ease-out, opacity 150ms ease-out;
+		opacity: 0;
+	}
+	.b-btn:hover{
+		box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+	}
+	.b-btn:active{
+		-webkit-transition: box-shadow 50ms ease-out, top 50ms ease-out;
+		   -moz-transition: box-shadow 50ms ease-out, top 50ms ease-out;
+		    -ms-transition: box-shadow 50ms ease-out, top 50ms ease-out;
+		   	 -o-transition: box-shadow 50ms ease-out, top 50ms ease-out;
+				transition: box-shadow 50ms ease-out, top 50ms ease-out;
+		box-shadow: 0px 5px 13px rgba(0,0,0,0.2);
+		top: 2px;
+	}
+	.b-btn:hover:before{
+		width: 100%;
+		opacity: 1;
+	}
+	.b-btn span{
+		position: relative;
+		z-index: 2;
+		-webkit-transition: color 150ms ease-out;
+		   -moz-transition: color 150ms ease-out;
+		    -ms-transition: color 150ms ease-out;
+		   	 -o-transition: color 150ms ease-out;
+				transition: color 150ms ease-out;
+	}
+.b-white-btn{
+	border: 1px solid #FFF;
+}
+	.b-white-btn:before{
+		background: #FFF;
+	}
+	.b-white-btn span{
+		color: #FFF;
+	}
+	.b-white-btn:hover span{
+		color: #9DD0CB;
+	}
+.b-green-btn{
+	background: #9DD0CB;
+	color: #FFF;
+	font-size: 18px;
+	line-height: 32px;
+	padding: 7px 40px 9px;
+}
+	.b-green-btn:before{
+		background: #7cb5af;
+	}
+h2.b-title{
+	padding-top: 64px;
+	margin-bottom: 32px;
+	font-size: 32px;
+	line-height: 50px;
+	font-family: "ubuntu-light";
+	text-transform: uppercase;
+}
+.b-content h2.b-title{
+	padding-top: 0px;
+}
+	h2.b-title b{
+		font-family: "ubuntu-bold";
+		font-size: 48px;
+		display: block;
+	}
+.b-header{
+	
+}
+.b-header-main,
+.b-header-doc{
+	height: 700px;
+}
+.b-header-doc{
+	background-position: 50% 50%;
+	background-size: cover;
+}
+	.b-header,
+	.b-header a{
+		color: #FFF;
+	}
+	.b-top-menu{
+		width: 100%;
+		position: fixed;
+		left: 0px;	
+		top: 0px;
+		z-index: 100;
+		-webkit-transition: opacity 150ms 500ms ease-out, visibility 150ms 500ms ease-out;
+		   -moz-transition: opacity 150ms 500ms ease-out, visibility 150ms 500ms ease-out;
+		    -ms-transition: opacity 150ms 500ms ease-out, visibility 150ms 500ms ease-out;
+		   	 -o-transition: opacity 150ms 500ms ease-out, visibility 150ms 500ms ease-out;
+				transition: opacity 150ms 500ms ease-out, visibility 150ms 500ms ease-out;
+	}
+		.perspective.animate .b-top-menu{
+			-webkit-transition: opacity 0ms ease-out, visibility 0ms ease-out;
+			   -moz-transition: opacity 0ms ease-out, visibility 0ms ease-out;
+			    -ms-transition: opacity 0ms ease-out, visibility 0ms ease-out;
+			   	 -o-transition: opacity 0ms ease-out, visibility 0ms ease-out;
+					transition: opacity 0ms ease-out, visibility 0ms ease-out;
+			opacity: 0;
+			visibility: hidden;
+		}
+		.b-top-fixed{
+			-webkit-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+			   -moz-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+			    -ms-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+			   	 -o-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+					transition: visibility 300ms ease-out, opacity 300ms ease-out;
+			background-position: 50% 0%;
+			background-repeat: no-repeat;
+			background-image: url('../i/main-back1.jpg');
+			background-size: cover;
+			opacity: 0;
+			visibility: hidden;
+			position: fixed;
+			z-index: 90;
+			width: 100%;
+			top: 0px;
+			left: 0px;
+			height: 85px;
+		}
+		.perspective.animate .b-top-fixed{
+			/*opacity: 0;*/
+		}
+		.fixed .b-top-fixed{
+			-webkit-transition: visibility 500ms ease-out, opacity 500ms ease-out;
+			   -moz-transition: visibility 500ms ease-out, opacity 500ms ease-out;
+			    -ms-transition: visibility 500ms ease-out, opacity 500ms ease-out;
+			   	 -o-transition: visibility 500ms ease-out, opacity 500ms ease-out;
+					transition: visibility 500ms ease-out, opacity 500ms ease-out;
+			visibility: visible;
+			opacity: 0.8;
+		}
+		.b-top-menu .b-wide-block{
+			background: transparent;
+		}
+		.b-top-menu .b-block{
+			padding-top: 12px;
+		}
+			.b-top-table{
+				display: table;
+				width: 100%;
+				margin-top: 23px;
+			}
+				.b-logo-cont{
+					display: table-cell;
+					vertical-align: middle;
+				}
+					.b-logo{
+						display: block;
+						position: relative;
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
+						width: 202px;
+						height: 47px;
+						background-size: 202px;
+						margin-right: 36px;
+					}
+						.b-logo .b-img{
+							position: absolute;
+							left: 0px;
+							bottom: 1px;
+							display: block;
+							background-position: 50% 50%;
+							background-repeat: no-repeat;
+							background-image: url('../i/logo-image.png');
+							background-size: contain;
+							width: 50px;
+							height: 78px;
+						}
+						.b-logo .b-txt{
+							position: absolute;
+							bottom: 0px;
+							right: 0px;
+							display: block;
+							background-position: 50% 50%;
+							background-repeat: no-repeat;
+							background-image: url('../i/logo-text.png');
+							background-size: 144px;
+							width: 144px;
+							height: 42px;
+						}
+				.b-menu-table-cell{
+					display: table-cell;
+					vertical-align: middle;
+				}
+				.b-menu-cont{
+					position: relative;
+					padding-bottom: 3px;
+				}
+					.b-menu-cont .b-line{
+						-webkit-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+						-moz-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+						-ms-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+						-o-transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+						transition: left 200ms ease-out, width 200ms ease-out, visibility 200ms ease-out, transform 200ms ease-out;
+						width: 100px;
+						height: 1px;
+						background: #FFF;
+						position: absolute;
+						left: 0px;
+						bottom: 10px;
+						visibility: hidden;
+						-webkit-transform: scale(0);
+						-moz-transform: scale(0);
+						-ms-transform: scale(0);
+						-o-transform: scale(0);
+						transform: scale(0);
+					}
+					.b-menu-cont .b-line.show{
+						visibility: visible;
+						-webkit-transform: scale(1);
+						   -moz-transform: scale(1);
+						    -ms-transform: scale(1);
+						   	 -o-transform: scale(1);
+								transform: scale(1);
+					}
+					.b-menu{
+						position: relative;
+						z-index: 1;
+						display: table-cell;
+						vertical-align: middle;
+					}
+						.b-menu li{
+							float: left;
+							/* margin-right: 29px; */
+						}
+							.b-menu li:last-child{
+								margin-right: 0px;
+							}
+							.b-menu a{
+								color: #FFF;
+								letter-spacing: 0.4px;
+								font-size: 14px;
+								display: block;
+								line-height: 28px;
+								text-transform: uppercase;
+								padding: 5px 18px 5px 19px;
+							}
+				.b-phone-cont{
+					display: table-cell;
+					vertical-align: middle;
+					text-align: right;
+				}
+					.b-phone-wrap{
+						display: inline-block;
+					}
+						.b-phone{
+							font-size: 21.7px;
+							color: #FFF;
+							font-family: "ubuntu-medium";
+							margin-bottom: 16px;
+							text-align: center;
+						}
+						.b-phone-cont .b-btn{
+
+						}
+						.b-burger{
+							display: none;
+							width: 50px;
+							height: 50px;
+							text-align: center;
+							vertical-align: middle;
+							margin-bottom: 1px;
+							border-radius: 100px;
+						}
+							.b-burger:active{
+								background: rgba(255,255,255,0.3);
+							}
+							.b-burger:before{
+								color: #FFF;
+								font-size: 20px;
+								text-align: center;
+								line-height: 50px;
+							}
+	.b-header-inner{
+		background-position: 50% 0%;
+		background-repeat: no-repeat;
+		background-image: url('../i/inner-back.jpg');
+	}
+		.b-header-inner .b-block{
+			padding-top: 145px;
+			padding-bottom: 54px;
+		}
+		.b-breadcrumbs{
+			margin-bottom: 11px;
+		}
+			.b-breadcrumbs li{
+				float: left;
+				margin-right: 27px;
+			}
+				.b-breadcrumbs a,
+				.b-breadcrumbs span{
+					font-size: 16px;
+					line-height: 28px;
+				}
+				.b-breadcrumbs a{
+					position: relative;	
+					border-bottom: 1px solid #FFF;
+				}
+					.b-breadcrumbs a:hover{
+						border-bottom-color: transparent;
+					}
+					.b-breadcrumbs a:after{
+						position: absolute;
+						content: "/";
+						right: -16px;
+						font-size: 16px;
+						height: 28px;
+						top: -5px;
+						line-height: 28px;
+					}
+				.b-breadcrumbs span{
+
+				}
+		.b-header-inner h1{
+			font-family: "ubuntu-bold";
+			font-size: 48px;
+			text-transform: uppercase;
+			line-height: 50px;
+		}
+		.b-header-doc h1{
+			max-width: 55%;
+		}
+	.b-header-block{
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-image: url('../i/main-back1.jpg');
+		background-size: cover;
+	}
+		.b-header-block,
+		.b-header-block .b-block{
+			height: 100%;
+		}
+			.b-main-header{
+				display: table;
+				text-align: left;
+				height: 100%;
+			}
+				.b-main-header-wrap{
+					padding-top: 70px;
+					display: table-cell;
+					vertical-align: middle;
+				}
+					.b-main-header h1{
+						text-transform: uppercase;
+						line-height: 60px;
+						font-size: 61.2px;
+						font-family: "ubuntu-light";
+						margin-bottom: 48px;
+					}
+						.b-main-header h1 b{
+							display: block;
+							font-size: 60px;
+							font-family: "ubuntu-bold";
+						}
+					.b-main-header .b-btn{
+						line-height: 32px;
+						font-size: 18px;
+						padding: 11px 68px 13px;
+					}
+.b-main-about{
+
+}
+	.b-main-about .b-block{
+		padding-bottom: 72px;
+	}
+		.b-main-about-text{
+			width: 54%;
+			margin-right: 4%;
+		}
+			.b-main-about h2.b-title{
+
+			}
+			.b-main-about p{
+
+			}
+			.b-author-cont{
+				text-align: right;
+				margin-top: 32px;
+			}
+				.b-author-sign{
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+					background-image: url('../i/sign.jpg');
+					background-size: 213px;
+					width: 213px;
+					height: 136px;
+					margin-bottom: -8px;
+				}
+				.b-author{
+
+				}
+					.b-main-about b{
+						font-family: "ubuntu-bold";
+					}
+		.b-main-about-photo{
+			width: 42%;
+			font-size: 0px;
+			text-align: right;
+			padding-top: 80px;
+		}
+		.b-content .b-main-about-photo{
+			padding-top: 8px;
+		}
+			.b-main-about-photo img{
+			    max-width: 476px;
+			    width: 100%;
+			}
+.b-problems{
+	
+}
+	.b-problems .b-wide-block{
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-image: url('../i/problems-back.jpg');
+	}
+		.b-problems .b-block{
+			text-align: center;
+		}
+			.b-problems h2.b-title{
+				text-align: left;
+			}
+			.b-woman-cont{
+				position: relative;
+				text-align: left;
+			}
+				.b-woman-text{
+					opacity: 0;
+					visibility: hidden;
+					-webkit-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+					   -moz-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+					    -ms-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+					   	 -o-transition: opacity 500ms ease-out, visibility 500ms ease-out;
+							transition: opacity 500ms ease-out, visibility 500ms ease-out;
+					position: absolute;
+					left: 0px;
+					top: 0px;
+					padding: 40px 48px;
+					background-color: rgba(255,255,255,0.8);
+					width: 726px;
+					box-sizing: border-box;
+				}
+					.b-woman-text.show{
+						visibility: visible;
+						opacity: 1;
+					}
+				.b-woman{
+					position: relative;
+					margin-top: -126px;
+					/*background-position: 50% 50%;
+					background-repeat: no-repeat;
+					background-image: url('../i/woman.png');
+					background-size: 100% auto;*/
+					/*width: 1115px;
+					height: 721px;*/
+					display: inline-block;
+					margin-bottom: 80px;
+				}
+					.b-woman-img{
+						width: 100%;
+					}
+					.b-problem{
+						text-align: left;
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						margin-left: -40px;
+						margin-top: -40px;
+					}
+					.b-problem-1{
+						left: 14.7%;
+						top: 92.5%;
+					}
+					.b-problem-2{
+						left: 47%;
+						top: 90.5%;
+					}
+					.b-problem-3{
+						left: 69.5%;
+						top: 70.5%;
+					}
+					.b-problem-4{
+						left: 79%;
+						top: 39.5%;
+					}
+					.b-problem-5{
+						left: 82%;
+						top: 68%;
+					}
+					.b-problem-6{
+						left: 87.5%;
+						top: 93.5%;
+					}
+						.b-pin{
+							position: relative;
+							width: 80px;
+							height: 80px;
+							cursor: pointer;
+						}
+							.b-pin:before{
+								position: absolute;
+								content: "s";
+								font-size: 0px;
+								width: 14px;
+								height: 14px;
+								left: 50%;
+								top: 50%;
+								margin-top: -7px;
+								margin-left: -7px;
+								border-radius: 100px;
+								background: #FFF;
+								-webkit-transition: all 200ms ease-out;
+								   -moz-transition: all 200ms ease-out;
+								    -ms-transition: all 200ms ease-out;
+								   	 -o-transition: all 200ms ease-out;
+										transition: all 200ms ease-out;
+								box-shadow: 0px 0px 0px 0px #FFF;
+							}
+							.b-pin:after{
+								position: absolute;
+								content: "s";
+								font-size: 0px;
+								width: 38px;
+								height: 38px;
+								left: 50%;
+								top: 50%;
+								margin-top: -19px;
+								margin-left: -19px;
+								border-radius: 100px;
+								box-shadow: inset 0px 0px 0px 2px #FFF;
+								-webkit-transition: all 200ms ease-out;
+								   -moz-transition: all 200ms ease-out;
+								    -ms-transition: all 200ms ease-out;
+								   	 -o-transition: all 200ms ease-out;
+										transition: all 200ms ease-out;
+							}
+								.b-pin:hover:before{
+									box-shadow: 0px 0px 0px 3px #75C1BA;
+								}
+								.b-pin:hover:after{
+									width: 46px;
+									height: 46px;
+									margin-top: -23px;
+									margin-left: -23px;
+									box-shadow: inset 0px 0px 0px 3px #75C1BA;
+								}
+								.active .b-pin:before,
+								.active .b-pin:hover:before{
+									box-shadow: 0px 0px 0px 9px #75C1BA;
+								}
+								.active .b-pin:after,
+								.active .b-pin:hover:after{
+									width: 60px;
+									height: 60px;
+									margin-top: -30px;
+									margin-left: -30px;
+									box-shadow: inset 0px 0px 0px 3px #75C1BA;
+								}
+						.b-problem-bubble{
+							opacity: 0;
+							visibility: hidden;
+							-webkit-transform: translateY(20px);
+							   -moz-transform: translateY(20px);
+							    -ms-transform: translateY(20px);
+							   	 -o-transform: translateY(20px);
+									transform: translateY(20px);
+							-webkit-transition: opacity 500ms ease-out, transform 500ms ease-out, visibility 500ms ease-out;
+							   -moz-transition: opacity 500ms ease-out, transform 500ms ease-out, visibility 500ms ease-out;
+							    -ms-transition: opacity 500ms ease-out, transform 500ms ease-out, visibility 500ms ease-out;
+							   	 -o-transition: opacity 500ms ease-out, transform 500ms ease-out, visibility 500ms ease-out;
+									transition: opacity 500ms ease-out, transform 500ms ease-out, visibility 500ms ease-out;
+							position: absolute;
+							left: 0px;
+							top: 0px;
+							padding: 40px 48px;
+							background-color: rgba(255,255,255,0.8);
+							width: 726px;
+							box-sizing: border-box;
+							/*display: none;*/
+						}
+						.g .b-problem-bubble{
+							-webkit-transform: translateX(20px);
+							   -moz-transform: translateX(20px);
+							    -ms-transform: translateX(20px);
+							   	 -o-transform: translateX(20px);
+									transform: translateX(20px);
+						}
+							.active .b-problem-bubble{
+								opacity: 1;
+								visibility: visible;
+								-webkit-transform: translateY(0px);
+								   -moz-transform: translateY(0px);
+								    -ms-transform: translateY(0px);
+								   	 -o-transform: translateY(0px);
+										transform: translateY(0px);
+							}
+							.active.g .b-problem-bubble{
+								opacity: 1;
+								visibility: visible;
+								-webkit-transform: translateX(0px);
+								   -moz-transform: translateX(0px);
+								    -ms-transform: translateX(0px);
+								   	 -o-transform: translateX(0px);
+										transform: translateX(0px);
+							}
+							.b-woman-cont h3{
+								margin-top: -3px;
+								font-size: 32px;
+								line-height: 40px;
+								font-family: "ubuntu-medium";
+								margin-bottom: 24px;
+							}
+							.b-problem-bubble p{
+
+							}
+								.b-problem-bubble span{
+									position: absolute;
+									display: block;
+									width: 0px;
+									height: 0px;
+									border: 24px solid transparent;
+								}
+								.g .b-problem-bubble span{
+									right: -48px;
+									border-left-color: rgba(255,255,255,0.8);
+								}
+								.v .b-problem-bubble span{
+									bottom: -48px;
+									border-top-color: rgba(255,255,255,0.8);
+								}
+								.b-woman-cont ul{
+									
+								}
+								.b-woman-cont ul + p{
+									margin-top: 16px;
+								}
+									.b-woman-cont li{
+										position: relative;
+										padding-left: 24px
+									}
+										.b-woman-cont li:before{
+											position: absolute;
+											content: "s";
+											font-size: 0px;
+											width: 6px;
+											height: 6px;
+											left: 0px;
+											top: 11px;
+											border-radius: 10px;
+											background: #484848;
+										}
+.b-services{
+
+}
+	.b-services .b-wide-block{
+
+	}
+		.b-services .b-block{
+			padding-bottom: 90px;
+		}
+			.b-services h2.b-title{
+				margin-bottom: 48px;
+			}
+			.b-services-list{
+				width: 45%;
+				background-color: #FAFAFA;
+				box-sizing: border-box;
+				padding: 15px 50px 18px;
+			}
+				.b-service{
+					border-bottom: 1px solid #E7E7E7;
+				}
+				.b-service:last-child{
+					border-bottom: 0px;
+				}
+					.b-service>a{
+						/*font-family: "ubuntu-regular";*/
+						padding-top: 21px;
+						font-size: 22px;
+						line-height: 32px;
+						padding-bottom: 22px;
+						display: block;
+						position: relative;
+					}
+						.b-service>a:after{
+							font-size: 20px;
+							line-height: 20px;
+							position: absolute;
+							top: 50%;
+							margin-top: -10px;
+							right: 0px;
+							content: "\e902";
+							opacity: 0.7;
+							-webkit-transition: transform 200ms ease-out;
+							   -moz-transition: transform 200ms ease-out;
+							    -ms-transition: transform 200ms ease-out;
+							   	 -o-transition: transform 200ms ease-out;
+									transition: transform 200ms ease-out;
+							/*display: none;*/
+						}
+						.b-service.b-service-with-sub>a:after{
+							display: block;
+						}
+						.b-services-list:hover .b-service.b-service-with-sub>a:after{
+							-webkit-transform: rotate(90deg);
+							   -moz-transform: rotate(90deg);
+							    -ms-transform: rotate(90deg);
+							   	 -o-transform: rotate(90deg);
+									transform: rotate(90deg);
+						}
+						.b-service.b-service-with-sub.show>a:after,
+						.b-service.b-service-with-sub.show>a:hover:after{
+							opacity: 0.7;
+							-webkit-transform: rotate(-90deg) !important;
+							   -moz-transform: rotate(-90deg) !important;
+							    -ms-transform: rotate(-90deg) !important;
+							   	 -o-transform: rotate(-90deg) !important;
+									transform: rotate(-90deg) !important;
+						}
+							.b-service>a:hover:after{
+								opacity: 1;
+							}
+						.b-service>a span{
+
+						}
+						.b-service:hover>a,
+						.b-service.show>a{
+							/*border-bottom: 1px solid #75C1BA;*/
+							color: #75C1BA;
+						}
+							.b-service>a:hover span{
+								border-bottom: 1px solid #75C1BA;
+							}
+							.b-service.b-service-with-sub>a:hover span{
+								border-bottom: 1px dashed #75C1BA;
+							}
+					.b-services-sub{
+						/*display: none;*/
+						overflow: hidden;
+					}
+					.b-services-sub.show{
+						
+					}
+						.b-services-sub li{
+							margin-left: 18px;
+							color: #75c1ba;
+						}
+							.b-services-sub a{
+								font-size: 18px;
+								line-height: 24px;
+								border-bottom: 1px solid transparent;
+								display: inline-block;
+								margin: 5px 0px 5px 8px;
+							}
+								.b-services-sub a:hover{
+									border-bottom: 1px solid #75C1BA;
+									color: #75C1BA;
+								}
+			.b-services-text{
+				width: 50%;
+			}
+				.b-services-text-item{
+					display: none;
+				}
+				.b-services-text-item.show{
+					display: block;
+				}
+					.b-services-text .b-img{
+						border-radius: 200px;
+						background-position: 50% 50%;
+						background-size: cover;
+						width: 276px;
+						height: 276px;
+						margin-bottom: 32px;
+					}
+					.b-services-text h3{
+						font-size: 30px;
+						line-height: 40px;
+						font-family: "ubuntu-medium";
+						margin-bottom: 24px;
+					}
+					.b-services-text p{
+
+					}
+.b-team{
+	height: 800px;
+}
+	.b-team .b-wide-block{
+		height: 100%;
+		overflow: hidden;
+		background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F8F8F8 100%);
+		background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #F8F8F8 100%);
+		background-image: linear-gradient(to top, #FFFFFF 0%, #F8F8F8 100%);
+	}
+		.b-team .b-block{
+			position: relative;
+			height: 100%;
+		}
+			.b-team h2.b-title{
+
+			}
+			.b-doctors-cont{
+				width: 100%;
+				height: 673px;
+				position: absolute;
+				left: 0px;
+				bottom: 0px;
+			}
+				.b-doctors{
+					width: 100%;
+					height: 673px;
+					position: absolute;
+					left: 0px;
+					bottom: -10px;
+				}
+					.b-doctor{
+						-webkit-transform-origin: 50% 105%;
+						-moz-transform-origin: 50% 105%;
+						-o-transform-origin: 50% 105%;
+						-ms-transform-origin: 50% 105%;
+						transform-origin: 50% 105%;
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						width: 583px;
+						height: 673px;
+						-webkit-transition: transform 200ms ease-out, opacity 200ms ease-out;
+						   -moz-transition: transform 200ms ease-out, opacity 200ms ease-out;
+						    -ms-transition: transform 200ms ease-out, opacity 200ms ease-out;
+						   	 -o-transition: transform 200ms ease-out, opacity 200ms ease-out;
+								transition: transform 200ms ease-out, opacity 200ms ease-out;
+					}
+						.b-doctor .b-img,
+						.b-doctor .b-img-blur{
+							position: absolute;
+							left: 0px;
+							top: 0px;
+							display: block;
+							height: 100%;
+							width: 100%;
+							background-position: 50% 100%;
+							background-repeat: no-repeat;
+							background-size: auto 660px;
+						}
+						.b-doctor .b-img-blur{
+							/*display: none;*/
+						}
+				.b-doctors-btn{
+					border: 0px;
+					position: absolute;
+					top: 50%;
+					margin-top: -40px;
+					width: 80px;
+					height: 80px;
+					border-radius: 100px;
+					background-color: rgba(255,255,255,0.7);
+					z-index: 10;
+					cursor: pointer;
+				}
+					.b-doctors-btn:hover{
+						background-color: rgba(255,255,255,1);
+					}
+					.b-doctors-btn:before{
+						font-size: 30px;
+						color: rgba(0,0,0,0.5);
+						position: relative;
+					}
+						.b-doctors-btn:hover:before{
+							color: #484848;
+						}
+				.b-doctors-prev{
+					right: 496px;
+				}
+					.b-doctors-prev:before{
+						left: -2px;	
+					}
+				.b-doctors-next{
+					right: 0px;
+				}
+					.b-doctors-next:before{
+						left: 2px;	
+					}
+			.b-doctors-text{
+				position: absolute;
+				z-index: 20;
+				width: 550px;
+				top: 50%;
+				margin-top: -30px;
+			}
+				.b-doctor-text{
+					position: absolute;
+					left: 0px;
+					box-sizing: border-box;
+					width: 100%;
+					top: 0px;
+					background: rgba(255,255,255,0.7);
+					padding: 36px 48px 43px;
+					opacity: 0;
+					visibility: hidden;
+				}
+				.b-doctor-text.show{
+					opacity: 1;
+					visibility: visible;
+					-webkit-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+					   -moz-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+					    -ms-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+					   	 -o-transition: opacity 300ms ease-out, visibility 300ms ease-out;
+							transition: opacity 300ms ease-out, visibility 300ms ease-out;
+				}
+				.b-doctor-text.hide{
+					opacity: 0;
+					visibility: hidden;
+					-webkit-transition: opacity 300ms ease-in, visibility 300ms ease-in;
+					   -moz-transition: opacity 300ms ease-in, visibility 300ms ease-in;
+					    -ms-transition: opacity 300ms ease-in, visibility 300ms ease-in;
+					   	 -o-transition: opacity 300ms ease-in, visibility 300ms ease-in;
+							transition: opacity 300ms ease-in, visibility 300ms ease-in;
+				}
+					.b-doctor-text h3{
+						font-size: 32px;
+						line-height: 40px;
+						font-family: "ubuntu-medium";
+						margin-bottom: 16px;
+						max-width: 400px;
+					}
+					.b-doctor-post{
+						font-size: 18px;
+						line-height: 32px;
+						color: rgba(0,0,0,0.5);
+					}
+					.b-doctor-text .b-btn{
+						margin-top: 24px;
+					}
+.b-main-reviews{
+	overflow: hidden;
+}
+	.b-main-reviews .b-wide-block{
+		padding-bottom: 76px;
+	}
+		.b-main-reviews .b-block{
+			
+		}
+			.b-main-reviews h2.b-title{
+				margin-bottom: 48px;
+			}
+			.b-reviews-slider{
+				position: relative;
+				height: 452px;
+			}
+			.b-reviews{
+				padding-top: 64px;
+				margin-bottom: -48px;
+			}
+				.b-review{
+					width: calc(100%/3 - 16px);
+					-webkit-transition: opacity 300ms ease-out, transform 300ms ease-out;
+					   -moz-transition: opacity 300ms ease-out, transform 300ms ease-out;
+					    -ms-transition: opacity 300ms ease-out, transform 300ms ease-out;
+					   	 -o-transition: opacity 300ms ease-out, transform 300ms ease-out;
+							transition: opacity 300ms ease-out, transform 300ms ease-out;
+				}
+				.b-popup .b-review{
+					width: 100%;
+				}
+				.b-reviews .b-review{
+					float: left;
+					margin-right: 24px;
+					margin-bottom: 48px;
+				}
+				.b-reviews .b-review:nth-child(3n){
+					margin-right: 0px;
+				}
+				.b-reviews-slider .b-review{
+					position: absolute;
+					left: 0px;
+					top: 0px;
+				}
+					.b-review-left{
+						width: 176px;
+						padding-right: 32px;
+					}
+					.b-review-right{
+						width: calc(100% - 176px - 32px);
+					}
+					.b-review .b-img{
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
+						width: 176px;
+						height: 176px;
+						border-radius: 100px;
+						margin-bottom: 32px;
+						background-size: cover;
+					}
+					.b-review h3{
+						font-size: 24px;
+						line-height: 32px;
+						margin-bottom: 16px;
+						font-family: "ubuntu-medium";
+					}
+					.b-review-date{
+						font-family: "ubuntu-regular";
+						line-height: 24px;
+						opacity: 0.5;
+						margin-bottom: 16px;
+					}
+					.b-review p{
+						margin-bottom: 16px;
+						max-height: 112px;
+						overflow: hidden;
+					}
+					.b-popup .b-review p{
+						max-height: 10000px;
+						margin-bottom: 0px;
+						overflow: visible;
+					}
+					.b-review .b-link{
+
+					}
+				.b-reviews-btn{
+					border: 0px;
+					position: absolute;
+					top: -130px;
+					width: 80px;
+					height: 80px;
+					border-radius: 100px;
+					background-color: rgba(255,255,255,0.7);
+					z-index: 10;
+					cursor: pointer;
+				}
+					.b-reviews-btn:hover{
+						background-color: rgba(255,255,255,1);
+					}
+					.b-reviews-btn:before{
+						font-size: 30px;
+						color: rgba(0,0,0,0.5);
+						position: relative;
+					}
+						.b-reviews-btn:hover:before{
+							color: #484848;
+						}
+				.b-reviews-prev{
+					right: 104px;
+				}
+					.b-reviews-prev:before{
+						left: -2px;	
+					}
+				.b-reviews-next{
+					right: 0px;
+				}
+					.b-reviews-next:before{
+						left: 2px;	
+					}
+.b-map-block{
+
+}
+	.b-map-block .b-wide-block{
+		position: relative;
+		height: 100%;
+	}
+		.b-map{
+			position: relative;
+			width: 100%;
+			height: 600px;
+		}
+		.b-map-text{
+			position: absolute;
+			left: 50%;
+			margin-left: 100px;
+			top: 103px;
+			text-align: left;
+			box-sizing: border-box;
+			width: 476px;
+			background: rgba(255,255,255,0.9);
+			padding: 32px 48px 26px;
+		}
+			.b-map-text h2.b-title{
+				padding-top: 0px;
+				font-size: 24px;
+				margin-bottom: 24px;
+				line-height: 35px;
+			}
+				.b-map-text h2.b-title b{
+					font-size: 32px;
+				}	
+			.b-map-text h3{
+				font-size: 16px;
+				font-family: "ubuntu-medium";
+				margin-bottom: 8px;
+			}
+			.b-map-text p{
+				margin-bottom: 16px;
+			}
+.b-content{
+	
+}
+	.b-content .b-wide-block{
+		padding: 64px 0px 80px;
+		background: #FFF;
+	}
+	.b-contacts-cont{
+		margin-bottom: -24px;
+	}
+		.b-contacts-text{
+			width: calc(50% - 12px);
+			margin-bottom: -24px;
+		}
+			.b-contacts-text-block{
+				box-sizing: border-box;
+				width: 49%;
+				padding-right: 24px;
+				display: inline-block;
+				vertical-align: top;
+				margin-bottom: 24px;
+			}
+				.b-contacts-cont h3{
+					font-size: 22px;
+					line-height: 32px;
+					font-family: "ubuntu-medium";
+					margin-bottom: 8px;
+				}
+				.b-contacts-text-block h3{
+
+				}
+				.b-contacts-text-block p{
+
+				}
+		.b-contacts-adm{
+			width: calc(50% - 12px);
+			margin-bottom: -24px;
+		}
+			.b-contacts-adm h3{
+				margin-bottom: 32px;
+			}
+			.b-contacts-adm-list{
+
+			}
+				.b-contacts-adm-list li{
+					margin-bottom: 24px;
+					float: left;
+					width: calc(100%/3 - 16px);
+					margin-right: 24px;
+				}
+				.b-contacts-adm-list li:nth-child(3n){
+					margin-right: 0px;
+				}
+					.b-contacts-adm-list .b-img{
+						border-radius: 100px;
+						background-position: 50% 50%;
+						background-repeat: no-repeat;
+						background-size: cover;
+						width: 130px;
+						height: 130px;
+						margin-bottom: 16px;
+					}
+					.b-contacts-adm-list h3{
+						font-size: 16px;
+						line-height: 28px;
+					}
+		.b-reviews-text{
+			/*padding-bottom: 64px;*/
+		}
+			.b-reviews-text .b-btn{
+				margin-top: 8px;
+				padding: 10px 64px 12px;
+			}
+			.b-reviews-text-cont{
+				width: calc(100% - 326px);
+			}
+.b-docs{
+	font-size: 0px;
+	margin-bottom: -48px;
+}
+.b-doc-slider{
+	position: relative;
+	height: 400px;
+	margin-top: 48px;
+}
+	.b-doc{
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100%/3 - 16px);
+		margin-right: 24px;
+		margin-bottom: 48px;
+	}
+	.b-doc-slider .b-doc{
+		-webkit-transition: opacity 300ms ease-out, transform 300ms ease-out;
+		   -moz-transition: opacity 300ms ease-out, transform 300ms ease-out;
+		    -ms-transition: opacity 300ms ease-out, transform 300ms ease-out;
+		   	 -o-transition: opacity 300ms ease-out, transform 300ms ease-out;
+				transition: opacity 300ms ease-out, transform 300ms ease-out;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+	}
+	.b-doc:nth-child(3n){
+		margin-right: 0px;
+	}
+		.b-doc .b-img{
+			overflow: hidden;
+			border-radius: 200px;
+			width: 276px;
+			height: 276px;
+			margin-bottom: 32px;
+			box-sizing: border-box;
+		}
+		.b-doc.active .b-img{
+			border: 8px solid #75C1BA;
+			background: #75C1BA;
+		}
+			.b-doc .b-img span{
+				width: 100%;
+				height: 100%;
+				display: block;
+				background-position: 50% 50%;
+				background-repeat: no-repeat;
+				border-radius: 200px;
+				background-size: cover;
+				-webkit-transition: transform 200ms ease-out;
+				   -moz-transition: transform 200ms ease-out;
+				    -ms-transition: transform 200ms ease-out;
+				   	 -o-transition: transform 200ms ease-out;
+						transition: transform 200ms ease-out;
+			}
+			.b-doc:hover .b-img span,
+			.b-doc.active .b-img span{
+				-webkit-transform: scale(1.1);
+				   -moz-transform: scale(1.1);
+				    -ms-transform: scale(1.1);
+				   	 -o-transform: scale(1.1);
+						transform: scale(1.1);
+			}
+		.b-doc h3{
+			font-size: 24px;
+			line-height: 32px;
+			font-family: "ubuntu-medium";
+			margin-bottom: 8px;
+		}
+		.b-doc:hover h3,
+		.b-doc.active h3{
+			color: #75C1BA;
+		}
+		.b-doc .b-doctor-post{
+			font-size: 14px;
+			font-family: "ubuntu-regular";
+			line-height: 24px;
+			text-transform: uppercase;
+		}
+	.b-header-doc-post{
+		max-width: 500px;
+		font-size: 22px;
+		line-height: 28px;
+		/*text-transform: uppercase;*/
+		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+	.b-header-doc-text{max-width: 40%;}
+		.b-header-doc-text p{
+
+		}
+			.b-header-doc-text p b{
+				font-family: "ubuntu-medium";
+			}
+		.b-header-doc-text ul{
+
+		}
+		.b-header-doc-text li{
+			position: relative;
+			padding-left: 30px;
+		}
+			.b-header-doc-text li:before{
+				position: absolute;
+				content: "s";
+				font-size: 0px;
+				width: 8px;
+				height: 8px;
+				left: 0px;
+				top: 10px;
+				background: #FFF;
+				border-radius: 100px;
+			}
+.b-footer{
+	
+}
+.b-footer *{
+	color: #FFF;
+}
+	.b-footer .b-wide-block{
+		padding: 64px 0px 32px;
+		background: #9DD0CB;
+		background-image: -webkit-linear-gradient(135deg, rgba(119,184,177,0.00) 0%, #639893 100%);
+		background-image: -o-linear-gradient(135deg, rgba(119,184,177,0.00) 0%, #639893 100%);
+		background-image: linear-gradient(-45deg, rgba(119,184,177,0.00) 0%, #639893 100%);
+	}
+		.b-footer .b-block{
+
+		}
+			.b-footer-top{
+
+			}
+				.b-logo-cont{
+					width: 210px;
+					padding-bottom: 7px;
+				}
+					.b-footer-top .b-logo{
+						display: block;
+					    position: relative;
+					    background-position: 50% 50%;
+					    background-repeat: no-repeat;
+					    width: 202px;
+					    height: 80px;
+					    background-size: 202px;
+					    margin-right: 48px;
+						background-image: url('../i/logo.png');
+					}
+				.b-soc{
+					margin-top: 27px;
+				}
+					.b-soc li{
+						margin-right: 16px;
+						float: left;
+					}
+						.b-soc a{
+							display: block;
+						}
+							.b-soc a:before{
+								color: #FFF;
+								font-size: 32px;
+								display: block;
+								position: relative;
+							}
+							.b-soc a:hover{
+								/*padding-bottom: 5px;*/
+							}
+							.b-soc a.icon-ig:before{
+
+							}
+							.b-soc a.icon-vk:before{
+
+							}
+							.b-soc a.icon-ok:before{
+
+							}
+				.b-footer-menu{
+					width: calc(97% - 210px);
+					display: table;
+					margin-bottom: 40px;
+				}
+					.b-footer-col{
+						display: table-cell;
+						padding-left: 50px;
+					}
+					.b-footer-col:last-child{
+						padding-right: 0px;
+					}
+						.b-footer-col h3{
+							font-size: 18px;
+							line-height: 24px;
+							font-family: "ubuntu-medium";
+							margin-bottom: 16px;
+							text-transform: uppercase;
+						}
+						.b-footer-col ul{
+
+						}
+							.b-footer-col li{
+								margin-bottom: 8px;
+								font-size: 16px;
+								line-height: 24px;
+							}
+								.b-footer-col a{
+									margin-bottom: -1px;
+									border-bottom: 1px solid transparent;
+								}
+									.b-footer-col a:hover{
+										border-bottom: 1px solid #FFF;
+									}
+			.b-limit{
+				text-align: center;
+				font-size: 30px;
+				line-height: 40px;
+				font-family: "ubuntu-light";
+				opacity: 0.35;
+				letter-spacing: 5px;
+				margin-bottom: 45px;
+			}
+			.b-footer-bottom{
+				position: relative;
+			}
+				.b-footer-copy{
+					font-size: 14px;
+					line-height: 24px;
+				}
+				.b-footer-conf{
+					border-bottom: 1px dashed #FFF;
+					margin-left: 110px;
+					font-size: 14px;
+					margin-top: 3px;
+					line-height: 18px;
+				}
+					.b-footer-conf:hover{
+						border-bottom: 0px dashed transparent;
+					}
+				.b-redder{
+					display: block;
+					width: 104px;
+					height: 18px;
+					background-position: 50% 50%;
+					background-repeat: no-repeat;
+					background-image: url('../i/redder.png');
+					font-size: 0px;
+					background-size: 104px;
+					margin-bottom: -2px;
+					margin-top: 2px;
+				}
+.b-popup{
+	padding: 38px;
+	width: 776px;
+	/*overflow: visible !important;*/
+	/*box-shadow: 0px 20px 45px rgba(0,0,0,0.2);*/
+}
+.b-popup-close{
+	position: absolute;
+	top: 10px;
+	width: 50px;
+	height: 50px;
+	right: 10px;
+	color: #484848;
+	background: transparent;
+	border: 0px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+.fancybox-bg{
+	/*background: #FFF;*/
+}
+.fancybox-container--ready .fancybox-bg{
+	opacity: 0.7;
+}
+	.b-popup-close:hover{
+		opacity: 1;
+	}
+	.b-popup-close:before{
+		text-align: center;
+		line-height: 50px;
+		font-size: 18px;
+	}
+	.b-popup-close:after{
+		display: none;
+	}
+div.b-popup{
+	opacity: 0;
+	-webkit-transform: translateY(30px);
+	   -moz-transform: translateY(30px);
+	    -ms-transform: translateY(30px);
+	   	 -o-transform: translateY(30px);
+			transform: translateY(30px);
+	-webkit-animation: fadeUp 700ms ease-out forwards;
+	   -moz-animation: fadeUp 700ms ease-out forwards;
+	    -ms-animation: fadeUp 700ms ease-out forwards;
+	   	 -o-animation: fadeUp 700ms ease-out forwards;
+			animation: fadeUp 700ms ease-out forwards;
+}
+.fancybox-container--closing div.b-popup{
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	   -moz-transform: translateY(0px);
+	    -ms-transform: translateY(0px);
+	   	 -o-transform: translateY(0px);
+			transform: translateY(0px);
+	-webkit-animation: fadeOutDown 300ms ease-out forwards;
+	   -moz-animation: fadeOutDown 300ms ease-out forwards;
+	    -ms-animation: fadeOutDown 300ms ease-out forwards;
+	   	 -o-animation: fadeOutDown 300ms ease-out forwards;
+			animation: fadeOutDown 300ms ease-out forwards;
+}
+.mobile-only{
+	display: none;
+}
+
+
+@-webkit-keyframes fadeUp {
+	100% {
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@-moz-keyframes fadeUp {
+	100% {
+		-moz-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@-ms-keyframes fadeUp {
+	100% {
+		-ms-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@-o-keyframes fadeUp {
+	100% {
+		-o-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+@keyframes fadeUp {
+	100% {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeOutDown {
+	100% {
+		-webkit-transform: translateY(30px);
+		opacity: 0;
+	}
+}
+@-moz-keyframes fadeOutDown {
+	100% {
+		-moz-transform: translateY(30px);
+		opacity: 0;
+	}
+}
+@-ms-keyframes fadeOutDown {
+	100% {
+		-ms-transform: translateY(30px);
+		opacity: 0;
+	}
+}
+@-o-keyframes fadeOutDown {
+	100% {
+		-o-transform: translateY(30px);
+		opacity: 0;
+	}
+}
+@keyframes fadeOutDown {
+	100% {
+		transform: translateY(30px);
+		opacity: 0;
+	}
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5) {
+	.b-header-block{
+		background-image: url('../i/main-back@2x.jpg');
+	}
+	.b-footer .b-logo{
+		background-image: url('../i/logo@2x.png');
+	}
+	.b-logo .b-img{
+		background-image: url('../i/logo-image@2x.png');
+	}
+	.b-logo .b-txt{
+		background-image: url('../i/logo-text@2x.png');
+	}
+	.b-author-sign{
+		background-image: url('../i/sign@2x.jpg');
+	}
+	.b-woman{
+		/*background-image: url('../i/woman@2x.png');*/
+	}
+	.b-redder{
+		background-image: url('../i/redder@2x.png');
+	}
+}	
+@media screen and (max-width: 1250px){
+	
+}
+@media screen and (max-width: 1020px){
+
+}
