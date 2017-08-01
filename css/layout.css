@@ -1476,6 +1476,9 @@ h2.b-title{
 				width: calc(100% - 376px - 52px);
 				margin-right: 48px;
 			}
+			.b-valign p {
+				margin-bottom: 0px;
+			}
 		.b-advice {
 		margin-bottom: 22px;
 		}
@@ -1497,6 +1500,7 @@ h2.b-title{
 	        }				
 			.b-text .b-advice li {
                 width: calc((100% - 120px)/4);
+                min-width: 260px;
                 display: inline-block;
                 text-align: left;
                 line-height: normal;
@@ -1508,9 +1512,6 @@ h2.b-title{
 				vertical-align: middle;
 			}
 			.b-text .b-icon {
-				background-repeat: no-repeat;
-				background-size: contain;
-				background-position: 50% 50%;
 				width: 50px;
 				height: 45px;
 				margin-right: 10px;
