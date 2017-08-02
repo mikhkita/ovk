@@ -865,40 +865,31 @@ h2.b-title{
 			.b-valign p {
 				margin-bottom: 0px;
 			}
-		.b-advice {
-		margin-bottom: 22px;
-		}
-			.b-text .b-advice ul {
+			.b-advice ul {
 			}
-	        .b-text .b-advice ul:after {
+	        .b-advice ul:after {
 	        }				
-			.b-text .b-advice li {
-                width: calc((100% - 120px)/4);
+			.b-advice {
+                width: calc((100% - 120px)/2);
                 min-width: 260px;
                 font-size: 14px;
-			}
-			.b-text .b-advice span {
 			}
 			.b-text .b-icon {
 				width: 50px;
 				height: 45px;
 				margin-right: 10px;
 			}
-			.b-text .b-icon-text {
+			.b-advice p {
 				font-size: 18px;
 				line-height: 24px;	
 				margin-bottom: 0px;			
 				width: calc(100% - 64px);
 			}
-		.b-text .b-types {
-			max-width: 984px;
-			margin-bottom: 50px;
-		}
-			.b-text .b-types .b-img {
+			.b-type .b-img {
 				width: 176px;
 				height: 176px;
 			}
-			.b-text .b-types .b-valign {
+			.b-type .b-valign {
 				margin-right: 0;
 				width: calc(100% - 176px - 36px);
 				margin-left: 32px;

@@ -1,0 +1,246 @@
+
+@font-face {
+    font-family: 'ubuntu-bold';
+    src: url('/bitrix/templates/main/fonts/ubuntu-bold.eot');
+    src: url('/bitrix/templates/main/fonts/ubuntu-bold.eot?#iefix') format('embedded-opentype'),
+         url('/bitrix/templates/main/fonts/ubuntu-bold.woff2') format('woff2'),
+         url('/bitrix/templates/main/fonts/ubuntu-bold.woff') format('woff'),
+         url('/bitrix/templates/main/fonts/ubuntu-bold.ttf') format('truetype'),
+         url('/bitrix/templates/main/fonts/ubuntu-bold.svg#ubuntu-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-light';
+    src: url('/bitrix/templates/main/fonts/ubuntu-light.eot');
+    src: url('/bitrix/templates/main/fonts/ubuntu-light.eot?#iefix') format('embedded-opentype'),
+         url('/bitrix/templates/main/fonts/ubuntu-light.woff2') format('woff2'),
+         url('/bitrix/templates/main/fonts/ubuntu-light.woff') format('woff'),
+         url('/bitrix/templates/main/fonts/ubuntu-light.ttf') format('truetype'),
+         url('/bitrix/templates/main/fonts/ubuntu-light.svg#ubuntu-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-medium';
+    src: url('/bitrix/templates/main/fonts/ubuntu-medium.eot');
+    src: url('/bitrix/templates/main/fonts/ubuntu-medium.eot?#iefix') format('embedded-opentype'),
+         url('/bitrix/templates/main/fonts/ubuntu-medium.woff2') format('woff2'),
+         url('/bitrix/templates/main/fonts/ubuntu-medium.woff') format('woff'),
+         url('/bitrix/templates/main/fonts/ubuntu-medium.ttf') format('truetype'),
+         url('/bitrix/templates/main/fonts/ubuntu-medium.svg#ubuntu-medium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('/bitrix/templates/main/fonts/ubuntu-regular.eot');
+    src: url('/bitrix/templates/main/fonts/ubuntu-regular.eot?#iefix') format('embedded-opentype'),
+         url('/bitrix/templates/main/fonts/ubuntu-regular.woff2') format('woff2'),
+         url('/bitrix/templates/main/fonts/ubuntu-regular.woff') format('woff'),
+         url('/bitrix/templates/main/fonts/ubuntu-regular.ttf') format('truetype'),
+         url('/bitrix/templates/main/fonts/ubuntu-regular.svg#ubuntu-regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight: normal;
+}
+
+ul li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	color: #00D4D7;
+}
+/* clear */
+p, img, h1, h2, h3, h4, h5, h6, div, table, a, img, form, iframe
+{
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+*{
+	margin:0;
+	padding:0;
+}
+table
+{
+	border-collapse:collapse;
+}
+* :focus
+{
+	outline:none;
+}
+
+/* other */
+
+.left
+{
+	float: left !important;
+}
+.right
+{
+	float: right !important;
+}
+.bnone
+{
+	background: none !important;
+}
+.bhide
+{
+	display: none;
+}
+.tright
+{
+	text-align: right;	
+}
+.tcenter
+{
+	text-align: center;
+}
+
+/* clearfix */	
+.clearfix:after 
+{
+	visibility: hidden;
+	display: block;
+	content: ".";
+	font-size: 0px;
+	clear: both;
+	height: 0;
+}
+* + html .clearfix { zoom: 1; } /* IE7 */
+* html .clearfix { zoom: 1; } /* IE6 */
+
+.clear
+{
+	clear:both;
+}
+.b-wysiwyg h2 {
+		font-family: "ubuntu-medium";
+		font-size: 36px;
+		line-height: 46px;
+		margin-bottom: 24px;
+	}
+	.b-wysiwyg h3 {
+		font-family: "ubuntu-medium";
+		font-size: 22px;
+		line-height: 32px;
+		margin-bottom: 24px;
+	}
+	.b-advice + h3,
+	.b-advice + p,
+	.b-advice + h2,
+	.b-advice + ul{
+		padding-top: 24px;
+	}
+	.b-type + h3,
+	.b-type + p,
+	.b-type + h2,
+	.b-type + ul{
+		padding-top: 24px;
+	}
+	.b-wysiwyg li h3 {
+		margin-bottom: 10px;
+	}
+	.b-wysiwyg p {
+		max-width: 752px;
+	}
+	.b-wysiwyg p,.b-wysiwyg li {
+		font-family: "ubuntu-light";
+		font-size: 16px;
+		line-height: 28px;
+		margin-bottom: 32px;
+	}
+	.b-wysiwyg img{
+		width: 100%:;
+	}	
+	.b-two-images img {
+		width: calc((100% - 29px)/2);
+		display: inline-block;
+		vertical-align: top;
+	}
+	.b-two-images img:nth-child(odd) {
+		margin-right: 24px;
+	}
+	.b-why img {
+		border-radius: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		width: 376px;
+		height: 376px;
+	}	
+		.b-why {
+			margin-bottom: 50px;
+		}
+			.b-valign {
+				display: inline-block;
+				vertical-align: middle;
+				width: calc(100% - 386px - 52px);
+				margin-right: 48px;
+			}
+			.b-valign p {
+				margin-bottom: 0px;
+			}
+		.b-advice {
+            width: calc((100% - 120px)/4);
+            min-width: 260px;
+            display: inline-block;
+            text-align: left;
+            line-height: normal;
+            font-size: 14px;
+            vertical-align: top;
+            margin-bottom: 24px;
+            margin-right: 24px;
+		}
+			.b-advice span {
+				display: inline-block;
+				vertical-align: middle;
+				background-position: 50%;
+				background-repeat: no-repeat;
+			}
+			.b-wysiwyg .b-icon {
+				width: 50px;
+				height: 45px;
+				margin-right: 10px;
+			}
+			.b-advice p {
+				display: inline-block;
+				font-family: "ubuntu-regular";
+				font-size: 18px;
+				line-height: 24px;	
+				margin-bottom: 0px;			
+				width: calc(100% - 64px);
+				vertical-align: middle;
+			}
+		.b-type {
+			max-width: 984px;
+			margin-bottom: 32px;
+		}
+			.b-type img {
+				border-radius: 100px;
+				vertical-align: middle;
+				display: inline-block;
+				width: 176px;
+				height: 176px;
+			}
+			.b-type h3{
+				margin-bottom: 10px;
+			}
+			.b-type .b-valign {
+				margin-right: 0;
+				width: calc(100% - 186px - 36px);
+				margin-left: 32px;
+			}
+		.b-wysiwyg .b-how {
+		}

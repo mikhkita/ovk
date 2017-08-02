@@ -21,6 +21,3 @@ $APPLICATION->SetPageProperty("canonical", "http://".$_SERVER["HTTP_HOST"]."/ser
 
 ?>
 <?=preg_replace("#(<[^\/]>\s*<\/.+?>)#uis", "", $arResult["DETAIL_TEXT"])?>
-<div class="b-back-link">
-	<a href="/services/">Вернуться к списку услуг</a>
-</div>

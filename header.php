@@ -131,7 +131,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 				<? if( !$isMain ): ?>
 				<div class="b b-content">
 					<div class="b-wide-block">
-						<div class="b-block">
+						<div class="b-block <?if(!$notBText):?>b-text<?endif;?>">
 				<? endif; ?>
 				<? if(!$notBText): ?>
 				
