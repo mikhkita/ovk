@@ -750,17 +750,27 @@ h2.b-title{
 					}
 .b-insole-orto {
 }
-	.b-text h2,h3,p,span,ul,li {
-	}
 	.b-text h2 {
 		font-size: 36px;
 		line-height: 46px;
-		margin-bottom: 8px;
+		margin-bottom: 24px;
 	}
 	.b-text h3 {
 		font-size: 22px;
 		line-height: 32px;
 		margin-bottom: 24px;
+	}
+	.b-advice + h3,
+	.b-advice + p,
+	.b-advice + h2,
+	.b-advice + ul{
+		padding-top: 24px;
+	}
+	.b-type + h3,
+	.b-type + p,
+	.b-type + h2,
+	.b-type + ul{
+		padding-top: 24px;
 	}
 	.b-text li h3 {
 		margin-bottom: 10px;
@@ -768,23 +778,27 @@ h2.b-title{
 	.b-text p {
 		max-width: 752px;
 	}
-	.b-text p,li {
+	.b-text p,.b-text li {
 		font-size: 16px;
 		line-height: 28px;
 		margin-bottom: 32px;
 	}
-	.b-text img {
+	.b-text img{
+		width: 100%:;
+	}	
+	.b-two-images img {
 		width: calc((100% - 28px)/2);
 	}
-	.b-text img:nth-child(odd) {
+	.b-two-images img:nth-child(odd) {
 		margin-right: 24px;
-	}	
-	.b-text .b-img {
+	}
+	.b-why img {
+		border-radius: 50%;
 		width: 376px;
 		height: 376px;
 	}	
 		.b-why {
-		margin-bottom: 50px;
+			margin-bottom: 50px;
 		}
 			.b-valign {
 				width: calc(100% - 376px - 52px);
@@ -794,9 +808,11 @@ h2.b-title{
 				margin-bottom: 0px;
 			}
 		.b-advice {
-            width: calc((100% - 81px)/3);
+            width: calc((100% - 108px)/4);
             min-width: 260px;
             font-size: 14px;
+            margin-bottom: 24px;
+            margin-right: 24px;
 		}
 			.b-advice span {
 			}
@@ -813,10 +829,14 @@ h2.b-title{
 			}
 		.b-type {
 			max-width: 984px;
+			margin-bottom: 32px;
 		}
-			.b-type .b-img {
+			.b-type img {
 				width: 176px;
 				height: 176px;
+			}
+			.b-type h3{
+				margin-bottom: 10px;
 			}
 			.b-type .b-valign {
 				margin-right: 0;
