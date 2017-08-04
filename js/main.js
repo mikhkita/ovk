@@ -802,4 +802,32 @@ $(document).ready(function(){
         return false;
     }
 
+
+    $('#b-tour-nav, a').click(function(event){
+        if (!$(this).hasClass("active")) {
+            $('.active').removeClass('active');
+            $(this).addClass('active');
+        }
+        var dataVal = $(event.target).attr("tab-id");
+        $('.b-tour-tab.show').addClass('hide');
+        $('.b-tour-tab.show').removeClass('show');
+        $('#b-tour-tab-'+dataVal+'').addClass('show');
+        $('#b-tour-tab-'+dataVal+'').removeClass('hide');
+        tabSliderInit();
+    });
+    function tabSliderInit () {
+        if ($('.slick-initialized').length>0) {
+            $('.slick-initialized').slick('unslick');
+        }
+        $('.b-tour-tab.show .b-tour-slider').slick({
+            dots: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,              
+            prevArrow: '<div class="slick-arrow-left icon-arrow-left"></div>',
+            nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
+        });
+    }  
+    tabSliderInit();
+
 });
