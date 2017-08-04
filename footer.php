@@ -112,8 +112,8 @@
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
 		<div class="b-popup" id="b-popup-1">
-			<h3>Оставьте заявку</h3>
-			<h4>и наши специалисты<br>свяжутся с Вами в ближайшее время</h4>
+			<h3>Подбор записи на прием</h3>
+			<h4>Выберите удобное для Вас время</h4>
 			<form action="kitsend.php" data-goal="CALLBACK" method="POST" id="b-form-1">
 				<div class="b-popup-form">
 					<label for="name">Введите Ваше имя</label>
