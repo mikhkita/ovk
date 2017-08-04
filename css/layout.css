@@ -316,6 +316,37 @@ h2.b-title{
 		font-size: 48px;
 		display: block;
 	}
+.hide {
+	display: none;
+}
+.show {
+	display: initial;
+}
+.slick-arrow-left,.slick-arrow-right {
+	position: absolute;
+	bottom: 100px;
+	left: 23%;
+	cursor: pointer;
+	z-index: 1;
+	width: 80px;
+	height: 80px;
+}
+.slick-arrow-right {
+	left: 30%;
+}
+.slick-arrow-left:before,.slick-arrow-right:before {
+	display: block;
+	width: 80px;
+	height: 80px;
+	border-radius: 100px;
+	background-color: rgba(255,255,255,0.7);
+	color: rgba(0,0,0,0.5);
+	line-height: 80px;
+	font-size: 31px;
+	padding-left: 29px;
+	box-sizing: border-box;
+}
+.slick-arrow-right:before {padding-left: 33px;}
 .b-header{
 	
 }
