@@ -325,14 +325,14 @@ h2.b-title{
 .slick-arrow-left,.slick-arrow-right {
 	position: absolute;
 	bottom: 100px;
-	left: 23%;
+	left: calc(50% - 580px);
 	cursor: pointer;
 	z-index: 1;
 	width: 80px;
 	height: 80px;
 }
 .slick-arrow-right {
-	left: 30%;
+	left: calc(50% - 580px + 122px);
 }
 .slick-arrow-left:before,.slick-arrow-right:before {
 	display: block;
@@ -2004,8 +2004,79 @@ div.b-popup{
 							height: 700px;
 							background-position: 50% 50%;
 							background-size: cover;
+							position: relative;
 						}
+							.b-tour-bubble-marker {
+								display: block;
+								width: 41px;
+								height: 41px;
+								border: 2px solid #ffffff;
+								border-radius: 100px;
+								background-color: rgba(0,0,0,0.1);
+								position: absolute;
+								top: 466px;
+								left: 466px;
+								cursor: pointer;
+						-webkit-transition: left 150ms ease-out, top 150ms ease-out, width 150ms ease-out, height 150ms ease-out, border-color 150ms ease-out;
+						   -moz-transition: left 150ms ease-out, top 150ms ease-out, width 150ms ease-out, height 150ms ease-out, border-color 150ms ease-out;
+						    -ms-transition: left 150ms ease-out, top 150ms ease-out, width 150ms ease-out, height 150ms ease-out, border-color 150ms ease-out;
+						   	 -o-transition: left 150ms ease-out, top 150ms ease-out, width 150ms ease-out, height 150ms ease-out, border-color 150ms ease-out;
+								transition: left 150ms ease-out, top 150ms ease-out, width 150ms ease-out, height 150ms ease-out, border-color 150ms ease-out;
+							}
+								.b-tour-bubble-marker:hover {
+									border-color: #9dd0cb;
+									background-color: rgba(255,255,255,0.4);
+									width: 52px;
+									height: 52px;
+									top: calc(466px - 5px);
+									left: calc(466px - 5px);
+								}
+								.b-tour-bubble-marker:hover:after {
+									background-color: #9dd0cb;
+									width: 20px;
+									height: 20px;
+									margin: 16px;
+								}			
 
+								.b-tour-bubble-marker:after {
+									content: '.';
+									font-size: 0;
+									display: inline-block;
+									width: 13px;
+									height: 13px;
+									border-radius: 100px;
+									background-color: #FFFFFF;
+									margin: 14px;
+							-webkit-transition: margin 150ms ease-out, width 150ms ease-out, height 150ms ease-out, background-color 150ms ease-out;
+							   -moz-transition: margin 150ms ease-out, width 150ms ease-out, height 150ms ease-out, background-color 150ms ease-out;
+							    -ms-transition: margin 150ms ease-out, width 150ms ease-out, height 150ms ease-out, background-color 150ms ease-out;
+							     -o-transition: margin 150ms ease-out, width 150ms ease-out, height 150ms ease-out, background-color 150ms ease-out;
+							        transition: margin 150ms ease-out, width 150ms ease-out, height 150ms ease-out, background-color 150ms ease-out;
+								}
+							.b-tour-bubble-box {
+								display: none;
+								width: 300px;
+								height: 380px;
+								position: absolute;
+								top: 200px;
+								left: 550px;
+								background-color: rgba(255,255,255,0.9);
+								box-shadow: 0px 0px 50px rgba(0,0,0,0.2);
+							}
+								.b-tour-bubble-box .b-img {
+									width: 100%;	
+									height: 50%;
+								}
+								.b-tour-bubble-box .b-text-width {
+									width: 90%;
+									margin: 0 auto;
+								}
+								.opened {
+
+								}
+								.bubble-opened {
+									display: block;
+								}
 
 
 @-webkit-keyframes fadeUp {
