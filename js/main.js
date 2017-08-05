@@ -802,51 +802,71 @@ $(document).ready(function(){
         return false;
     }
 
-
-    $('#b-tour-nav, a').click(function(event){
-        if (!$(this).hasClass("active")) {
-            $('#b-tour-nav, .active').removeClass('active');
-            $(this).addClass('active');
-        }
-        var dataVal = $(event.target).attr("tab-id");
-        $('.b-tour-tab.show').addClass('hide');
-        $('.b-tour-tab.show').removeClass('show');
-        $('#b-tour-tab-'+dataVal+'').addClass('show');
-        $('#b-tour-tab-'+dataVal+'').removeClass('hide');
-        tabSliderInit();
-    });
-
-
-    function tabSliderInit () {
-        if ($('.slick-initialized').length>0) {
-            $('.slick-initialized').slick('unslick');
-        }
-        $('.b-tour-tab.show .b-tour-slider').slick({
-            dots: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,              
-            prevArrow: '<div class="slick-arrow-left icon-arrow-left"></div>',
-            nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
+    if ($('.b-tour-tabs').length>0) {
+        $('#b-tour-nav, a').click(function(event){
+            if (!$(this).hasClass("active")) {
+                $('#b-tour-nav, .active').removeClass('active');
+                $(this).addClass('active');
+            }
+            var dataVal = $(event.target).attr("tab-id");
+            $('.b-tour-tab.show').addClass('hide');
+            $('.b-tour-tab.show').removeClass('show');
+            $('#b-tour-tab-'+dataVal+'').addClass('show');
+            $('#b-tour-tab-'+dataVal+'').removeClass('hide');
+            tabSliderInit();
         });
-    }  
-    tabSliderInit();
 
 
-    $('.b-tour-tabs .b-tour-bubble-marker').click(function(event){
-        if (!$(this).hasClass("opened")) {
-            $('.b-tour-tabs, .opened').removeClass('opened');
-            $(this).addClass('opened');
-            var dataval = $(this).attr('data-href');
-            $('#'+dataval+'').addClass('bubble-opened');
-        }
-        else  {
-           $(this).removeClass('opened'); 
-            var dataval = $(this).attr('data-href');
-            $('#'+dataval+'').removeClass('bubble-opened');           
-        }
-    });
+        function tabSliderInit () {
+            if ($('.slick-initialized').length>0) {
+                $('.slick-initialized').slick('unslick');
+                $('.b-tour-tabs, .bubble-opened').removeClass('bubble-opened');
+                $('.b-tour-tabs, .opened').removeClass('opened');
+            }
+            $('.b-tour-tab.show .b-tour-slider').slick({
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,  
+                cssEase: 'ease', 
+                speed: 1000,           
+                prevArrow: '<div class="slick-arrow-left icon-arrow-left"></div>',
+                nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
+            });
+        }  
+        tabSliderInit();
 
+
+        $('.b-tour-tabs .b-tour-bubble-marker-btn').click(function(event){
+            if (!$(this).hasClass("opened")) {
+                if ($('.opened').length>0) {
+                    $('.bubble-opened').removeClass('bubble-opened'); 
+                    $('.opened').removeClass('opened');                     
+                }
+                $('.b-tour-tabs, .opened').removeClass('opened');
+                $(this).addClass('opened');
+                var dataval = $(this).attr('data-href');
+                $('#'+dataval+'').addClass('bubble-opened');
+            }
+            else  {
+               $(this).removeClass('opened'); 
+                var dataval = $(this).attr('data-href');
+                $('#'+dataval+'').removeClass('bubble-opened');           
+            }
+        });
+        $(document).on('click', function(e) {
+          if (!$(e.target).closest(".b-tour-tabs .b-tour-bubble-marker").length) {
+            $('.bubble-opened').removeClass('bubble-opened'); 
+            $('.opened').removeClass('opened'); 
+          }
+          e.stopPropagation();
+        });
+        $('.b-tour-tabs .b-popup-close').click(function(event){
+            $('.bubble-opened').removeClass('bubble-opened'); 
+            $('.opened').removeClass('opened');             
+        });
+        
+    };
 
 
 });
