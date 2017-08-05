@@ -11,6 +11,8 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery.timepicker.css" type="text/css">	
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/component.css" type="text/css">
@@ -52,7 +54,7 @@
 						<div class="b-phone-cont">
 							<div class="b-phone-wrap">
 								<div class="b-phone">+7 (999) 499-50-00</div>
-								<a href="#" class="b-btn b-white-btn"><span>Записаться на прием</span></a>
+								<a href="#b-popup-zapis" class="b-btn b-white-btn" id="b-popup-zapis-href"><span>Записаться на прием</span></a>
 								<a href="#" class="b-burger icon-menu" id="showMenu"></a>
 							</div>
 						</div>
@@ -93,7 +95,7 @@
 										<div class="b-tour-slide" style="background-image: url('i/tour-slide.jpg');">
 											<div class="b-tour-bubble-marker b-marker-1">
 												<span class="b-tour-bubble-marker-btn" data-href="bubble-1"></span>
-												<div class="b-tour-bubble-box b-text" id="bubble-1">
+												<div class="b-tour-bubble-box b-text bubble-right" id="bubble-1">
 													<div class="b-popup-close icon-cross"></div>
 													<div class="b-img" style="background-image: url('./i/foot-scan1.jpg');"></div>
 													<div class="b-text-width">
@@ -104,9 +106,8 @@
 											</div>
 											<div class="b-tour-bubble-marker b-marker-2">
 												<span class="b-tour-bubble-marker-btn" data-href="bubble-2"></span>
-												<div class="b-tour-bubble-box b-text" id="bubble-2">
+												<div class="b-tour-bubble-box b-without-image b-text bubble-left" id="bubble-2">
 													<div class="b-popup-close icon-cross"></div>
-													<div class="b-img" style="background-image: url('./i/foot-scan1.jpg');"></div>
 													<div class="b-text-width">
 														<h3>Something here, tag H3</h3>
 														<p>And here.... little more words...And here.... little more words...And here.... little more words...And here.... little more words...And here.... little more words...</p>
@@ -267,6 +268,24 @@
 			</div>
 		</div>
 	</div>
+	<div class="b-popup-zapis" id="b-popup-zapis" style="display:none;">
+		<!-- <div class="b-popup-close icon-cross"></div> -->
+		<h2><span>Подобрать</span><br>Запись на прием</h2>
+		<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
+		<form action="kitsend.php" class="">
+			<div class="b-popup-zapis-fields clearfix">
+				<div><input type="text" id="name" name="name" placeholder="Ваше имя *" required></div>
+				<div><input type="text" id="name" name="name" placeholder="Ваш телефон *" required></div>
+				<div><input type="text" id="name" name="name" placeholder="Выберите услугу *" required></div>
+				<div><input type="text" name="date" placeholder="Выберите даты *" id="date"></div>
+				<div><input type="text" id="time-start" name="time-start" placeholder="Со скольки удобно *" class="time-start" required></div>
+				<div><input type="text" id="time-end" name="time-end" placeholder="До скольки удобно *" class="time-end" required></div>
+			</div>
+			<div class="b-popup-zapis-btn-cont">
+				<button type="submit" class="b-btn b-green-btn right ajax">Отправить</button>
+			</div>
+		</form>	
+	</div>	
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
 		<div class="b-popup" id="b-popup-1">
@@ -299,6 +318,9 @@
 	</div>
 
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js"></script>	
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>
 	<script type="text/javascript" src="js/jssor.js"></script>

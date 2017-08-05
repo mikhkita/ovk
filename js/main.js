@@ -803,9 +803,9 @@ $(document).ready(function(){
     }
 
     if ($('.b-tour-tabs').length>0) {
-        $('#b-tour-nav, a').click(function(event){
+        $('.b-tour-nav a').click(function(event){
             if (!$(this).hasClass("active")) {
-                $('#b-tour-nav, .active').removeClass('active');
+                $('.b-tour-nav .active').removeClass('active');
                 $(this).addClass('active');
             }
             var dataVal = $(event.target).attr("tab-id");
@@ -820,8 +820,8 @@ $(document).ready(function(){
         function tabSliderInit () {
             if ($('.slick-initialized').length>0) {
                 $('.slick-initialized').slick('unslick');
-                $('.b-tour-tabs, .bubble-opened').removeClass('bubble-opened');
-                $('.b-tour-tabs, .opened').removeClass('opened');
+                $('.b-tour-tabs .bubble-opened').removeClass('bubble-opened');
+                $('.b-tour-tabs .opened').removeClass('opened');
             }
             $('.b-tour-tab.show .b-tour-slider').slick({
                 dots: false,
@@ -843,7 +843,7 @@ $(document).ready(function(){
                     $('.bubble-opened').removeClass('bubble-opened'); 
                     $('.opened').removeClass('opened');                     
                 }
-                $('.b-tour-tabs, .opened').removeClass('opened');
+                $('.b-tour-tabs .opened').removeClass('opened');
                 $(this).addClass('opened');
                 var dataval = $(this).attr('data-href');
                 $('#'+dataval+'').addClass('bubble-opened');
@@ -867,6 +867,58 @@ $(document).ready(function(){
         });
         
     };
+    $('#time-start').timepicker({ 
+        'minTime': '10:00pm',
+        'maxTime': '18:00pm',  
+        'timeFormat': 'H:i',      
+        'scrollDefault': 'now' 
+    });
+    $('#time-end').timepicker({ 
+        'minTime': '10:00pm',
+        'maxTime': '18:00pm',  
+        'timeFormat': 'H:i',      
+        'scrollDefault': 'now' 
+    });
+    $(function() {
+      $('#date').datepicker({
+        minDate: 0,
+        range: 'multiple', // режим - выбор нескольких дат 
+        range_multiple_max: '15', // макимальное число выбираемых дат
+        onSelect: function(dateText, inst, extensionRange) {
+          // extensionRange - объект расширения
+          $('[name=multipleDate]').val(extensionRange.datesText.join('\n'));
+        }
+      });
 
+      // выделить послезавтра и следующие 2 дня
+      $('#date_range').datepicker('setDate', ['+2d', '+3d', '+4d']);
+
+      // объект расширения (хранит состояние календаря)
+      var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
+      if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join('\n'));
+    });
+    // $(function(){
+    //     $("#date").datepicker({
+    //         minDate: 0,
+    //     });
+    // });
+    $("a#b-popup-zapis-href").fancybox({
+        'hideOnContentClick': true
+    });
+// Disable a list of dates
+// var disabledDays = ["9-21-2010", "9-24-2010", "9-27-2010", "9-28-2010", "9-3-2010", "9-17-2010", "9-2-2010", "9-3-2010", "9-4-2010", "9-5-2010"];
+// function disableAllTheseDays(date) {
+//     var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
+//     for (i = 0; i < disabledDays.length; i++) {
+//         if($.inArray((m+1) + '-' + d + '-' + y,disabledDays) != -1) {
+//             return [false];
+//         }
+//     }
+//     return [true];
+// }
+// $('#datepicker5').datepicker({
+//         dateFormat: 'mm-dd-yy',
+//         beforeShowDay: disableAllTheseDays
+// });    
 
 });
