@@ -2125,7 +2125,89 @@ div.b-popup{
 											line-height: 11px;
 											position: absolute;
 										}							
-
+	.b-popup-zapis {
+		max-width: 776px;
+		width: 100%;
+		max-height: 591px;
+		height: 100%;
+		background: linear-gradient( -6deg,#C9E2E5 , #7CA9AA);
+		padding: 34px 48px 48px;
+		box-sizing: border-box;
+		color: #ffffff;
+		position: relative;
+	}	
+		.b-popup-close {
+			color: #ffffff;
+			top: 13px;
+			right: 15px;			
+		}
+			.b-popup-close:before {
+				display: block;
+				width: 50px;
+				height: 50px;
+			}
+		.b-popup-zapis h2 {
+			font-family: "ubuntu-bold";
+			font-size: 48px;
+			line-height: 50px;
+			text-transform: uppercase;
+			margin-bottom: 24px;
+		}
+			.b-popup-zapis span {
+				font-family: "ubuntu-light";
+				font-size: 32px;
+				line-height: 40px;
+			}
+		.b-popup-zapis p {
+			font-family: "ubuntu-light";
+			font-size: 16px;
+			line-height: 24px;
+			width: 60%;
+			margin-bottom: 32px;
+		}	
+		.b-popup-zapis-fields { 
+		}
+			.b-popup-zapis-fields input {
+				font-family: "ubuntu-light";
+				font-size: 16px;
+				line-height: 51px;
+				border-radius: 100px;
+				border: none;
+				border: 1px solid #ffffff;
+				box-sizing: border-box;
+				padding: 0 20px;
+				width: calc((100% - 27px)/2);
+				background-color: rgba(255,255,255,0.2);
+				margin-bottom: 24px;
+				color: #ffffff;
+			}	
+			.b-popup-zapis-fields input:nth-child(6) {
+				margin-bottom: 30px;
+			}			
+			.b-popup-zapis-fields input:nth-child(odd) {
+				margin-right: 23px;
+			}
+			.b-popup-zapis-fields input::-webkit-input-placeholder {
+				color: #ffffff;
+			}
+			.b-popup-zapis-fields input:-moz-placeholder {
+				color: #ffffff;
+			}		
+			.b-popup-zapis .b-btn {
+				border: none;
+				font-family: "ubuntu-regular";
+				font-size: 20px;
+				line-height: 28px;
+				color: #9DD0CB;
+				background-color: #ffffff;
+				padding: 18px 40px 18px;
+			}
+				.b-popup-zapis .b-btn:before {
+					background-color: rgba(124,181,175,0.2);
+				}
+				.b-popup-zapis .b-btn:hover:before {
+					background-color: rgba(124,181,175,0.2);
+				}
 
 @-webkit-keyframes fadeUp {
 	100% {
