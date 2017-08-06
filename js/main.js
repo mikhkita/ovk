@@ -612,9 +612,6 @@ $(document).ready(function(){
 
             margin = (""+margin == "NaN")?0:margin;
 
-            console.log(""+margin);
-            // cols = (cols == 0)?1:cols;
-
             for (var i = 0; i < cols; i++) {
                 states.push({
                     left : i*_.slideWidth+i*margin,
@@ -670,6 +667,7 @@ $(document).ready(function(){
         fps : 60,
         dots : false,
         centerMode : true,
+        centerIndex : ( isDesktop || isTablet )?2:1,
         prevButtonClass : "b-reviews-btn b-reviews-prev icon-arrow-left",
         nextButtonClass : "b-reviews-btn b-reviews-next icon-arrow-right",
         style : function(s){
@@ -698,6 +696,8 @@ $(document).ready(function(){
                     opacity : 0,
                     scale : 0.7
                 }];
+            
+            margin = (""+margin == "NaN")?0:margin;
 
             for (var i = 0; i < cols; i++) {
                 states.push({

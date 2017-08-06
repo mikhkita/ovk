@@ -16,6 +16,6 @@ foreach ($arResult["ITEMS"] as $i => $arItem){
 	}
 }
 
-$arResult["ITEMS"] = $start + $end;
+$arResult["ITEMS"] = array_merge($start, $end);
 
 ?>
