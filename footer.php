@@ -149,6 +149,7 @@
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/KitCarousel.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/KitAnimate.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/device.js"></script>
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/slick.min.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/KitSend.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/fastclick.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/modernizr.custom.25376.js"></script>

@@ -320,9 +320,6 @@ h2.b-title{
 .hide {
 	display: none;
 }
-.show {
-	display: initial;
-}
 .slick-arrow-left,.slick-arrow-right {
 	position: absolute;
 	bottom: 64px;
@@ -1186,6 +1183,11 @@ h2.b-title{
 					padding: 36px 48px 43px;
 					opacity: 0;
 					visibility: hidden;
+					-webkit-transition: opacity 300ms 300ms ease-in, visibility 300ms 300ms ease-in;
+					   -moz-transition: opacity 300ms 300ms ease-in, visibility 300ms 300ms ease-in;
+					    -ms-transition: opacity 300ms 300ms ease-in, visibility 300ms 300ms ease-in;
+					   	 -o-transition: opacity 300ms 300ms ease-in, visibility 300ms 300ms ease-in;
+							transition: opacity 300ms 300ms ease-in, visibility 300ms 300ms ease-in;
 				}
 				.b-doctor-text.show{
 					opacity: 1;
@@ -1196,15 +1198,11 @@ h2.b-title{
 					   	 -o-transition: opacity 300ms ease-out, visibility 300ms ease-out;
 							transition: opacity 300ms ease-out, visibility 300ms ease-out;
 				}
-				.b-doctor-text.hide{
+				/*.b-doctor-text.hide{
 					opacity: 0;
 					visibility: hidden;
-					-webkit-transition: opacity 300ms ease-in, visibility 300ms ease-in;
-					   -moz-transition: opacity 300ms ease-in, visibility 300ms ease-in;
-					    -ms-transition: opacity 300ms ease-in, visibility 300ms ease-in;
-					   	 -o-transition: opacity 300ms ease-in, visibility 300ms ease-in;
-							transition: opacity 300ms ease-in, visibility 300ms ease-in;
-				}
+					
+				}*/
 					.b-doctor-text h3{
 						font-size: 32px;
 						line-height: 40px;
