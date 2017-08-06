@@ -329,6 +329,10 @@ h2.b-title{
 	width: 80px;
 	height: 80px;
 }
+.slick-arrow-left:hover:before,.slick-arrow-right:hover:before {
+	background-color: #ffffff;
+	color: #484848;
+}
 .slick-arrow-right {
 	left: calc(50% - 580px + 122px);
 }
@@ -1911,18 +1915,6 @@ div.b-popup{
 .b-tour{
 	
 }
-	.b-tour .hide {
-		display: initial;
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 500ms ease-in, visibility 500ms ease-in;
-	}
-	.b-tour .show {
-		display: initial;
-		opacity: 1;
-		visibility: visible;
-		transition: opacity 500ms ease-out, visibility 500ms ease-out;
-	}
 	.b-tour .b-wide-block{
 		height: 100%;
 		overflow: hidden;
@@ -2035,7 +2027,16 @@ div.b-popup{
 					top: 0px;
 					width: 100%;
 					height: 100%;
+					opacity: 0;
+					visibility: hidden;
+					transition: opacity 500ms ease-in, visibility 500ms ease-in;
 				}
+				.b-tour-tabs .show {
+					display: initial;
+					opacity: 1;
+					visibility: visible;
+					transition: opacity 500ms ease-out, visibility 500ms ease-out;
+				}				
 					.b-tour-slider{
 						width: 100%;
 						height: 100%;
@@ -2057,8 +2058,8 @@ div.b-popup{
 								left: 65%;
 							}							
 							.b-tour .b-problem-bubble {
-								width: 350px;
-								box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+								width: 700px;
+								/* box-shadow: 0px 5px 15px rgba(0,0,0,0.2); */
 								padding: 0;
 							}
 								.b-tour .b-problem-bubble .b-img {
@@ -2068,7 +2069,7 @@ div.b-popup{
 									background-size: cover;
 								}
 								.b-tour .b-problem-bubble .b-text-width {
-									padding: 23px 28px 20px;
+									padding: 40px 48px;
 								}
 								.b-tour .b-problem-bubble .b-text-width h3 {
 									font-family: "ubuntu-bold";
@@ -2168,7 +2169,7 @@ div.b-popup{
 				.b-popup-zapis .b-btn:hover:before {
 					background-color: rgba(124,181,175,0.2);
 				}
-			.b-popup-zapis .fancybox-close-small {
+			.fancybox-close-small {
 				position: absolute;
 				top: 15px;
 				width: 50px;
@@ -2176,12 +2177,12 @@ div.b-popup{
 				right: 15px;
 				color: #ffffff;
 				background: transparent;
-				border: 0px;
+				border: none;
 				cursor: pointer;
 				opacity: 0.7;
 			}
 
-			.b-popup-zapis .fancybox-close-small:after {
+			.fancybox-close-small:after {
 				font-family: 'icomoon' !important;
 				speak: none;
 				font-style: normal;
@@ -2196,13 +2197,13 @@ div.b-popup{
 				right: 15px;
 				width: 20px;
 				height: 20px;
-				color: #fff;
+				color: #484848;
 				border: none;
 				background: transparent;
 				box-sizing: border-box;
 				z-index: 2;
 				}
-			.b-popup-zapis .fancybox-close-small:hover:after {
+			.fancybox-close-small:hover:after {
 			  color: #6c6c6c;
 			  background: transparent;
 			  }				
