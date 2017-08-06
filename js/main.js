@@ -36,7 +36,7 @@ $(document).ready(function(){
                 padTop = 40;
             }
             else if ($('.b-tour').length>0) {
-                topLim = 40;;
+                topLim = $(".b-tour h2.b-title").offset().top + $(".b-tour h2.b-title").height() + 96;
                 padLeft = 10;
                 padTop = 10;
             }
@@ -255,7 +255,7 @@ $(document).ready(function(){
             }
 
             if( $(this).hasClass("g") ){
-                left = ($pin.offset().left - bubbleW - margin > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
+                left = ($pin.offset().left - bubbleW - margin*2 > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
             }else{
                 left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
             }
