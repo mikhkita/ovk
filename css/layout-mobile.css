@@ -863,31 +863,15 @@ h2.b-title{
 		line-height: 30px;
 		margin-bottom: 20px;
 	}
-	.b-advice + h3,
-	.b-advice + p,
-	.b-advice + h2,
-	.b-advice + ul{
-		padding-top: 24px;
-	}
-	.b-type + h3,
-	.b-type + p,
-	.b-type + h2,
-	.b-type + ul{
-		padding-top: 24px;
-	}
-	.b-text li h3 {
-		margin-bottom: 10px;
-	}
 	.b-text p {
 		max-width: 752px;
 	}
 	.b-text p,.b-text li {
 		font-size: 16px;
 		line-height: 28px;
-		margin-bottom: 32px;
 	}
 	.b-text img{
-		width: 100%:;
+		width: 100%;
 	}	
 	.b-two-images img {
 		width: 100%;
@@ -897,20 +881,24 @@ h2.b-title{
 		margin-right: 0;
 	}
 	.b-why img {
-		display: none;
+	position: absolute;
+	top: 0px;
+	width: 276px;
+	height: 276px;
 	}	
 		.b-why {
-			margin-bottom: 30px;
+			margin-bottom: 24px;
 		}
-			.b-valign {
+			.b-why .b-valign {
 				width: 100%;
 				margin-right: 0px;
+				margin-top: 300px;
 			}
 			.b-valign p {
 				margin-bottom: 0px;
 			}
 		.b-advice {
-            width: calc((100% - 108px)/4);
+            width: 100%;
             min-width: 260px;
             font-size: 14px;
             margin-bottom: 20px;
@@ -1052,9 +1040,13 @@ h2.b-title{
 	margin-bottom: -48px;
 }
 .b-doc-slider{
-	height: 310px;
+	height: 400px;
 	margin-top: 48px;
 }
+	.b-doc-slider .b-reviews-btn{
+		top: 73px;
+		margin-top: 0px;
+	}
 	.b-doc{
 		vertical-align: top;
 		width: 100%;
@@ -1064,11 +1056,13 @@ h2.b-title{
 	.b-doc-slider .b-doc{
 		left: 0px;
 		top: 0px;
+		width: 100%;
+		text-align: center;
 		-webkit-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		   -moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		    -ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		   	 -o-transition: opacity 0ms ease-out, transform 0ms ease-out;
-				transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-o-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		transition: opacity 0ms ease-out, transform 0ms ease-out;
 	}
 	.b-doc:nth-child(3n){
 		margin-right: 0px;
@@ -1077,6 +1071,10 @@ h2.b-title{
 			width: 276px;
 			height: 276px;
 			margin-bottom: 32px;
+		}
+		.b-doc-slider .b-doc .b-img{
+			display: inline-block;
+			margin-bottom: 8px;
 		}
 		.b-doc.active .b-img{
 			border: 8px solid #75C1BA;
@@ -1102,6 +1100,7 @@ h2.b-title{
 			font-size: 20px;
 			margin-bottom: 8px;
 			line-height: 24px;
+			max-width: 100%;
 		}
 		.b-doc:hover h3,
 		.b-doc.active h3{
@@ -1112,6 +1111,7 @@ h2.b-title{
 			line-height: 22px;
 			text-transform: none;
 			font-family: "ubuntu-light";
+			max-width: 100%;
 		}
 	.b-header-doc-post{
 		max-width: 70%;
@@ -1409,13 +1409,47 @@ div.b-popup{
 	   	 -o-animation: fadeOutDown 300ms ease-out forwards;
 			animation: fadeOutDown 300ms ease-out forwards;
 }
-.mobile-only{
+.mobile-only, .mobile-only-only{
 	display: block;
 }
 .not-mobile{
 	display: none;
 }
-
+.doctor-img{
+	height: 400px;
+	background-size: auto 400px;
+	margin-bottom: 24px;
+	background-position: 73%;
+}
+.doctor-img-683{
+	background-position: 78%;
+}
+.doctor-img-691{
+	background-position: 90%;
+}
+.doctor-img-684{
+	background-position: 76%;
+}
+.doctor-img-685{
+	background-position: 78%;
+}
+.doctor-img-689{
+	background-position: 77%;
+}
+.doctor-img-686{
+	background-position: 81%;
+}
+.b-doc-slider-cont{
+	padding-top: 32px;
+	margin-bottom: -44px;
+	background-color: #FAFAFA;
+}
+.b-doc-detail{
+	padding-bottom: 32px;
+}
+.b-doc-detail .b-doctor-post + p{
+	margin-top: 16px;
+}
 @media (-webkit-min-device-pixel-ratio: 1.5) {
 	.b-header-block{
 	}
@@ -1436,8 +1470,27 @@ div.b-popup{
 	.b-redder{
 	}
 }	
-@media screen and (max-width: 1250px){
-	
+@media screen and (max-width: 540px){
+	.b-type {
+		
+	}
+		.b-type img {
+			margin-bottom: 16px;
+		}
+		.b-type h3{
+			
+		}
+		.b-type .b-valign {
+			width: 100%;
+			margin-left: 0px;
+		}
+	.b-doc-slider{
+		height: 320px;
+	}
+	.b-doc-slider .b-doc .b-img{
+		width: 200px;
+		height: 200px;
+	}
 }
 @media screen and (max-width: 1020px){
 

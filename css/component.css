@@ -130,6 +130,7 @@ html, body, .perspective {
 
 .outer-nav.vertical a {
 	display: block;
+	color: #484848;
 }
 
 .outer-nav.horizontal a {
