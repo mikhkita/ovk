@@ -936,18 +936,6 @@ $(document).ready(function(){
             //$('#b-tour-tab-'+dataVal+'').removeClass('hide');
         });
     };
-    $('#time-start').timepicker({ 
-        'minTime': '10:00pm',
-        'maxTime': '18:00pm',  
-        'timeFormat': 'H:i',      
-        'scrollDefault': 'now' 
-    });
-    $('#time-end').timepicker({ 
-        'minTime': '10:00pm',
-        'maxTime': '18:00pm',  
-        'timeFormat': 'H:i',      
-        'scrollDefault': 'now' 
-    });
     $(function() {
       $('#date').datepicker({
         minDate: 0,
@@ -980,6 +968,10 @@ $(document).ready(function(){
         });
 
     }
+    $('#service').niceSelect();
+    $('#time-start').niceSelect();
+    $('#time-end').niceSelect();
+
 
 // Disable a list of dates
 // var disabledDays = ["9-21-2010", "9-24-2010", "9-27-2010", "9-28-2010", "9-3-2010", "9-17-2010", "9-2-2010", "9-3-2010", "9-4-2010", "9-5-2010"];

@@ -11,9 +11,9 @@
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/slick.css" type="text/css">
-	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css">
-	<link rel="stylesheet" href="css/jquery.timepicker.css" type="text/css">	
+	<link rel="stylesheet" href="css/jquery-ui.css" type="text/css">	
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
+	<link rel="stylesheet" href="css/nice-select.css" type="text/css">
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
 	<link rel="stylesheet" href="css/component.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
@@ -275,13 +275,54 @@
 		<h2><span>Подобрать</span><br>Запись на прием</h2>
 		<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
 		<form action="kitsend.php" class="">
-			<div class="b-popup-zapis-fields clearfix">
+			<div class="b-popup-zapis-fields b-popup clearfix">
 				<div><input type="text" id="name" name="name" placeholder="Ваше имя *" required></div>
 				<div><input type="text" id="name" name="name" placeholder="Ваш телефон *" required></div>
-				<div><input type="text" id="name" name="name" placeholder="Выберите услугу *" required></div>
+				<div>
+					<select name="service" id="service" class="full-width">
+						<option value="service-default" data-display="Выберите услугу *">Выберите услугу</option>
+						<option value="service-1">Услуга 1</option>
+						<option value="service-2">Услуга 2</option>
+						<option value="service-3">Услуга 3</option>
+						<option value="service-4">Услуга 4</option>
+						<option value="service-5">Услуга 5</option>
+					</select>
+				</div>
 				<div><input type="text" name="date" placeholder="Выберите даты *" id="date"></div>
-				<div><input type="text" id="time-start" name="time-start" placeholder="Со скольки удобно *" class="time-start" required></div>
-				<div><input type="text" id="time-end" name="time-end" placeholder="До скольки удобно *" class="time-end" required></div>
+				<div>
+					<select name="time-start" id="time-start" class="half-width">
+						<option value="service-default" data-display="Со скольки удобно" style="color:#484848;">Выберите время</option>
+						<option value="9:00">9:00</option>
+						<option value="10:00">10:00</option>
+						<option value="11:00">11:00</option>
+						<option value="12:00">12:00</option>
+						<option value="13:00">13:00</option>
+						<option value="14:00">14:00</option>
+						<option value="15:00">15:00</option>
+						<option value="16:00">16:00</option>
+						<option value="17:00">17:00</option>
+						<option value="18:00">18:00</option>	
+						<option value="19:00">19:00</option>
+						<option value="20:00">20:00</option>
+					</select>
+				</div>			
+				<div>
+					<select name="time-end" id="time-end" class="half-width">
+						<option value="service-default" data-display="До скольки удобно">Выберите время</option>
+						<option value="10:00">10:00</option>
+						<option value="11:00">11:00</option>
+						<option value="12:00">12:00</option>
+						<option value="13:00">13:00</option>
+						<option value="14:00">14:00</option>
+						<option value="15:00">15:00</option>
+						<option value="16:00">16:00</option>
+						<option value="17:00">17:00</option>
+						<option value="18:00">18:00</option>	
+						<option value="19:00">19:00</option>
+						<option value="20:00">20:00</option>
+						<option value="21:00">21:00</option>
+					</select>
+				</div>					
 			</div>
 			<div class="b-popup-zapis-btn-cont">
 				<button type="submit" class="b-btn b-green-btn right ajax">Отправить</button>
@@ -321,7 +362,7 @@
 
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.js"></script>
-	<script type="text/javascript" src="js/jquery.timepicker.js"></script>
+	<script type="text/javascript" src="js/jquery.nice-select.js"></script>
 	<script type="text/javascript" src="js/jquery.datepicker.extension.range.min.js"></script>	
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>

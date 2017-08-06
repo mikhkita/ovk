@@ -1273,7 +1273,108 @@ h2.b-title{
 								.b-tour .g .b-problem-bubble span {
 								}	
 								.b-tour .v .b-problem-bubble span {
-								}												
+								}	
+	.b-popup-zapis {
+		min-width: 90%;
+		width: 776px;
+		min-height: 591px;
+		height: 600px;
+		padding: 34px 48px 48px;
+	}	
+		.b-popup-close {
+			top: 13px;
+			right: 15px;			
+		}
+			.b-popup-close:before {
+				display: block;
+				width: 50px;
+				height: 50px;
+			}
+		.b-popup-zapis h2 {
+			font-size: 35px;
+			line-height: 40px;
+			margin-bottom: 18px;
+		}
+			.b-popup-zapis h2 span {
+				font-size: 32px;
+				line-height: 40px;
+			}
+		.b-popup-zapis p {
+			font-size: 16px;
+			line-height: 24px;
+			width: 60%;
+			margin-bottom: 24px;
+		}								
+		.b-popup-zapis-fields { 
+			margin-bottom: 6px;
+		}
+			.b-popup-zapis-fields input{
+				font-size: 16px;
+				line-height: 51px;
+				border-radius: 100px;
+				border: none;
+				box-sizing: border-box;
+				padding: 0 20px;
+				width: 100%;
+				margin-bottom: 24px;
+				border: 1px solid #ffffff;
+			}
+			.b-popup-zapis-fields div {
+				width: 100%;
+			}	
+			.b-popup-zapis-fields .nice-select {
+				width: 100%;
+				font-size: 16px;
+				line-height: 51px;
+				border-radius: 100px;
+				border: none;
+				padding: 0 20px;
+				width: 100%;
+				margin-bottom: 24px;
+				height: 100%;
+			}
+			.b-popup-zapis-fields div:nth-child(odd) {
+				margin-right: 23px;
+			}
+			.b-popup-zapis-fields input::-webkit-input-placeholder {
+			}
+			.b-popup-zapis-fields input:-moz-placeholder {
+			}		
+			.b-popup-zapis .b-btn {
+				line-height: 28px;
+				padding: 18px 40px 18px;
+			}
+				.b-popup-zapis .b-btn:before {
+				}
+				.b-popup-zapis .b-btn:hover:before {
+				}
+			.fancybox-close-small {
+				top: 15px;
+				width: 50px;
+				height: 50px;
+				right: 15px;
+				border: none;
+			}
+
+			.fancybox-close-small:after {
+				font-size: 20px;
+				top: 15px;
+				right: 15px;
+				width: 20px;
+				height: 20px;
+				border: none;
+				}
+			.fancybox-close-small:hover:after {
+			  }			
+			.nice-select.full-width ul{
+			  width: 100%;
+			  text-align: left;
+			}
+			.nice-select.half-width ul{
+			  width: 50%;
+			 text-align: left;
+
+			}			  																				
 .b-footer{
 	
 }
@@ -1373,8 +1474,9 @@ h2.b-title{
 					float: none !important;
 				}
 .b-popup{
-	padding: 38px;
-	width: 776px;
+	padding: 24px 24px;
+	width: 90%;
+	height: initial;
 }
 .b-popup-close{
 	top: 10px;

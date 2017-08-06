@@ -2090,12 +2090,13 @@ div.b-popup{
 		min-width: 776px;
 		width: 776px;
 		min-height: 591px;
-		height: 591px;
+		height: 600px;
 		background: linear-gradient( -6deg,#C9E2E5 , #7CA9AA);
 		padding: 34px 48px 48px;
 		box-sizing: border-box;
 		color: #ffffff;
 		position: relative;
+		overflow: visible;
 	}	
 		.b-popup-close {
 			color: #ffffff;
@@ -2129,7 +2130,7 @@ div.b-popup{
 		.b-popup-zapis-fields { 
 			margin-bottom: 6px;
 		}
-			.b-popup-zapis-fields input {
+			.b-popup-zapis-fields input{
 				font-family: "ubuntu-light";
 				font-size: 16px;
 				line-height: 51px;
@@ -2146,7 +2147,24 @@ div.b-popup{
 			.b-popup-zapis-fields div {
 				width: calc((100% - 27px)/2);
 				display: inline-block;
+				vertical-align: top;
 			}	
+			.b-popup-zapis-fields .nice-select {
+				width: 100%;
+				font-family: "ubuntu-light";
+				font-size: 16px;
+				line-height: 51px;
+				border-radius: 100px;
+				border: none;
+				border: 1px solid #ffffff;
+				box-sizing: border-box;
+				padding: 0 20px;
+				width: 100%;
+				background-color: rgba(255,255,255,0.2);
+				margin-bottom: 24px;
+				color: #ffffff;
+				height: 100%;
+			}
 			.b-popup-zapis-fields div:nth-child(odd) {
 				margin-right: 23px;
 			}
@@ -2208,7 +2226,16 @@ div.b-popup{
 			.fancybox-close-small:hover:after {
 			  color: #6c6c6c;
 			  background: transparent;
-			  }				
+			  }			
+			.nice-select.full-width ul{
+			  width: 100%;
+			  text-align: left;
+			}
+			.nice-select.half-width ul{
+			  width: 50%;
+			 text-align: left;
+
+			}			  	
 
 @-webkit-keyframes fadeUp {
 	100% {

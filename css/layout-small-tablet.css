@@ -1194,7 +1194,7 @@ h2.b-title{
 									max-width: 100%
 								}							
 	.b-popup-zapis {
-		min-width: 776px;
+		min-width: 580px;
 		width: 776px;
 		min-height: 591px;
 		height: 591px;
@@ -1287,7 +1287,7 @@ h2.b-title{
 				}
 .b-popup{
 	padding: 38px;
-	width: 776px;
+	width: 80%;
 }
 .b-popup-close{
 	top: 10px;
