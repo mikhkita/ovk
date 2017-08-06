@@ -26,7 +26,7 @@ $this->setFrameMode(true);
 				<h3><?=$arItem["NAME"]?></h3>
 				<div class="b-review-date"><?=$arItem["PROPERTIES"]["DATE"]["VALUE"]?></div>
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
-				<a href="#b-popup-review-<?=$arItem["ID"]?>" class="b-link fancy-review">Читать полностью</a>
+				<a href="#b-popup-review-<?=$arItem["ID"]?>" class="b-link <?=$arParams["FANCY_CLASS"]?>">Читать полностью</a>
 			</div>
 		<?endforeach;?>
 	</div>
