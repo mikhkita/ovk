@@ -1291,50 +1291,62 @@ h2.b-title{
 				height: 50px;
 			}
 		.b-popup-zapis h2 {
-			font-size: 35px;
+			font-size: 30px;
 			line-height: 40px;
-			margin-bottom: 18px;
+			margin-bottom: 12px;
 		}
 			.b-popup-zapis h2 span {
-				font-size: 32px;
-				line-height: 40px;
+				font-size: 24px;
+				line-height: 38px;
 			}
 		.b-popup-zapis p {
 			font-size: 16px;
 			line-height: 24px;
-			width: 60%;
-			margin-bottom: 24px;
+			width: 100%;
+			margin-bottom: 18px;
 		}								
-		.b-popup-zapis-fields { 
+		.b-popup-zapis-fields {
 			margin-bottom: 6px;
+			padding: 0 !important;
 		}
-			.b-popup-zapis-fields input{
+			.b-popup-zapis-fields input,.b-popup-zapis-fields select{
 				font-size: 16px;
 				line-height: 51px;
 				border-radius: 100px;
 				border: none;
 				box-sizing: border-box;
 				padding: 0 20px;
-				width: 100%;
-				margin-bottom: 24px;
+				width: calc(100% - 30px);
+				margin-bottom: 0;
 				border: 1px solid #ffffff;
+				border: none;
+				background-color: transparent;
 			}
 			.b-popup-zapis-fields div {
 				width: 100%;
+				height: 51px;
+				margin-bottom: 14px;
+				border: 1px solid #ffffff;
+				border-radius: 100px;
+				overflow: hidden;
+				background-color: rgba(255,255,255,0.2);
 			}	
+			.b-popup-zapis-fields div select {
+			margin: 0 13px;
+			}
 			.b-popup-zapis-fields .nice-select {
 				width: 100%;
 				font-size: 16px;
 				line-height: 51px;
 				border-radius: 100px;
-				border: none;
+				border: 1px solid #ffffff;
 				padding: 0 20px;
 				width: 100%;
 				margin-bottom: 24px;
 				height: 100%;
 			}
 			.b-popup-zapis-fields div:nth-child(odd) {
-				margin-right: 23px;
+				margin-right: 0;
 			}
 			.b-popup-zapis-fields input::-webkit-input-placeholder {
 			}

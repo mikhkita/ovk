@@ -873,8 +873,16 @@ $(document).ready(function(){
             $('.slick-initialized').slick('unslick');
         }
         var bTourTabs = $('.b-tour-tabs'),
-            bBlockwidth = bTourTabs.closest('.b-block').width();
-            bTourTabs.css({"margin-left":""+((bBlockwidth - myWidth)/2)+"px","width":""+myWidth+"px"});        
+            bBlockwidth = bTourTabs.closest('.b-block').width(),
+            maxscreenWidth = myWidth;
+            if (myWidth >= 1600) {
+                maxscreenWidth = 1600;
+            }
+            var marginH = ((bBlockwidth - maxscreenWidth)/2);
+            if (myWidth<400) {
+                marginH = -20;
+            }
+            bTourTabs.css({"margin-left":""+marginH+"px","width":""+maxscreenWidth+"px"});        
         if (myWidth>=600) {
             var minHeight = 500,
                 maxHeight = 700,
@@ -961,16 +969,18 @@ $(document).ready(function(){
 
 
     if (isMobile==true) {
-        $("b-problem-bubble").each(function() {
-            $("b-problem-bubble").addClass("b-popup");
+        $(".b-problem-bubble").each(function() {
+            $(".b-problem-bubble").addClass("b-popup");
         })
         $(".b-pin").fancybox({
         });
 
     }
-    $('#service').niceSelect();
-    $('#time-start').niceSelect();
-    $('#time-end').niceSelect();
+    if (isMobile==false) {
+        $('#service').niceSelect();
+        $('#time-start').niceSelect();
+        $('#time-end').niceSelect();
+    }
 
 
 // Disable a list of dates
