@@ -147,6 +147,12 @@ h2.b-title{
 	h2.b-title b{
 		font-size: 48px;
 	}
+.slick-arrow-left {
+	left: calc(50% - 480px);
+}
+.slick-arrow-right {
+	left: calc(50% - 480px + 122px);
+}	
 .b-header{
 	
 }
@@ -1081,6 +1087,110 @@ h2.b-title{
 					margin-bottom: -2px;
 					margin-top: 2px;
 				}
+			.b-tour-tabs{
+				width: 1240px;
+				height: 700px;
+				position: relative;
+				margin-left: -140px;
+			}
+				.b-tour-tab{
+					left: 0px;
+					top: 0px;
+					width: 100%;
+					height: 100%;
+				}
+					.b-tour-slider{
+						width: 100%;
+						height: 100%;
+					}
+						.b-tour-slide{
+							width: 1600px;
+							height: 700px;
+						}
+							.b-tour .b-problem-bubble {
+
+							}
+								.b-tour .b-problem-bubble .b-img {
+									width: 100%;
+									height: 190px;
+								}
+								.b-tour .b-problem-bubble .b-text-width {
+									padding: 23px 28px 20px;
+								}
+								.b-tour .b-problem-bubble .b-text-width h3 {
+									max-width: 100%;
+									margin-bottom: 0;
+								}
+								.b-tour .b-problem-bubble .b-text-width p {
+									max-width: 100%
+								}
+	.b-popup-zapis {
+		min-width: 776px;
+		width: 776px;
+		min-height: 591px;
+		height: 591px;
+		padding: 34px 48px 48px;
+	}	
+		.b-popup-close {
+			top: 13px;
+			right: 15px;			
+		}
+			.b-popup-close:before {
+				width: 50px;
+				height: 50px;
+			}
+		.b-popup-zapis h2 {
+			font-size: 48px;
+			line-height: 50px;
+			margin-bottom: 24px;
+		}
+			.b-popup-zapis h2 span {
+			}
+		.b-popup-zapis p {
+			width: 60%;
+			margin-bottom: 32px;
+		}	
+		.b-popup-zapis-fields { 
+			margin-bottom: 6px;
+		}
+			.b-popup-zapis-fields input {
+				padding: 0 20px;
+				width: 100%;
+				margin-bottom: 24px;
+			}
+			.b-popup-zapis-fields div {
+				width: calc((100% - 27px)/2);
+			}	
+			.b-popup-zapis-fields div:nth-child(odd) {
+				margin-right: 23px;
+			}
+			.b-popup-zapis-fields input::-webkit-input-placeholder {
+			}
+			.b-popup-zapis-fields input:-moz-placeholder {
+			}		
+			.b-popup-zapis .b-btn {
+				padding: 18px 40px 18px;
+			}
+				.b-popup-zapis .b-btn:before {
+				}
+				.b-popup-zapis .b-btn:hover:before {
+				}
+			.b-popup-zapis .fancybox-close-small {
+				top: 15px;
+				width: 50px;
+				height: 50px;
+				right: 15px;
+			}
+
+			.b-popup-zapis .fancybox-close-small:after {
+				top: 15px;
+				right: 15px;
+				width: 20px;
+				height: 20px;
+				}
+			.b-popup-zapis .fancybox-close-small:hover:after {
+			  }								
+
 .b-popup{
 	padding: 38px;
 	width: 776px;

@@ -152,6 +152,23 @@ h2.b-title{
 	h2.b-title b{
 		font-size: 30px;
 	}
+.slick-arrow-left,.slick-arrow-right {
+	bottom: 20px;
+	left: 20px;
+	width: 50px;
+	height: 50px;
+}
+.slick-arrow-right {
+	left: 90px;
+}
+.slick-arrow-left:before,.slick-arrow-right:before {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	padding-left: 17px;
+}
+.slick-arrow-right:before {padding-left: 22px;}	
 .b-header{
 	
 }
@@ -426,8 +443,8 @@ h2.b-title{
 						top: 88.5%;
 					}
 						.b-pin{
-							width: 80px;
-							height: 80px;
+							width: 50px;
+							height: 50px;
 							cursor: pointer;
 						}
 							.b-pin:before{
@@ -1122,6 +1139,136 @@ h2.b-title{
 				left: 0px;
 				top: 10px;
 			}
+.b-tour{
+	
+}
+	.b-tour .b-wide-block{
+		height: 100%;
+	}
+		.b-tour .b-block{
+
+		}
+			.b-tour h2.b-title{
+				position: relative;
+				left: 0px;
+				top: 0px;
+			}
+			.b-tour-nav-cont{
+				height: 280px;
+				right: 50%;
+				margin-right: calc(-50% + 40px);
+				top: initial;
+				bottom: 0;
+			}
+				.b-tour-nav{
+					vertical-align: middle;
+				}
+					.b-tour-nav li{
+						margin-bottom: 4px;
+					}
+						.b-tour-nav a{
+							width: 40px;
+							height: 40px;
+						}
+							.b-tour-nav a:before {
+								font-size: 0px;
+								width: 10px;
+								height: 10px;
+								left: 50%;
+								top: 50%;
+								margin-top: -5px;
+								margin-left: -5px;
+							}
+							.b-tour-nav a:hover:before, .b-tour-nav .active:before{
+							}
+						.b-tour-nav span{
+							right: 54px;
+							top: 50%;
+							margin-top: -16px;
+							padding: 7px 16px 9px;
+						}
+							.b-tour-nav span:after{
+								content: "s";
+								font-size: 0px;
+								width: 0px;
+								height: 0px;
+								right: -32px;
+								top: 0px;
+							}
+						.b-tour-nav a:hover+span,  .b-tour-nav .active+span{
+						}
+			.b-tour-tabs{
+				width: calc(100% + 40px);
+				height: 350px;
+				margin-left: -20px;
+			}
+				.b-tour-tab{
+					left: 0px;
+					top: 0px;
+					width: 100%;
+					height: 100%;
+				}
+					.b-tour-slider{
+						width: 100%;
+						height: 100%;
+					}
+						.b-tour-slide{
+							width: 1600px;
+							height: 350px;
+						}
+							.b-marker-1 {
+								top: 76%;
+								left: 54%;
+							}	
+							.b-marker-2 {
+								top: 48%;
+								left: 65%;
+							}	
+							
+							.mobile-reset .b-tour-nav .active+span{
+								opacity: 0;
+								transition-property: opacity;
+								transition-delay: 2.5s;
+							}							
+							.mobile-reset .b-problem-bubble {
+								opacity: 1;
+								visibility: visible;
+								display: none;
+								position: relative;
+								box-shadow: none;
+								width: 300px;	
+								padding: 0;		
+							}
+							.mobile-reset .b-problem-bubble span {
+								border: none;
+							}
+							.mobile-reset .b-problem-bubble {
+
+							}
+								.mobile-reset .b-problem-bubble .b-img {
+									background-position: 50% 50%;
+									background-size: cover;
+									background-repeat: no-repeat;
+									width: 100%;
+									height: 190px;
+								}
+								.mobile-reset .b-problem-bubble .b-text-width {
+									padding: 16px 26px 20px;
+									background-color: #ffffff;
+								}
+								.mobile-reset .b-problem-bubble .b-text-width h3 {
+									font-family: "ubuntu-bold";
+									font-size: 20px;
+									max-width: 100%;
+									margin-bottom: 0;
+								}
+								.mobile-reset .b-problem-bubble .b-text-width p {
+									max-width: 100%
+								}			
+								.b-tour .g .b-problem-bubble span {
+								}	
+								.b-tour .v .b-problem-bubble span {
+								}												
 .b-footer{
 	
 }
