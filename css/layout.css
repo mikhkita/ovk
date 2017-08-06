@@ -2147,7 +2147,7 @@ div.b-popup{
 				display: inline-block;
 				vertical-align: top;
 			}	
-			.b-popup-zapis-fields .nice-select {
+			.b-popup-zapis-fields .nice-select, select {
 				width: 100%;
 				font-family: "ubuntu-light";
 				font-size: 16px;
