@@ -324,7 +324,7 @@ h2.b-title{
 }
 .slick-arrow-left,.slick-arrow-right {
 	position: absolute;
-	bottom: 100px;
+	bottom: 64px;
 	left: calc(50% - 580px);
 	cursor: pointer;
 	z-index: 1;
@@ -1883,8 +1883,21 @@ div.b-popup{
 .b-tour{
 	
 }
+	.b-tour .hide {
+		display: initial;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 500ms ease-in, visibility 500ms ease-in;
+	}
+	.b-tour .show {
+		display: initial;
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 500ms ease-out, visibility 500ms ease-out;
+	}
 	.b-tour .b-wide-block{
-		height: 700px;
+		height: 100%;
+		overflow: hidden;
 	}
 		.b-tour .b-block{
 
@@ -1896,11 +1909,11 @@ div.b-popup{
 				z-index: 20;
 			}
 			.b-tour-nav-cont{
-				height: 700px;
+				height: 100%;
 				position: absolute;
 				right: 50%;
-				margin-right: -580px;
-				top: 0px;
+				margin-right: -50%;
+				top: calc(50% - 132px);
 				display: table;
 				z-index: 10;
 			}
@@ -1998,6 +2011,7 @@ div.b-popup{
 					.b-tour-slider{
 						width: 100%;
 						height: 100%;
+						margin: 0 auto;
 					}
 						.b-tour-slide{
 							width: 1600px;
@@ -2006,168 +2020,41 @@ div.b-popup{
 							background-size: cover;
 							position: relative;
 						}
-						.b-tour-bubble-marker {
-							position: absolute;							
-						}
 							.b-marker-1 {
-								top: 466px;
-								left: 466px;
+								top: 76%;
+								left: 54%;
 							}	
 							.b-marker-2 {
-								top: 266px;
-								left: 866px;
-							}												
-							.b-tour-bubble-marker-btn{
-								display: block;
-								width: 41px;
-								height: 41px;
-								border: 2px solid #ffffff;
-								border-radius: 100px;
-								background-color: rgba(0,0,0,0.1);
-							}
-								.b-tour-bubble-marker-btn:hover,.b-tour-bubble-marker-btn.opened {
-									border-color: #9dd0cb;
-									background-color: rgba(255,255,255,0.4);
-									cursor: pointer;
-								}
-								.b-tour-bubble-marker-btn:hover:after,.b-tour-bubble-marker-btn.opened:after  {
-									background-color: #9dd0cb;
-								}
-								.b-tour-bubble-marker-btn:after{
-									content: '.';
-									font-size: 0;
-									display: inline-block;
-									width: 13px;
-									height: 13px;
-									border-radius: 100px;
-									background-color: #FFFFFF;
-									margin: 14px;
-								}							
-							.b-tour-bubble-box {
-								-webkit-transition: transform 300ms ease-out, transform-origin 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-								-moz-transition: transform 300ms ease-out, transform-origin 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-								-o-transition: transform 300ms ease-out, transform-origin 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-								-ms-transition: transform 300ms ease-out, transform-origin 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-								transition: transform 300ms ease-out, transform-origin 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-								-webkit-transform-origin: -10% 228px;
-								-moz-transform-origin: -10% 228px;
-								-o-transform-origin: -10% 228px;
-								-ms-transform-origin: -10% 228px;
-								transform-origin: -10% 228px;
-								-webkit-transform: scale(0.7);
-								-moz-transform: scale(0.7);
-								-ms-transform: scale(0.7);
-								-o-transform: scale(0.7);
-								transform: scale(0.7);
-								background-color: #FFF;
-								position: absolute;
-								top: 44%;
-								margin-top: -228px;
+								top: 48%;
+								left: 65%;
+							}							
+							.b-tour .b-problem-bubble {
 								width: 350px;
 								box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-								z-index: 9999;
-								opacity: 0;
-								visibility: hidden;
+								padding: 0;
 							}
-								.b-tour-bubble-box .b-img {
+								.b-tour .b-problem-bubble .b-img {
 									width: 100%;
 									height: 190px;
 									background-position: 50% 50%;
 									background-size: cover;
 								}
-								.b-tour-bubble-box .b-text-width {
+								.b-tour .b-problem-bubble .b-text-width {
 									padding: 23px 28px 20px;
 								}
-								.b-tour-bubble-box .b-text-width h3 {
+								.b-tour .b-problem-bubble .b-text-width h3 {
+									font-family: "ubuntu-bold";
+									font-size: 20px;
 									max-width: 100%;
 									margin-bottom: 0;
 								}
-								.b-tour-bubble-box .b-text-width p {
+								.b-tour .b-problem-bubble .b-text-width p {
 									max-width: 100%
-								}								
-								.opened {
-
-								}
-								.bubble-opened {
-							-webkit-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-							-moz-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-							-o-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-							-ms-transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-							transition: transform 300ms ease-out, opacity 300ms ease-out, visibility 300ms ease-out;
-							transform: translate(0px, 0px) rotate(0rad) skewX(0rad) scale(1, 1);
-							opacity: 1;
-							visibility: visible;
-							right: 70px !important;
-							}
-								.b-tour-bubble-box.b-without-image{
-									-webkit-transform-origin: -10% 50%;
-									   -moz-transform-origin: -10% 50%;
-									     -o-transform-origin: -10% 50%;
-									    -ms-transform-origin: -10% 50%;
-									        transform-origin: -10% 50%;
-									margin-top: -110px;
-								}
-								.b-tour-bubble-box.b-without-image:after{
-									top: 50%;
-									margin-top: -13px;
-								}								
-									.b-tour-bubble-box:after {
-
-									}
-								.bubble-right {
-									left: 70px;
-								}									
-									.bubble-right:after {
-										position: absolute;
-										content: ".";
-										font-size: 0px;
-										width: 0px;
-										height: 0px;
-										left: -28px;
-										top: 215px;
-										border: 15px solid transparent;
-										border-right: 15px solid #FFF;
-									}
-								.bubble-left {
-									right: 70px;
-							-webkit-transform-origin: 110% 228px !important;
-							   -moz-transform-origin: 110% 228px !important;
-							     -o-transform-origin: 110% 228px !important;
-							    -ms-transform-origin: 110% 228px !important;
-							        transform-origin: 110% 228px !important;
+								}			
+								.b-tour .g .b-problem-bubble span {
 								}	
-								.b-tour-bubble-box.b-without-image.bubble-left{
-							-webkit-transform-origin: 110% 50% !important;
-							   -moz-transform-origin: 110% 50% !important;
-							     -o-transform-origin: 110% 50% !important;
-							    -ms-transform-origin: 110% 50% !important;
-							        transform-origin: 110% 50% !important;									
-								}							
-									.bubble-left:after {
-										position: absolute;
-										content: ".";
-										font-size: 0px;
-										width: 0px;
-										height: 0px;
-										right: -28px;
-										top: 215px;
-										border: 15px solid transparent;
-										border-left: 15px solid #FFF;
-									}									
-										.b-tour-bubble-box .b-popup-close:before{
-											z-index: 2;
-											font-size: 20px;
-											left: 7px;
-											top: 7px;
-											/* background-color: #FFF; */
-											border-radius: 100px;
-											padding: 8px;
-											height: 20px;
-											width: 20px;
-											line-height: 20px;
-											position: absolute;
-											color: #ffffff;
-										}							
+								.b-tour .v .b-problem-bubble span {
+								}									
 	.b-popup-zapis {
 		min-width: 776px;
 		width: 776px;
@@ -2287,15 +2174,6 @@ div.b-popup{
 				box-sizing: border-box;
 				z-index: 2;
 				}
-
-			.b-popup-zapis .fancybox-close-small:focus:after {
-			  outline: 1px dotted #888; }
-
-			.b-popup-zapis .fancybox-slide--video .fancybox-close-small {
-			  top: -36px;
-			  right: -36px;
-			  background: transparent; }
-
 			.b-popup-zapis .fancybox-close-small:hover:after {
 			  color: #6c6c6c;
 			  background: transparent;
