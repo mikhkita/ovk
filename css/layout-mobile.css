@@ -1156,7 +1156,7 @@ h2.b-title{
 			.b-tour-nav-cont{
 				height: 280px;
 				right: 50%;
-				margin-right: calc(-50% + 40px);
+				margin-right: calc(-55% + 35px);
 				top: initial;
 				bottom: 0;
 			}
@@ -1167,8 +1167,8 @@ h2.b-title{
 						margin-bottom: 4px;
 					}
 						.b-tour-nav a{
-							width: 40px;
-							height: 40px;
+							width: 35px;
+							height: 35px;
 						}
 							.b-tour-nav a:before {
 								font-size: 0px;
@@ -1178,6 +1178,8 @@ h2.b-title{
 								top: 50%;
 								margin-top: -5px;
 								margin-left: -5px;
+								background-color: #75C1BA;
+								opacity: 1;
 							}
 							.b-tour-nav a:hover:before, .b-tour-nav .active:before{
 							}
@@ -1229,15 +1231,18 @@ h2.b-title{
 								opacity: 0;
 								transition-property: opacity;
 								transition-delay: 2.5s;
-							}							
+							}	
+					
 							.mobile-reset .b-problem-bubble {
 								opacity: 1;
 								visibility: visible;
 								display: none;
 								position: relative;
 								box-shadow: none;
-								width: 300px;	
-								padding: 0;		
+								width: 90%;
+								padding: 0;
+								box-sizing: border-box;
+								background-color: #ffffff;
 							}
 							.mobile-reset .b-problem-bubble span {
 								border: none;
@@ -1250,11 +1255,11 @@ h2.b-title{
 									background-size: cover;
 									background-repeat: no-repeat;
 									width: 100%;
-									height: 190px;
+									height: 200px;
 								}
 								.mobile-reset .b-problem-bubble .b-text-width {
-									padding: 16px 26px 20px;
-									background-color: #ffffff;
+									padding: 24px;
+									/* background-color: #ffffff; */
 								}
 								.mobile-reset .b-problem-bubble .b-text-width h3 {
 									font-family: "ubuntu-bold";

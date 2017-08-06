@@ -20,7 +20,7 @@ $(document).ready(function(){
             isDesktop = true;
         }else if( myWidth > 999 ){
             isTablet = true;
-        }else if( myWidth > 767 ){
+        }else if( myWidth > 600 ){
             isSmallTablet = true;
         }else{
             isMobile = true;
@@ -36,9 +36,9 @@ $(document).ready(function(){
                 padTop = 40;
             }
             else if ($('.b-tour').length>0) {
-                topLim = $(".b-tour h2.b-title").offset().top + 40;;
-                padLeft = 0;
-                padTop = 0;
+                topLim = 40;;
+                padLeft = 10;
+                padTop = 10;
             }
             bubblePosition(padLeft,padTop,topLim);
         }      
@@ -862,15 +862,10 @@ $(document).ready(function(){
         return false;
     }
     function tabSliderInit () {
-        if (isMobile) {
-            slideObj = $(".b-tour-slide");
-            lenslideObj = slideObj.length;
-            if (slideObj.height()!=280) {
-                for (var i = lenslideObj-1; i >= 0; i--) {
-                    slideObject = $(".b-tour-slide:eq("+i+")");
-                    slideObject.css({"height":"280px"});
-                    $('.b-tour-tabs').css({"height":"280px"});
-                }
+        if (isMobile==true) {
+            if ($(".b-tour-slide").height()!=280) {
+                $(".b-tour-slide").css({"height":"280px"});
+                $('.b-tour-tabs').css({"height":"280px"});
             }    
         }
 
@@ -887,8 +882,8 @@ $(document).ready(function(){
             if ((myWidth/bTourTabs.height()>windowRatio)||(myWidth/bTourTabs.height()<windowRatio)) {
                 slideObj = $(".b-tour-slide");
                 lenslideObj = slideObj.length;
-                    for (var i = lenslideObj-1; i >= 0; i--) {
-                        slideObject = $(".b-tour-slide:eq("+i+")");
+                    //for (var i = lenslideObj-1; i >= 0; i--) {
+                        slideObject = $(".b-tour-slide");
                         slideHeight = slideObject.height();
                         resultHeight = myWidth/windowRatio;
                         if (resultHeight<minHeight) {
@@ -900,7 +895,7 @@ $(document).ready(function(){
                             if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
                                 slideObject.css({"height":""+resultHeight+"px"})                             
                     } 
-                }
+                //}
                 slideObj = $(".b-tour-tabs");
                 slideHeight = slideObj.height();
                 resultHeight = myWidth/windowRatio;
@@ -935,42 +930,11 @@ $(document).ready(function(){
                 $(this).addClass('active');
             }
             var dataVal = $(event.target).attr("tab-id");
-            $('.b-tour-tab.show').addClass('hide');
+            //$('.b-tour-tab.show').addClass('hide');
             $('.b-tour-tab.show').removeClass('show');
             $('#b-tour-tab-'+dataVal+'').addClass('show');
-            $('#b-tour-tab-'+dataVal+'').removeClass('hide');
-            //tabSliderInit();
+            //$('#b-tour-tab-'+dataVal+'').removeClass('hide');
         });
-
-        // $('.b-tour-tabs .b-tour-bubble-marker-btn').click(function(event){
-        //     if (!$(this).hasClass("opened")) {
-        //         if ($('.opened').length>0) {
-        //             $('.bubble-opened').removeClass('bubble-opened'); 
-        //             $('.opened').removeClass('opened');                     
-        //         }
-        //         $('.b-tour-tabs .opened').removeClass('opened');
-        //         $(this).addClass('opened');
-        //         var dataval = $(this).attr('data-href');
-        //         $('#'+dataval+'').addClass('bubble-opened');
-        //     }
-        //     else  {
-        //        $(this).removeClass('opened'); 
-        //         var dataval = $(this).attr('data-href');
-        //         $('#'+dataval+'').removeClass('bubble-opened');           
-        //     }
-        // });
-        // $(document).on('click', function(e) {
-        //   if (!$(e.target).closest(".b-tour-tabs .b-tour-bubble-marker").length) {
-        //     $('.bubble-opened').removeClass('bubble-opened'); 
-        //     $('.opened').removeClass('opened'); 
-        //   }
-        //   e.stopPropagation();
-        // });
-        // $('.b-tour-tabs .b-popup-close').click(function(event){
-        //     $('.bubble-opened').removeClass('bubble-opened'); 
-        //     $('.opened').removeClass('opened');             
-        // });
-        
     };
     $('#time-start').timepicker({ 
         'minTime': '10:00pm',
@@ -1000,19 +964,21 @@ $(document).ready(function(){
 
       // объект расширения (хранит состояние календаря)
       var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
-      if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join('\n'));
+      if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
     });
-    // $(function(){
-    //     $("#date").datepicker({
-    //         minDate: 0,
-    //     });
-    // });
+
     $("a#b-popup-zapis-href").fancybox({
         'hideOnContentClick': true
     });
-    if (isMobile) {
+
+
+    if (isMobile==true) {
+        $("b-problem-bubble").each(function() {
+            $("b-problem-bubble").addClass("b-popup");
+        })
         $(".b-pin").fancybox({
         });
+
     }
 
 // Disable a list of dates
