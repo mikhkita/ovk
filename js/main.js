@@ -951,7 +951,7 @@ $(document).ready(function(){
         range_multiple_max: '15', // макимальное число выбираемых дат
         onSelect: function(dateText, inst, extensionRange) {
           // extensionRange - объект расширения
-          $('[name=multipleDate]').val(extensionRange.datesText.join('\n'));
+          $('[name=multipleDate]').val(extensionRange.datesText.join(','));
         }
       });
 

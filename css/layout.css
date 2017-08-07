@@ -163,6 +163,9 @@ input.error,textarea.error{
 .icon-arrow-left:before {
 	content: "\e903";
 }
+.icon-calendar:before {
+  content: "\e908";
+}
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -2146,7 +2149,9 @@ div.b-popup{
 				width: calc((100% - 27px)/2);
 				display: inline-block;
 				vertical-align: top;
-			}	
+				position: relative;
+			}
+			.b-popup-zapis-fields .icon-calendar:before {display: block;position: absolute;font-size: 21px;right: 21px;top: 15px;}	
 			.b-popup-zapis-fields .nice-select, select {
 				width: 100%;
 				font-family: "ubuntu-light";

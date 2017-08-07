@@ -1316,20 +1316,19 @@ h2.b-title{
 				border: none;
 				box-sizing: border-box;
 				padding: 0 20px;
-				width: calc(100% - 30px);
-				margin-bottom: 0;
+				width: 100%;
+				margin-bottom: 20px;
 				border: 1px solid #ffffff;
-				border: none;
-				background-color: transparent;
+				background-color: rgba(255,255,255,0.2);
 			}
 			.b-popup-zapis-fields div {
 				width: 100%;
-				height: 51px;
-				margin-bottom: 14px;
-				border: 1px solid #ffffff;
-				border-radius: 100px;
-				overflow: hidden;
-				background-color: rgba(255,255,255,0.2);
+				/* height: 51px; */
+				/* margin-bottom: 14px; */
+				/* border: 1px solid #ffffff; */
+				/* border-radius: 100px; */
+				/* overflow: hidden; */
+				/* background-color: rgba(255,255,255,0.2); */
 			}	
 			.b-popup-zapis-fields div select {
 			margin: 0 13px;
@@ -1342,7 +1341,7 @@ h2.b-title{
 				border: 1px solid #ffffff;
 				padding: 0 20px;
 				width: 100%;
-				margin-bottom: 24px;
+				margin-bottom: 20px;
 				height: 100%;
 			}
 			.b-popup-zapis-fields div:nth-child(odd) {
