@@ -27,7 +27,7 @@ $(document).ready(function(){
         }
 
         isRetina = ( (isDesktop || isTablet) && retina() )?true:false;
-
+        bpinClickBinder();
         if( ($(".b-problem").length) && (isMobile == false)){
             topLim = 0;
             if ($('.b-main-about').length>0) {
@@ -43,9 +43,11 @@ $(document).ready(function(){
             bubblePosition(padLeft,padTop,topLim);
         }      
 
-        if ($('.b-tour').length>0) {
+        if ($('.b-tour').length) {
             tabSliderInit();
         }
+        fancyboxPopupInit();
+        
 
         customHandlers["onScroll"]();
 
@@ -159,33 +161,36 @@ $(document).ready(function(){
             "width" : $el.width() - 1
         });
     }
-    if (isMobile==false) {
-        $(".b-pin").click(function(){
-            if( $(this).parent(".b-problem").hasClass("active") ){
-                $(".b-problem.active").removeClass("active");
-            }else{
-                $(".b-problem.active").removeClass("active");
-                $(this).parents(".b-problem").addClass("active");
-                if( isDesktop || isTablet ){
-                    $(".b-woman-text").removeClass("show");
+    function bpinClickBinder() {
+        if (isMobile==false) {
+            $(".b-pin").click(function(){
+                if( $(this).parent(".b-problem").hasClass("active") ){
+                    $(".b-problem.active").removeClass("active");
+                }else{
+                    $(".b-problem.active").removeClass("active");
+                    $(this).parents(".b-problem").addClass("active");
+                    if( isDesktop || isTablet ){
+                        $(".b-woman-text").removeClass("show");
+                    }
                 }
-            }
-            return false;
-        });
+                return false;
+            });
 
-        var open = false;
-        $("body").on("mouseup touchend",".b-problem-bubble *, .b-problem-bubble, .b-pin, .b-pin *",function(){
-            open = true;
-        });
-        $("body").on("mousedown touchstart",function() {
-            open = false;
-        }).on("mouseup touchend", ".b-problems, .b-tour", function(){
-            if( !open ){
-                $(".b-problem.active").removeClass("active");
-                $(".b-woman-text").addClass("show");
-            }
-        });
+            var open = false;
+            $("body").on("mouseup touchend",".b-problem-bubble *, .b-problem-bubble, .b-pin, .b-pin *",function(){
+                open = true;
+            });
+            $("body").on("mousedown touchstart",function() {
+                open = false;
+            }).on("mouseup touchend", ".b-problems, .b-tour", function(){
+                if( !open ){
+                    $(".b-problem.active").removeClass("active");
+                    $(".b-woman-text").addClass("show");
+                }
+            });
+        }
     }
+    bpinClickBinder();
     // function bubblePosition(){
     //     $(".b-main-about .b-problem").each(function(){
     //         var $bubble = $(this).find(".b-problem-bubble"),
@@ -967,14 +972,27 @@ $(document).ready(function(){
         'hideOnContentClick': true
     });
 
-
-    if (isMobile==true) {
-        $(".b-problem-bubble").each(function() {
-            $(".b-problem-bubble").addClass("b-popup");
-        })
-        $(".b-pin").fancybox({
-        });
-
+    function fancyboxPopupInit() {
+        if (isMobile==true) {
+            $(".b-problem-bubble").each(function() {
+                $(this).addClass("b-popup");
+                $(this).css({"top":"initial","left":"initial","display":"none"});
+            })                            
+            $(".b-pin").fancybox({
+            afterClose: function( instance, current ) {
+                }                
+            });
+        }
+        else {
+            $(".b-problem-bubble").each(function() {
+                $(this).removeClass("b-popup");
+                $(this).css({"display":"block"});
+            })
+            $(".b-pin").each(function() {
+                $(this).unbind('click.fb-start');
+            })            
+            bpinClickBinder();
+        }
     }
     if (isMobile==false) {
         $('#service').niceSelect();
