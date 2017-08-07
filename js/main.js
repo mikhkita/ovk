@@ -34,13 +34,15 @@ $(document).ready(function(){
                 topLim = $(".b-problems h2.b-title").offset().top + $(".b-problems h2.b-title").height() + 96;
                 padLeft = 48;
                 padTop = 40;
+                leftLim = $(".b-problem").closest(".b-block").offset().left;
             }
             else if ($('.b-tour').length>0) {
                 topLim = $(".b-tour h2.b-title").offset().top + $(".b-tour h2.b-title").height() + 96;
                 padLeft = 10;
                 padTop = 10;
+                leftLim = $(".b-problem").closest(".b-wide-block").offset().left + 16;
             }
-            bubblePosition(padLeft,padTop,topLim);
+            bubblePosition(padLeft,padTop,topLim,leftLim);
         }      
 
         if ($('.b-tour').length>0) {
@@ -232,21 +234,20 @@ $(document).ready(function(){
     //         }
     //     });
     // }
-    function bubblePosition(paddingL,paddingT,topLim){
+    function bubblePosition(paddingL,paddingT,topLim,leftLim){
         $('.b-problem').each(function(){
             var $bubble = $(this).find(".b-problem-bubble"),
                 $pin = $(this),
                 $triangle = $bubble.find("span"),
-                paddingLeft = paddingL,//
-                paddingTop = paddingT,//
+                paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
+                paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
                 margin = 42,
                 bubbleW = $bubble.width() + paddingLeft*2,
                 bubbleH = $bubble.height() + paddingTop*2,
                 topLimit = topLim,//
-                leftLimit = $(".b-problem").closest(".b-block").offset().left,
+                leftLimit = leftLim,
                 left = 0,
                 top = 0;
-
 
             if( $(this).hasClass("g") ){
                 top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
