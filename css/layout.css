@@ -68,6 +68,7 @@ html{
 	background-repeat: no-repeat;
 	background-image: url('../i/problems-back.jpg');
 	background-size: cover;
+	background: #fafafa;
 }
 
 html,
@@ -81,6 +82,7 @@ body {
 	text-align: center;
 	font-family: 'ubuntu-light';
 	overflow-x: hidden;
+	background: #Fafafa;
 	-webkit-text-size-adjust: none;
 	color: #484848;
 }
@@ -355,6 +357,38 @@ h2.b-title{
 .b-header{
 	
 }
+.b-header .b-wide-block{
+	position: relative;
+	overflow: visible;
+}
+	.b-header .b-wide-block:after{
+		position: absolute;
+		content: "s";
+		font-size: 0px;
+		width: 50px;
+		height: 10000px;
+		right: -50px;
+		top: 0px;
+		background-size: 50px;
+		opacity: 0.2;
+		background-position: 50% 50%;
+		background-repeat: repeat-y;
+		background-image: url('../i/shadow-right.png');
+	}
+	.b-header .b-wide-block:before{
+		position: absolute;
+		content: "s";
+		font-size: 0px;
+		width: 50px;
+		height: 10000px;
+		left: -50px;
+		top: 0px;
+		background-size: 50px;
+		opacity: 0.2;
+		background-position: 50% 50%;
+		background-repeat: repeat-y;
+		background-image: url('../i/shadow-left.png');
+	}
 .b-header-main,
 .b-header-doc{
 	height: 700px;
@@ -2061,7 +2095,7 @@ div.b-popup{
 								left: 65%;
 							}							
 							.b-tour .b-problem-bubble {
-								width: 700px;
+								width: 670px;
 								/* box-shadow: 0px 5px 15px rgba(0,0,0,0.2); */
 								padding: 0;
 							}
@@ -2239,6 +2273,10 @@ div.b-popup{
 			 text-align: left;
 
 			}			  	
+.container{
+	overflow: hidden;
+	background: #fafafa;
+}
 
 @-webkit-keyframes fadeUp {
 	100% {
