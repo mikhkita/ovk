@@ -1240,7 +1240,7 @@ h2.b-title{
 								position: relative;
 								box-shadow: none;
 								width: 90%;
-								padding: 0;
+								/* padding: 0; */
 								box-sizing: border-box;
 								background-color: #ffffff;
 							}
@@ -1258,7 +1258,7 @@ h2.b-title{
 									height: 200px;
 								}
 								.mobile-reset .b-problem-bubble .b-text-width {
-									padding: 24px;
+									/* padding: 24px; */
 									/* background-color: #ffffff; */
 								}
 								.mobile-reset .b-problem-bubble .b-text-width h3 {
