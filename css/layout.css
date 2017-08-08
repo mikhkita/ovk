@@ -2023,7 +2023,7 @@ div.b-popup{
 							   -moz-transition: opacity 300ms ease-out, visibility 300ms ease-out, transform 300ms ease-out;
 							    -ms-transition: opacity 300ms ease-out, visibility 300ms ease-out, -ms-transform 300ms ease-out;
 							   	 -o-transition: opacity 300ms ease-out, visibility 300ms ease-out, -o-transform 300ms ease-out;
-									transition: opacity 300ms ease-out, visibility 300ms ease-out, transform 300ms ease-out;
+									transition: opacity 300ms ease-out, visibility 300ms ease-out, transform 300ms ease-out,color 300ms ease-out,background-color 300ms ease-out;
 							-webkit-transform: translateX(10px);
 							   -moz-transform: translateX(10px);
 							    -ms-transform: translateX(10px);
@@ -2051,7 +2051,7 @@ div.b-popup{
 							    -ms-transform: translateX(0px);
 							   	 -o-transform: translateX(0px);
 									transform: translateX(0px);
-						}
+						}										
 			.b-tour-tabs{
 				width: 1600px;
 				height: 700px;
@@ -2201,6 +2201,7 @@ div.b-popup{
 				margin-bottom: 24px;
 				color: #ffffff;
 				height: 100%;
+				-webkit-appearance: none;
 			}
 			.b-popup-zapis-fields div:nth-child(odd) {
 				margin-right: 23px;
@@ -2271,8 +2272,45 @@ div.b-popup{
 			.nice-select.half-width ul{
 			  width: 50%;
 			 text-align: left;
+			}
+.b-recommendations {
 
-			}			  	
+}
+	.b-recommendation {
+		margin-bottom: 48px;
+	}
+	.b-recommendation:last-child {
+		margin-bottom: 11px;
+	}
+		.b-recommendation .b-img {
+			background-position: 50% 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			width: 276px;height: 91px;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 24px;
+		}
+		.b-recommendation-text {
+			width: calc(100% - 304px);
+			display: inline-block;
+			vertical-align: top;
+		}
+			.b-recommendation h3 {
+				font-family: "ubuntu-medium";
+				font-size: 30px;
+				line-height: 40px;
+				margin-bottom: 16px;
+		}
+			.b-recommendation p {
+			margin-bottom: 32px;
+			}
+			.b-recommendation .b-green-btn {
+				border-radius: 100px;
+				font-family: "ubuntu-regular";
+				padding: 13px 40px 15px;
+				line-height: 48px;
+			}
 .container{
 	overflow: hidden;
 	background: #fafafa;

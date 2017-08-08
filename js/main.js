@@ -27,7 +27,7 @@ $(document).ready(function(){
         }
 
         isRetina = ( (isDesktop || isTablet) && retina() )?true:false;
-        bpinClickBinder();
+        
         if( ($(".b-problem").length) && (isMobile == false)){
             topLim = 0;
             if ($('.b-main-about').length>0) {
@@ -47,7 +47,6 @@ $(document).ready(function(){
             tabSliderInit();
         }
         fancyboxPopupInit();
-        
 
         customHandlers["onScroll"]();
 
@@ -867,51 +866,37 @@ $(document).ready(function(){
         return false;
     }
     function tabSliderInit () {
-        if (isMobile==true) {
-            if ($(".b-tour-slide").height()!=280) {
-                $(".b-tour-slide").css({"height":"280px"});
-                $('.b-tour-tabs').css({"height":"280px"});
-            }    
-        }
-
-        if ($('.slick-initialized').length>0) {
+        if ($('.slick-initialized').length) {
             $('.slick-initialized').slick('unslick');
+        }         
+        if (myWidth<600) {
+            //if ($(".b-tour-tabs").height()!=280) {
+                $('.b-tour-slide').css({"height":"280px"});
+                $('.b-tour-slide').css({"width":""+myWidth+"px"});
+                $('.b-tour-tabs').css({"height":"280px"});
+                $('.b-tour-tabs').css({"width":""+myWidth+"px"});
+            //}
         }
-        var bTourTabs = $('.b-tour-tabs'),
-            bBlockwidth = bTourTabs.closest('.b-block').width(),
-            maxscreenWidth = myWidth;
-            if (myWidth >= 1600) {
-                maxscreenWidth = 1600;
-            }
-            var marginH = ((bBlockwidth - maxscreenWidth)/2);
-            if (myWidth<400) {
-                marginH = -20;
-            }
-            bTourTabs.css({"margin-left":""+marginH+"px","width":""+maxscreenWidth+"px"});        
-        if (myWidth>=600) {
-            var minHeight = 500,
-                maxHeight = 700,
-                windowRatio = 2;
-            if ((myWidth/bTourTabs.height()>windowRatio)||(myWidth/bTourTabs.height()<windowRatio)) {
-                slideObj = $(".b-tour-slide");
-                lenslideObj = slideObj.length;
-                    //for (var i = lenslideObj-1; i >= 0; i--) {
-                        slideObject = $(".b-tour-slide");
-                        slideHeight = slideObject.height();
-                        resultHeight = myWidth/windowRatio;
-                        if (resultHeight<minHeight) {
-                            resultHeight = minHeight
-                        }
-                        else if (resultHeight>maxHeight){
-                            resultHeight = maxHeight
-                         }                    
-                            if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
-                                slideObject.css({"height":""+resultHeight+"px"})                             
-                    } 
-                //}
-                slideObj = $(".b-tour-tabs");
-                slideHeight = slideObj.height();
-                resultHeight = myWidth/windowRatio;
+        else {
+            var bTourTabs = $('.b-tour-tabs'),
+                bBlockwidth = bTourTabs.closest('.b-block').width(),
+                maxscreenWidth = myWidth;
+                if (myWidth >= 1600) {
+                    maxscreenWidth = 1600;
+                }
+                var marginH = ((bBlockwidth - maxscreenWidth)/2);
+                if (myWidth<400) {
+                    marginH = -20;
+                }
+                bTourTabs.css({"margin-left":""+marginH+"px","width":""+maxscreenWidth+"px"});     
+
+                var minHeight = 450,
+                    maxHeight = 700,
+                    windowRatio = 2.285;
+
+                    slideObj = $(".b-tour-tabs");
+                    slideHeight = slideObj.height();
+                    resultHeight = myWidth/windowRatio;
                 if (resultHeight<minHeight) {
                     resultHeight = minHeight
                 }
@@ -919,11 +904,12 @@ $(document).ready(function(){
                     resultHeight = maxHeight
                     }
                     if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
-                        slideObj.css({"height":""+resultHeight+"px"})                   
-                    }
-                }                  
-        }
+                        $(".b-tour-slide").css({"height":""+resultHeight+"px"}); 
+                        slideObj.css({"height":""+resultHeight+"px"});
 
+                    };
+                
+        }
         $('.b-tour-tab .b-tour-slider').slick({
             dots: false,
             slidesToShow: 1,
@@ -935,7 +921,7 @@ $(document).ready(function(){
             nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
         });
     }  
-    //tabSliderInit();
+    tabSliderInit();
     if ($('.b-tour-tabs').length) {
         $('.b-tour-nav a').click(function(event){
             if (!$(this).hasClass("active")) {
@@ -978,19 +964,15 @@ $(document).ready(function(){
                 $(this).addClass("b-popup");
                 $(this).css({"top":"initial","left":"initial","display":"none"});
             })                            
-            $(".b-pin").fancybox({
-            afterClose: function( instance, current ) {
-                }                
+            $(".b-pin").fancybox({              
             });
         }
         else {
-            $(".b-problem-bubble").each(function() {
-                $(this).removeClass("b-popup");
-                $(this).css({"display":"block"});
-            })
-            $(".b-pin").each(function() {
-                $(this).unbind('click.fb-start');
-            })            
+            $(".b-problem-bubble").removeClass("b-popup");
+            $(".b-problem-bubble").css({"display":"block"});
+            $(".b-pin").unbind('click.fb-start');    
+            $("body").unbind('mouseup');
+            $("body").unbind('mousedown');
             bpinClickBinder();
         }
     }
