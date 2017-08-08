@@ -43,6 +43,22 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 	<link rel="stylesheet" media="screen and (min-width: 600px) and (max-width: 999px)" href="/bitrix/templates/main/css/layout-small-tablet.css?<?=$GLOBALS["version"]?>" />
 	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 599px)" href="/bitrix/templates/main/css/layout-mobile.css?<?=$GLOBALS["version"]?>" />
 
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="<?=SITE_TEMPLATE_PATH?>/favicon/apple-touch-icon-76x76.png" />
+	<link rel="icon" type="image/png" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="<?=SITE_TEMPLATE_PATH?>/favicon/favicon-128.png" sizes="128x128" />
+	<meta name="application-name" content="«Клиника Восстановительной Ортопедии»"/>
+	<meta name="msapplication-TileColor" content="#" />
+	<meta name="msapplication-TileImage" content="<?=SITE_TEMPLATE_PATH?>/favicon/mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="<?=SITE_TEMPLATE_PATH?>/favicon/mstile-70x70.png" />
+
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 	<?$APPLICATION->ShowHead();?>
 </head>
