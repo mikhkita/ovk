@@ -874,16 +874,24 @@ $(document).ready(function(){
         if ($(".b-tour").length) {
             if ($('.slick-initialized').length) {
                 $('.slick-initialized').slick('unslick');
-            }         
+            } 
+            var bPinContWidth = 480,
+                bPinContHeight = 450,
+                bPinContratio = bPinContWidth/bPinContHeight;                    
             if (myWidth<600) {
                 //if ($(".b-tour-tabs").height()!=280) {
                     $('.b-tour-slide').css({"height":"280px"});
                     $('.b-tour-slide').css({"width":""+myWidth+"px"});
                     $('.b-tour-tabs').css({"height":"280px"});
                     $('.b-tour-tabs').css({"width":""+myWidth+"px"});
+                    $(".b-pin-cont").css({"width":""+bPinContratio*280+""});
                 //}
             }
             else {
+                var bPinCont = $(".b-pin-cont"),
+                    newWidth = bPinCont.height()*bPinContratio;
+                    bPinCont.css({"width":""+newWidth+""});
+
                 var bTourTabs = $('.b-tour-tabs'),
                     bBlockwidth = bTourTabs.closest('.b-block').width(),
                     maxscreenWidth = myWidth;
@@ -1004,6 +1012,6 @@ $(document).ready(function(){
           var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
           if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
         });              
-    }   
+    }     
 
 });

@@ -2093,6 +2093,10 @@ div.b-popup{
 							.b-marker-2 {
 								top: 48%;
 								left: 65%;
+							}
+							.b-tour .b-problem {
+								margin-left: 19px;
+								margin-top: 0px;
 							}							
 							.b-tour .b-problem-bubble {
 								z-index: 10;
@@ -2123,7 +2127,13 @@ div.b-popup{
 								.b-tour .g .b-problem-bubble span {
 								}	
 								.b-tour .v .b-problem-bubble span {
-								}									
+								}
+								.b-pin-cont {
+									height: 100%;
+									width: 70%;
+									margin: 0 auto;
+									position: relative;
+								}
 	.b-popup-zapis {
 		min-width: 776px;
 		width: 776px;

@@ -1226,7 +1226,9 @@ h2.b-title{
 								transition-property: opacity;
 								transition-delay: 2.5s;
 							}	
-					
+							.b-tour .b-problem {
+								margin-left: 10px;
+							}					
 							.mobile-reset .b-problem-bubble {
 								opacity: 1;
 								visibility: visible;
