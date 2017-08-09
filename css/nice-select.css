@@ -66,8 +66,8 @@
     -webkit-transform: scale(1) translateY(0);
     -ms-transform: scale(1) translateY(0);
     transform: scale(1) translateY(0);
-    overflow: visible;
-    max-height: 350px;
+    /* overflow: visible; */
+    max-height: 200px;
     overflow-y: auto;
   }
   .nice-select .list:after {
@@ -75,13 +75,14 @@
     display: block;
     font-size: 0;
     position: absolute;
-    top: 0px;
+    top: -8px;
     left: 65px;
     border: 16px solid transparent;
     width: 0;
-    height: 0;
+    height: 8px;
     margin-top: -32px;
-    border-bottom-color: rgba(255, 255, 255, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.9);
+    z-index: 99999;
   }
   .nice-select.disabled {
     border-color: #ededed;
@@ -114,7 +115,7 @@
     border-radius: 5px;
     box-shadow: 0 0 0 1px rgba(68, 68, 68, 0.11);
     box-sizing: border-box;
-    margin-top: 18px;
+    margin-top: 1px;
     opacity: 0;
     overflow: hidden;
     padding: 0;
@@ -133,28 +134,31 @@
     transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
     z-index: 9;
     width: 100%;
+    overflow-y: auto;
+    height: 200px;
     }
     .nice-select .list:hover .option:not(:hover) {
-      background-color: transparent !important; }
+      /* background-color: transparent !important; */
+      }
   .nice-select .option {
     font-size: 16px;
     cursor: pointer;
-    font-weight: 400;
-    line-height: 40px;
+    font-weight: normal;
+    line-height: 30px;
     list-style: none;
-    min-height: 40px;
+    min-height: 30px;
     outline: none;
     padding-left: 18px;
     padding-right: 29px;
     text-align: left;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.9);
     color: #484848;
     text-align: left;
     }
     .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
-      background-color: rgba(117, 193, 186, 0.3);
+      background-color: rgba(117, 193, 186, 0.4);
       }
     .nice-select .option.selected {
       font-weight: bold;

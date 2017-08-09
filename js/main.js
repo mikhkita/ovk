@@ -27,33 +27,14 @@ $(document).ready(function(){
         }
 
         isRetina = ( (isDesktop || isTablet) && retina() )?true:false;
-        bpinClickBinder();
-        if( ($(".b-problem").length) && (isMobile == false)){
-            topLim = 0;
-            if ($('.b-main-about').length>0) {
-                topLim = $(".b-problems h2.b-title").offset().top + $(".b-problems h2.b-title").height() + 96;
-                padLeft = 48;
-                padTop = 40;
-                leftLim = $(".b-problem").closest(".b-block").offset().left;
-            }
-            else if ($('.b-tour').length>0) {
-                topLim = $(".b-tour h2.b-title").offset().top + $(".b-tour h2.b-title").height() + 96;
-                padLeft = 10;
-                padTop = 10;
-                leftLim = $(".b-problem").closest(".b-wide-block").offset().left + 16;
-            }
-            bubblePosition(padLeft,padTop,topLim,leftLim);
-        }      
-
-        if ($('.b-tour').length) {
-            tabSliderInit();
-        }
-        fancyboxPopupInit();
-        
 
         customHandlers["onScroll"]();
 
         checkMenu();
+        tabSliderInit();        
+        // bpinClickBinder();
+        // bubblePosition();        
+        fancyboxProblemPopupInit();        
     }
     customHandlers["onScroll"] = function (scroll){
         var scroll = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
@@ -163,7 +144,8 @@ $(document).ready(function(){
             "width" : $el.width() - 1
         });
     }
-    function bpinClickBinder() {
+
+    function bpinClickBinder() {       
         if (isMobile==false) {
             $(".b-pin").click(function(){
                 if( $(this).parent(".b-problem").hasClass("active") ){
@@ -184,7 +166,7 @@ $(document).ready(function(){
             });
             $("body").on("mousedown touchstart",function() {
                 open = false;
-            }).on("mouseup touchend", ".b-problems, .b-tour", function(){
+            }).on("mouseup touchend", ".b-problems, .b-tour-tabs", function(){
                 if( !open ){
                     $(".b-problem.active").removeClass("active");
                     $(".b-woman-text").addClass("show");
@@ -193,97 +175,119 @@ $(document).ready(function(){
         }
     }
     bpinClickBinder();
-    // function bubblePosition(){
-    //     $(".b-main-about .b-problem").each(function(){
-    //         var $bubble = $(this).find(".b-problem-bubble"),
-    //             $pin = $(this),
-    //             $triangle = $bubble.find("span"),
-    //             paddingLeft = 48,
-    //             paddingTop = 40,
-    //             margin = 42,
-    //             bubbleW = $bubble.width() + paddingLeft*2,
-    //             bubbleH = $bubble.height() + paddingTop*2,
-    //             topLimit = $(".b-problems h2.b-title").offset().top + $(".b-problems h2.b-title").height() + 96,
-    //             leftLimit = $(".b-problems .b-block").offset().left,
-    //             left = 0,
-    //             top = 0;
+
+    function bubblePosition(){
+        if ($(".b-main-about").length) {
+            $(".b-main-about, .b-problem").each(function(){
+                var $bubble = $(this).find(".b-problem-bubble"),
+                    $pin = $(this),
+                    $triangle = $bubble.find("span"),
+                    paddingLeft = 48,
+                    paddingTop = 40,
+                    margin = 42,
+                    bubbleW = $bubble.width() + paddingLeft*2,
+                    bubbleH = $bubble.height() + paddingTop*2,
+                    topLimit = $(".b-problems h2.b-title").offset().top + $(".b-problems h2.b-title").height() + 96,
+                    leftLimit = $(".b-problems .b-block").offset().left,
+                    left = 0,
+                    top = 0;
 
 
-    //         if( $(this).hasClass("g") ){
-    //             top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
-    //         }else{
-    //             top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
-    //         }
+                if( $(this).hasClass("g") ){
+                    top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
+                }else{
+                    top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
+                }
 
-    //         if( $(this).hasClass("g") ){
-    //             left = ($pin.offset().left - bubbleW - margin > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
-    //         }else{
-    //             left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
-    //         }
+                if( $(this).hasClass("g") ){
+                    left = ($pin.offset().left - bubbleW - margin > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
+                }else{
+                    left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
+                }
 
-    //         $bubble.css({
-    //             "left" : left,
-    //             "top" : top
-    //         });
+                $bubble.css({
+                    "left" : left,
+                    "top" : top
+                });
 
-    //         // Позиция треугольника
+                // Позиция треугольника
 
-    //         if( $(this).hasClass("g") ){
-    //             $triangle.css({
-    //                 "top" : top*(-1) + $pin.height()/2 - 25
-    //             });
-    //         }else{
-    //             $triangle.css({
-    //                 "left" : left*(-1) + $pin.width()/2 - 25
-    //             });
-    //         }
-    //     });
-    // }
-    function bubblePosition(paddingL,paddingT,topLim,leftLim){
-        $('.b-problem').each(function(){
-            var $bubble = $(this).find(".b-problem-bubble"),
-                $pin = $(this),
-                $triangle = $bubble.find("span"),
-                paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
-                paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
-                margin = 42,
-                bubbleW = $bubble.width() + paddingLeft*2,
-                bubbleH = $bubble.height() + paddingTop*2,
-                topLimit = topLim,//
-                leftLimit = leftLim,
-                left = 0,
-                top = 0;
+                var minVal = 0,
+                    valTop = top*(-1) + $pin.height()/2 - 25;
+                    valLeft = left*(-1) + $pin.width()/2 - 25;
+                    minValTop = (valTop<=minVal)?(minVal):(valTop);
+                    minValLeft = (valLeft<=minVal)?(minVal):(valLeft);
+                if (true) {}
 
-            if( $(this).hasClass("g") ){
-                top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
-            }else{
-                top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
-            }
-
-            if( $(this).hasClass("g") ){
-                left = ($pin.offset().left - bubbleW - margin*2 > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
-            }else{
-                left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
-            }
-
-            $bubble.css({
-                "left" : left,
-                "top" : top
+                if( $(this).hasClass("g") ){
+                    $triangle.css({
+                        "top" : minValTop
+                    });
+                }else{
+                    $triangle.css({
+                        "left" : minValLeft
+                    });
+                }
             });
+        }
+    }
+    bubblePosition();
 
-            // Позиция треугольника
+    function bubblePositionTour(){
+        if ($('.b-tour').length) {
+            $('.b-problem').each(function(){
+                var $bubble = $(this).find(".b-problem-bubble"),
+                    $pin = $(this),
+                    $triangle = $bubble.find("span"),
+                    paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
+                    paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
+                    margin = 42,
+                    bubbleW = $bubble.width() + paddingLeft*2,
+                    bubbleH = $bubble.height() + paddingTop*2,
+                    topLimit = $(".b-tour h2.b-title").offset().top + $(".b-tour h2.b-title").height() + 96,
+                    leftLimit = $(".b-problem").closest(".b-block").offset().left,
+                    left = 0,
+                    top = 0;
 
-            if( $(this).hasClass("g") ){
-                $triangle.css({
-                    "top" : top*(-1) + $pin.height()/2 - 25
+                if( $(this).hasClass("g") ){
+                    top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
+                }else{
+                    top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
+                }
+
+                if( $(this).hasClass("g") ){
+                    left = ($pin.offset().left - bubbleW - margin*2 > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
+                }else{
+                    left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
+                }
+
+                $bubble.css({
+                    "left" : left,
+                    "top" : top
                 });
-            }else{
-                $triangle.css({
-                    "left" : left*(-1) + $pin.width()/2 - 25
-                });
-            }
-        });
+
+                // Позиция треугольника
+
+                var minVal = 0,
+                    valTop = top*(-1) + $pin.height()/2 - 25;
+                    valLeft = left*(-1) + $pin.width()/2 - 25;
+                    minValTop = (valTop<=minVal)?(minVal):(valTop);
+                    minValLeft = (valLeft<=minVal)?(minVal):(valLeft);
+                if (true) {}
+
+                if( $(this).hasClass("g") ){
+                    $triangle.css({
+                        "top" : minValTop
+                    });
+                }else{
+                    $triangle.css({
+                        "left" : minValLeft
+                    });
+                }
+            });
+        }
     }    
+    bubblePositionTour();
 
     $(".b-service").mouseover(function(){
         $(".b-services-text-item.show").removeClass("show");
@@ -855,7 +859,6 @@ $(document).ready(function(){
 
     // var jssor_slider1 = new $JssorSlider$("slider1_container", options);
 
-
     function retina(){
         var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
             (min--moz-device-pixel-ratio: 1.5),\
@@ -868,75 +871,71 @@ $(document).ready(function(){
         return false;
     }
     function tabSliderInit () {
-        if (isMobile==true) {
-            if ($(".b-tour-slide").height()!=280) {
-                $(".b-tour-slide").css({"height":"280px"});
-                $('.b-tour-tabs').css({"height":"280px"});
-            }    
-        }
-
-        if ($('.slick-initialized').length>0) {
-            $('.slick-initialized').slick('unslick');
-        }
-        var bTourTabs = $('.b-tour-tabs'),
-            bBlockwidth = bTourTabs.closest('.b-block').width(),
-            maxscreenWidth = myWidth;
-            if (myWidth >= 1600) {
-                maxscreenWidth = 1600;
-            }
-            var marginH = ((bBlockwidth - maxscreenWidth)/2);
-            if (myWidth<400) {
-                marginH = -20;
-            }
-            bTourTabs.css({"margin-left":""+marginH+"px","width":""+maxscreenWidth+"px"});        
-        if (myWidth>=600) {
-            var minHeight = 500,
-                maxHeight = 700,
-                windowRatio = 2;
-            if ((myWidth/bTourTabs.height()>windowRatio)||(myWidth/bTourTabs.height()<windowRatio)) {
-                slideObj = $(".b-tour-slide");
-                lenslideObj = slideObj.length;
-                    //for (var i = lenslideObj-1; i >= 0; i--) {
-                        slideObject = $(".b-tour-slide");
-                        slideHeight = slideObject.height();
-                        resultHeight = myWidth/windowRatio;
-                        if (resultHeight<minHeight) {
-                            resultHeight = minHeight
-                        }
-                        else if (resultHeight>maxHeight){
-                            resultHeight = maxHeight
-                         }                    
-                            if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
-                                slideObject.css({"height":""+resultHeight+"px"})                             
-                    } 
+        if ($(".b-tour").length) {
+            if ($('.slick-initialized').length) {
+                $('.slick-initialized').slick('unslick');
+            } 
+            var bPinContWidth = 480,
+                bPinContHeight = 450,
+                bPinContratio = bPinContWidth/bPinContHeight;                    
+            if (myWidth<600) {
+                //if ($(".b-tour-tabs").height()!=280) {
+                    $('.b-tour-slide').css({"height":"280px"});
+                    $('.b-tour-slide').css({"width":""+myWidth+"px"});
+                    $('.b-tour-tabs').css({"height":"280px"});
+                    $('.b-tour-tabs').css({"width":""+myWidth+"px"});
+                    $(".b-pin-cont").css({"width":""+bPinContratio*280+""});
                 //}
-                slideObj = $(".b-tour-tabs");
-                slideHeight = slideObj.height();
-                resultHeight = myWidth/windowRatio;
+            }
+            else {
+                var bPinCont = $(".b-pin-cont"),
+                    newWidth = bPinCont.height()*bPinContratio;
+                    bPinCont.css({"width":""+newWidth+""});
+
+                var bTourTabs = $('.b-tour-tabs'),
+                    bBlockwidth = bTourTabs.closest('.b-block').width(),
+                    maxscreenWidth = myWidth;
+                if (myWidth >= 1600) {
+                    maxscreenWidth = 1600;
+                }
+                var marginH = ((bBlockwidth - maxscreenWidth)/2);
+                if (myWidth<400) {
+                    marginH = -20;
+                }
+                bTourTabs.css({"margin-left":""+marginH+"px","width":""+maxscreenWidth+"px"});     
+
+                var minHeight = 450,
+                    maxHeight = 700,
+                    windowRatio = 2.285;
+
+                    slideObj = $(".b-tour-tabs");
+                    slideHeight = slideObj.height();
+                    resultHeight = myWidth/windowRatio;
                 if (resultHeight<minHeight) {
                     resultHeight = minHeight
                 }
                 else if (resultHeight>=maxHeight) {
                     resultHeight = maxHeight
                     }
-                    if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
-                        slideObj.css({"height":""+resultHeight+"px"})                   
-                    }
-                }                  
+            if ((myWidth/slideHeight<windowRatio)||(myWidth/slideHeight>windowRatio)) {
+                $(".b-tour-slide").css({"height":""+resultHeight+"px"}); 
+                slideObj.css({"height":""+resultHeight+"px"});
+                };
+            }
+            $('.b-tour-tab .b-tour-slider').slick({
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,  
+                cssEase: 'ease', 
+                speed: 700,           
+                prevArrow: '<div class="slick-arrow-left icon-arrow-left"></div>',
+                nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
+            });               
         }
+    } 
+    tabSliderInit();
 
-        $('.b-tour-tab .b-tour-slider').slick({
-            dots: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,  
-            cssEase: 'ease', 
-            speed: 700,           
-            prevArrow: '<div class="slick-arrow-left icon-arrow-left"></div>',
-            nextArrow: '<div class="slick-arrow-right icon-arrow-right"></div>'
-        });
-    }  
-    //tabSliderInit();
     if ($('.b-tour-tabs').length) {
         $('.b-tour-nav a').click(function(event){
             if (!$(this).hasClass("active")) {
@@ -950,72 +949,69 @@ $(document).ready(function(){
             //$('#b-tour-tab-'+dataVal+'').removeClass('hide');
         });
     };
-    $(function() {
-      $('#date').datepicker({
-        minDate: 0,
-        range: 'multiple', // режим - выбор нескольких дат 
-        range_multiple_max: '15', // макимальное число выбираемых дат
-        onSelect: function(dateText, inst, extensionRange) {
-          // extensionRange - объект расширения
-          $('[name=multipleDate]').val(extensionRange.datesText.join(','));
-        }
-      });
 
-      // выделить послезавтра и следующие 2 дня
-      $('#date_range').datepicker('setDate', ['+2d', '+3d', '+4d']);
-
-      // объект расширения (хранит состояние календаря)
-      var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
-      if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
-    });
-
-    $("a#b-popup-zapis-href").fancybox({
-        'hideOnContentClick': true
-    });
-
-    function fancyboxPopupInit() {
-        if (isMobile==true) {
+    function fancyboxProblemPopupInit() {
+        if ((isMobile==true)&&($(".b-problem").length)) {
+            $(".b-pin").unbind('click.fb-start');
+            $(".b-pin").unbind('click');    
+            $("body").unbind('mouseup');
+            $("body").unbind('mousedown');            
             $(".b-problem-bubble").each(function() {
-                $(this).addClass("b-popup");
+                $(this).addClass("b-popup fancytrigger");
                 $(this).css({"top":"initial","left":"initial","display":"none"});
-            })                            
-            $(".b-pin").fancybox({
-            afterClose: function( instance, current ) {
-                }                
+            });                            
+            $(".b-pin").fancybox({              
             });
         }
         else {
-            $(".b-problem-bubble").each(function() {
-                $(this).removeClass("b-popup");
-                $(this).css({"display":"block"});
-            })
-            $(".b-pin").each(function() {
-                $(this).unbind('click.fb-start');
-            })            
-            bpinClickBinder();
+            if ($(".fancytrigger").length) {
+                $(".b-problem-bubble").removeClass("b-popup fancytrigger");
+                $(".b-problem-bubble").css({"display":"block"});
+                $(".b-pin").unbind('click');
+                $(".b-pin").unbind('click.fb-start');    
+                $("body").unbind('mouseup');
+                $("body").unbind('mousedown');
+                bpinClickBinder();
+                bubblePosition();
+                bubblePositionTour();                
+            }
+            else {
+                bubblePosition();
+                bubblePositionTour();
+            }
         }
+        
     }
-    if (isMobile==false) {
-        $('#service').niceSelect();
-        $('#time-start').niceSelect();
-        $('#time-end').niceSelect();
-    }
+    fancyboxProblemPopupInit()
 
 
-// Disable a list of dates
-// var disabledDays = ["9-21-2010", "9-24-2010", "9-27-2010", "9-28-2010", "9-3-2010", "9-17-2010", "9-2-2010", "9-3-2010", "9-4-2010", "9-5-2010"];
-// function disableAllTheseDays(date) {
-//     var m = date.getMonth(), d = date.getDate(), y = date.getFullYear();
-//     for (i = 0; i < disabledDays.length; i++) {
-//         if($.inArray((m+1) + '-' + d + '-' + y,disabledDays) != -1) {
-//             return [false];
-//         }
-//     }
-//     return [true];
-// }
-// $('#datepicker5').datepicker({
-//         dateFormat: 'mm-dd-yy',
-//         beforeShowDay: disableAllTheseDays
-// });    
+    if ($("#b-popup-zapis-href").length) {
+        $("a#b-popup-zapis-href").fancybox({
+            'hideOnContentClick': true
+        }); 
+        if (isMobile==false) {
+            $('#service').niceSelect();
+            $('#time-start').niceSelect();
+            $('#time-end').niceSelect();
+        }  
+        $(function() {
+          $('#date').datepicker({
+            minDate: 0,
+            range: 'multiple', // режим - выбор нескольких дат 
+            range_multiple_max: '15', // макимальное число выбираемых дат
+            onSelect: function(dateText, inst, extensionRange) {
+              // extensionRange - объект расширения
+              $('[name=multipleDate]').val(extensionRange.datesText.join(','));
+            }
+          });
+
+          // выделить послезавтра и следующие 2 дня
+          $('#date_range').datepicker('setDate', ['+2d', '+3d', '+4d']);
+
+          // объект расширения (хранит состояние календаря)
+          var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
+          if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
+        });              
+    }     
 
 });

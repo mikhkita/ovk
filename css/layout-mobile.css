@@ -1218,21 +1218,17 @@ h2.b-title{
 							width: 1600px;
 							height: 350px;
 						}
-							.b-marker-1 {
-								top: 76%;
-								left: 54%;
-							}	
-							.b-marker-2 {
-								top: 48%;
-								left: 65%;
-							}	
-							
+							.mobile-reset .b-tour-nav span {
+								opacity: 0;
+							}
 							.mobile-reset .b-tour-nav .active+span{
 								opacity: 0;
 								transition-property: opacity;
 								transition-delay: 2.5s;
 							}	
-					
+							.b-tour .b-problem {
+								margin-left: 10px;
+							}					
 							.mobile-reset .b-problem-bubble {
 								opacity: 1;
 								visibility: visible;
@@ -1256,6 +1252,7 @@ h2.b-title{
 									background-repeat: no-repeat;
 									width: 100%;
 									height: 200px;
+									margin-bottom: 15px;
 								}
 								.mobile-reset .b-problem-bubble .b-text-width {
 									/* padding: 24px; */
@@ -1385,7 +1382,42 @@ h2.b-title{
 			  width: 50%;
 			 text-align: left;
 
-			}			  																				
+			}	
+					  																				.b-recommendations {
+
+}
+.b-recommendation {
+	margin-bottom: 48px;
+}
+.b-recommendation:last-child {
+	margin-bottom: 11px;
+}
+	.b-recommendation .b-img {
+		width: 276px;
+		background-position: 0 0;
+		height: 91px;
+		display: block;
+		vertical-align: top;
+		margin-right: 24px;
+	}
+	.b-recommendation-text {
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+	}
+		.b-recommendation h3 {
+			font-size: 30px;
+			line-height: 40px;
+			margin-bottom: 16px;
+	}
+		.b-recommendation p {
+		margin-bottom: 24px;
+		}
+		.b-recommendation .b-green-btn {
+			border-radius: 100px;
+			padding: 13px 40px 15px;
+			box-sizing: border-box;
+		}
 .b-footer{
 	
 }
