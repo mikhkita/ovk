@@ -431,7 +431,7 @@ h2.b-title{
 			background-position: 50% 0%;
 			background-repeat: no-repeat;
 			background-image: url('../i/main-back1.jpg');
-			background-size: cover;
+			background-size: 150%;
 			opacity: 0;
 			visibility: hidden;
 			position: fixed;
