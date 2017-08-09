@@ -559,6 +559,93 @@ h2.b-title{
 								text-transform: uppercase;
 								padding: 5px 18px 5px 19px;
 							}
+
+
+
+							.b-menu-with-submenu {
+								position: relative;
+							}
+								.b-submenu{
+									position: absolute;
+									left: 0px;
+									top: 52px;
+									background-color: #FFF;
+									padding: 10px 20px 14px;
+									visibility: hidden;
+									opacity: 0;
+									-webkit-transition: all 300ms ease-out;
+									-moz-transition: all 300ms ease-out;
+									-ms-transition: all 300ms ease-out;
+									-o-transition: all 300ms ease-out;
+									transition: all 300ms ease-out;
+									-webkit-transform: translateY(20px);
+									-moz-transform: translateY(20px);
+									-ms-transform: translateY(20px);
+									-o-transform: translateY(20px);
+									transform: translateY(20px);
+								}
+								body.fixed .b-submenu{
+									box-shadow: 0px 15px 40px rgba(0,0,0,0.15)
+								}
+									.b-submenu:before{
+										position: absolute;
+										content: "s";
+										font-size: 0px;
+										width: 0px;
+										height: 0px;
+										left: 20px;
+										top: -14px;
+										border-top: 7px solid transparent;
+										border-right: 8px solid transparent;
+										border-bottom: 7px solid #FFF;
+										border-left: 8px solid transparent;
+									}
+									.b-submenu:after{
+										content: "s";
+										font-size: 0px;
+										position: absolute;
+										left: 0px;
+										top: -15px;
+										width: 100%;
+										height: 15px;
+									}
+								.b-menu li:hover .b-submenu{
+									visibility: visible;
+									opacity: 1;
+									-webkit-transform: translateY(0px);
+									   -moz-transform: translateY(0px);
+									    -ms-transform: translateY(0px);
+									   	 -o-transform: translateY(0px);
+											transform: translateY(0px);
+								}
+									.b-submenu li{
+										margin-bottom: 5px;
+										margin-right: 10px;
+									}
+									.b-submenu li:last-child{
+										margin-bottom: 0px;
+									}
+										.b-submenu li a{
+											/* white-space: nowrap; */
+											display: inline-block;
+											padding: 10px 0px;
+											font-size: 16px;
+											line-height: 20px;
+											color: #484848;
+											font-family: "ubuntu-light";
+											text-transform: none;
+										}
+											.b-submenu li a:hover{
+												text-decoration: underline;
+											}
+											.b-submenu li a.active,
+											.b-submenu li.active a{
+												color: #00D4D7;
+											}
+											.b-submenu li a.active:hover,
+											.b-submenu li.active a:hover{
+												text-decoration: none;
+											}
 				.b-phone-cont{
 					display: table-cell;
 					vertical-align: middle;
@@ -926,6 +1013,22 @@ h2.b-title{
 								   	 -o-transform: translateX(0px);
 										transform: translateX(0px);
 							}
+						.r .b-problem-bubble{
+							-webkit-transform: translateX(-20px);
+							   -moz-transform: translateX(-20px);
+							    -ms-transform: translateX(-20px);
+							   	 -o-transform: translateX(-20px);
+									transform: translateX(-20px);
+						}							
+							.active.r .b-problem-bubble{
+								opacity: 1;
+								visibility: visible;
+								-webkit-transform: translateX(0px);
+								   -moz-transform: translateX(0px);
+								    -ms-transform: translateX(0px);
+								   	 -o-transform: translateX(0px);
+										transform: translateX(0px);
+							}							
 							.b-woman-cont h3{
 								margin-top: -3px;
 								font-size: 32px;
@@ -951,6 +1054,11 @@ h2.b-title{
 									bottom: -48px;
 									border-top-color: rgba(255,255,255,0.8);
 								}
+								.r .b-problem-bubble span{
+									left: -48px;
+									border-right-color: rgba(255,255,255,0.8);
+									border-left-color: transparent;
+								}								
 								.b-woman-cont ul{
 									
 								}
@@ -2086,14 +2194,32 @@ div.b-popup{
 							background-size: cover;
 							position: relative;
 						}
+							/*sertificats*/
 							.b-marker-1 {
-								top: 76%;
-								left: 54%;
+								top: 28%;
+								left: 113%;
 							}	
-							.b-marker-2 {
-								top: 48%;
-								left: 65%;
+							.b-marker-1 .b-problem-bubble {
+								width: 278px;
+								text-align: center;
 							}
+							/*insoles*/
+							.b-marker-2 {
+								top: 44%;
+								left: -43%;
+							}
+							.b-marker-2 .b-problem-bubble {
+								width: 278px;
+								text-align: center;
+							}		
+							.b-marker-3 {
+								top: 54%;
+								left: 66%;
+							}
+							.b-marker-3 .b-problem-bubble {
+								width: 700px;
+								text-align: left;
+							}												
 							.b-tour .b-problem {
 								margin-left: 19px;
 								margin-top: 0px;

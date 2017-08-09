@@ -241,10 +241,10 @@ $(document).ready(function(){
                     $triangle = $bubble.find("span"),
                     paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
                     paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
-                    margin = 42,
+                    margin = 0,
                     bubbleW = $bubble.width() + paddingLeft*2,
                     bubbleH = $bubble.height() + paddingTop*2,
-                    topLimit = $(".b-tour h2.b-title").offset().top + $(".b-tour h2.b-title").height() + 96,
+                    topLimit = $(".b-tour h2.b-title").offset().top  + 96,//+ $(".b-tour h2.b-title").height()
                     leftLimit = $(".b-problem").closest(".b-block").offset().left,
                     left = 0,
                     top = 0;
@@ -260,11 +260,20 @@ $(document).ready(function(){
                 }else{
                     left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
                 }
-
-                $bubble.css({
-                    "left" : left,
-                    "top" : top
-                });
+                if ($(this).hasClass("r")) {
+                    left = left + 100;
+                    top = top + $bubble.height();
+                    $bubble.css({
+                        "left" : left,
+                        "top" : top
+                    });                   
+                }
+                else {
+                    $bubble.css({
+                        "left" : left,
+                        "top" : top
+                    });
+                }
 
                 // Позиция треугольника
 
@@ -273,7 +282,6 @@ $(document).ready(function(){
                     valLeft = left*(-1) + $pin.width()/2 - 25;
                     minValTop = (valTop<=minVal)?(minVal):(valTop);
                     minValLeft = (valLeft<=minVal)?(minVal):(valLeft);
-                if (true) {}
 
                 if( $(this).hasClass("g") ){
                     $triangle.css({
@@ -992,7 +1000,9 @@ $(document).ready(function(){
         if (isMobile==false) {
             $('#service').niceSelect();
             $('#time-start').niceSelect();
-            $('#time-end').niceSelect();
+            $('#time-end').niceSelect(function(){
+            console.log($(this).attr("data-value"))
+        });
         }  
         $(function() {
           $('#date').datepicker({
@@ -1013,5 +1023,58 @@ $(document).ready(function(){
           if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
         });              
     }     
+
+    // function zapisTimePickDisabler() {
+    //     $(".option").click(function(event){
+    //         //console.log("clicked");
+    //         var ts = $(".nice-select.time-start .selected"),
+    //             tsstr = ".time-start",
+    //             tsval = $("li").index(ts),
+    //             tslen = ts.length,
+    //             te = $(".nice-select.time-end .selected"),
+    //             testr = ".time-end",
+    //             teval= te.attr("data-value"),
+    //             telen = te.length,
+    //             thisval = $(this).attr("data-value"),
+    //             summlen = tslen+telen;
+    //             console.log(teval);
+    //             console.log(teval);
+    //         function disabler(delement,pcs,bool){ //bool = 0 - fill start ..= 2 - fill end
+    //             console.log("disabler - start");
+    //             if (bool == 0) {
+    //                 for (var i = pcs - 1; i >= 0; i--) {
+    //                     $(""+delement+" li:("+i+")").addClass("disabled");
+    //                 }                
+    //             }
+    //             else {
+    //                 pcsafter = $(""+delement+" li").length - pcs;
+    //                 for (var i = pcsafter; i >= 0; i--) {
+    //                     $("."+delement+" li:("+(i+pcs)+")").addClass("disabled");
+    //                 }                 
+    //             }
+    //         }
+    //         if ((tsval >0)||(teval>0)) {
+    //             if (summlen == 2) {
+    //                 console.log("summlen - ",summlen);
+    //                 if (tsval > teval) {
+    //                     console.log("hmm no action i");
+    //                     ts.removeClass("selected");
+    //                     $(".time-start li:eq("+teval+")").addClass("selected");
+    //                     disabler(tsstr,(teval-1),0);
+    //                     te.removeClass("selected");
+    //                     $(".time-end li:eq("+tsval+")").addClass("selected"); 
+    //                     disabler(testr,(tsval-1),1);                   
+    //                 }
+    //             }
+    //             else if (summlen == 1) {
+    //                 console.log("hmm no action e");
+    //                 console.log("summlen - ",summlen);
+    //                 var disableonecol = (tslen == 1)?(disabler(tsstr,tsind,0)):(disabler(testr,(teind),1));
+    //             } 
+    //             console.log("hmm no action");
+    //         }
+    //     });
+    // }
+    
 
 });
