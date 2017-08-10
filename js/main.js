@@ -233,69 +233,69 @@ $(document).ready(function(){
     }
     bubblePosition();
 
-    function bubblePositionTour(){
-        if ($('.b-tour').length) {
-            $('.b-problem').each(function(){
-                var $bubble = $(this).find(".b-problem-bubble"),
-                    $pin = $(this),
-                    $triangle = $bubble.find("span"),
-                    paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
-                    paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
-                    margin = 0,
-                    bubbleW = $bubble.width() + paddingLeft*2,
-                    bubbleH = $bubble.height() + paddingTop*2,
-                    topLimit = $(".b-tour h2.b-title").offset().top  + 96,//+ $(".b-tour h2.b-title").height()
-                    leftLimit = $(".b-problem").closest(".b-block").offset().left,
-                    left = 0,
-                    top = 0;
+    // function bubblePositionTour(){
+    //     if ($('.b-tour').length) {
+    //         $('.b-problem').each(function(){
+    //             var $bubble = $(this).find(".b-problem-bubble"),
+    //                 $pin = $(this),
+    //                 $triangle = $bubble.find("span"),
+    //                 paddingLeft = parseInt($bubble.find(".b-text-width").css("padding-left")),//
+    //                 paddingTop = parseInt($bubble.find(".b-text-width").css("padding-top")),//
+    //                 margin = 0,
+    //                 bubbleW = $bubble.width() + paddingLeft*2,
+    //                 bubbleH = $bubble.height() + paddingTop*2,
+    //                 topLimit = $(".b-tour h2.b-title").offset().top  + 96,//+ $(".b-tour h2.b-title").height()
+    //                 leftLimit = $(".b-problem").closest(".b-block").offset().left,
+    //                 left = 0,
+    //                 top = 0;
 
-                if( $(this).hasClass("g") ){
-                    top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
-                }else{
-                    top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
-                }
+    //             if( $(this).hasClass("g") ){
+    //                 top = ($pin.offset().top - bubbleH + $pin.height() + margin > topLimit )?(-1*bubbleH + $pin.height() + margin):( -1*($pin.offset().top - topLimit) );
+    //             }else{
+    //                 top = ($pin.offset().top - bubbleH - margin > topLimit )?(-1*bubbleH - margin):( -1*($pin.offset().top - topLimit) );
+    //             }
 
-                if( $(this).hasClass("g") ){
-                    left = ($pin.offset().left - bubbleW - margin*2 > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
-                }else{
-                    left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
-                }
-                if ($(this).hasClass("r")) {
-                    left = left + 100;
-                    top = top + $bubble.height();
-                    $bubble.css({
-                        "left" : left,
-                        "top" : top
-                    });                   
-                }
-                else {
-                    $bubble.css({
-                        "left" : left,
-                        "top" : top
-                    });
-                }
+    //             if( $(this).hasClass("g") ){
+    //                 left = ($pin.offset().left - bubbleW - margin*2 > leftLimit )?(-1*bubbleW - margin):( -1*($pin.offset().left - leftLimit) );
+    //             }else{
+    //                 left = ($pin.offset().left - bubbleW + $pin.width() + margin > leftLimit )?(-1*bubbleW + $pin.height() + margin):( -1*($pin.offset().left - leftLimit) );
+    //             }
+    //             if ($(this).hasClass("r")) {
+    //                 left = left + 100;
+    //                 top = top + $bubble.height();
+    //                 $bubble.css({
+    //                     "left" : left,
+    //                     "top" : top
+    //                 });                   
+    //             }
+    //             else {
+    //                 $bubble.css({
+    //                     "left" : left,
+    //                     "top" : top
+    //                 });
+    //             }
 
-                // Позиция треугольника
+    //             // Позиция треугольника
 
-                var minVal = 0,
-                    valTop = top*(-1) + $pin.height()/2 - 25;
-                    valLeft = left*(-1) + $pin.width()/2 - 25;
-                    minValTop = (valTop<=minVal)?(minVal):(valTop);
-                    minValLeft = (valLeft<=minVal)?(minVal):(valLeft);
+    //             var minVal = 0,
+    //                 valTop = top*(-1) + $pin.height()/2 - 25;
+    //                 valLeft = left*(-1) + $pin.width()/2 - 25;
+    //                 minValTop = (valTop<=minVal)?(minVal):(valTop);
+    //                 minValLeft = (valLeft<=minVal)?(minVal):(valLeft);
 
-                if( $(this).hasClass("g") ){
-                    $triangle.css({
-                        "top" : minValTop
-                    });
-                }else{
-                    $triangle.css({
-                        "left" : minValLeft
-                    });
-                }
-            });
-        }
-    }    
-    bubblePositionTour();
+    //             if( $(this).hasClass("g") ){
+    //                 $triangle.css({
+    //                     "top" : minValTop
+    //                 });
+    //             }else{
+    //                 $triangle.css({
+    //                     "left" : minValLeft
+    //                 });
+    //             }
+    //         });
+    //     }
+    // }    
+    // bubblePositionTour();
 
     $(".b-service").mouseover(function(){
         $(".b-services-text-item.show").removeClass("show");
@@ -959,36 +959,38 @@ $(document).ready(function(){
     };
 
     function fancyboxProblemPopupInit() {
-        if ((isMobile==true)&&($(".b-problem").length)) {
-            $(".b-pin").unbind('click.fb-start');
-            $(".b-pin").unbind('click');    
-            $("body").unbind('mouseup');
-            $("body").unbind('mousedown');            
-            $(".b-problem-bubble").each(function() {
-                $(this).addClass("b-popup fancytrigger");
-                $(this).css({"top":"initial","left":"initial","display":"none"});
-            });                            
-            $(".b-pin").fancybox({              
-            });
-        }
-        else {
-            if ($(".fancytrigger").length) {
-                $(".b-problem-bubble").removeClass("b-popup fancytrigger");
-                $(".b-problem-bubble").css({"display":"block"});
-                $(".b-pin").unbind('click');
-                $(".b-pin").unbind('click.fb-start');    
+        //if ($(".b-main-about").length) {
+            if ((isMobile==true)&&($(".b-problem").length)) {
+                $(".b-pin").unbind('click.fb-start');
+                $(".b-pin").unbind('click');    
                 $("body").unbind('mouseup');
-                $("body").unbind('mousedown');
-                bpinClickBinder();
-                bubblePosition();
-                bubblePositionTour();                
+                $("body").unbind('mousedown');            
+                $(".b-problem-bubble").each(function() {
+                    $(this).addClass("b-popup fancytrigger");
+                    $(this).css({"top":"initial","left":"initial","display":"none"});
+                });                            
+                $(".b-pin").fancybox({              
+                });
             }
             else {
-                bubblePosition();
-                bubblePositionTour();
+                if ($(".fancytrigger").length) {
+                    $(".b-problem-bubble").removeClass("b-popup fancytrigger");
+                    $(this).css({"top":"","left":""});
+                    $(".b-problem-bubble").css({"display":"block"});
+                    $(".b-pin").unbind('click');
+                    $(".b-pin").unbind('click.fb-start');    
+                    $("body").unbind('mouseup');
+                    $("body").unbind('mousedown');
+                    bpinClickBinder();
+                    bubblePosition();
+                    //bubblePositionTour();                
+                }
+                else {
+                    bubblePosition();
+                    //bubblePositionTour();
+                }
             }
-        }
-        
+       // }
     }
     fancyboxProblemPopupInit()
 
@@ -998,11 +1000,10 @@ $(document).ready(function(){
             'hideOnContentClick': true
         }); 
         if (isMobile==false) {
-            $('#service').niceSelect();
+            //$('#service').niceSelect();
+            $('#time-end').niceSelect();  
             $('#time-start').niceSelect();
-            $('#time-end').niceSelect(function(){
-            console.log($(this).attr("data-value"))
-        });
+
         }  
         $(function() {
           $('#date').datepicker({
@@ -1024,57 +1025,50 @@ $(document).ready(function(){
         });              
     }     
 
-    // function zapisTimePickDisabler() {
-    //     $(".option").click(function(event){
-    //         //console.log("clicked");
-    //         var ts = $(".nice-select.time-start .selected"),
-    //             tsstr = ".time-start",
-    //             tsval = $("li").index(ts),
-    //             tslen = ts.length,
-    //             te = $(".nice-select.time-end .selected"),
-    //             testr = ".time-end",
-    //             teval= te.attr("data-value"),
-    //             telen = te.length,
-    //             thisval = $(this).attr("data-value"),
-    //             summlen = tslen+telen;
-    //             console.log(teval);
-    //             console.log(teval);
-    //         function disabler(delement,pcs,bool){ //bool = 0 - fill start ..= 2 - fill end
-    //             console.log("disabler - start");
-    //             if (bool == 0) {
-    //                 for (var i = pcs - 1; i >= 0; i--) {
-    //                     $(""+delement+" li:("+i+")").addClass("disabled");
-    //                 }                
-    //             }
-    //             else {
-    //                 pcsafter = $(""+delement+" li").length - pcs;
-    //                 for (var i = pcsafter; i >= 0; i--) {
-    //                     $("."+delement+" li:("+(i+pcs)+")").addClass("disabled");
-    //                 }                 
-    //             }
-    //         }
-    //         if ((tsval >0)||(teval>0)) {
-    //             if (summlen == 2) {
-    //                 console.log("summlen - ",summlen);
-    //                 if (tsval > teval) {
-    //                     console.log("hmm no action i");
-    //                     ts.removeClass("selected");
-    //                     $(".time-start li:eq("+teval+")").addClass("selected");
-    //                     disabler(tsstr,(teval-1),0);
-    //                     te.removeClass("selected");
-    //                     $(".time-end li:eq("+tsval+")").addClass("selected"); 
-    //                     disabler(testr,(tsval-1),1);                   
-    //                 }
-    //             }
-    //             else if (summlen == 1) {
-    //                 console.log("hmm no action e");
-    //                 console.log("summlen - ",summlen);
-    //                 var disableonecol = (tslen == 1)?(disabler(tsstr,tsind,0)):(disabler(testr,(teind),1));
-    //             } 
-    //             console.log("hmm no action");
-    //         }
-    //     });
-    // }
-    
+    function zapisTimePickDisabler() {
+        $(".option").click(function(event){
+            //console.log("clicked");
+            var ts = $(".time-start .selected").not("[data-value='service-default']");
+            if (ts) {
+                tsval = Number($(".time-start span").text().split(":")[0]);
+            }
+            else {ts=0} 
+            var te = $(".time-end .selected").not("[data-value='service-default']");
+            if (te) {
+                teval = Number($(".time-end span").text().split(":")[0]);
+            } 
+            else {te=0} 
+            function disabler(delement,pcs,bool){ //bool = 0 - fill start ..= 2 - fill end
+                console.log("disabler - start");
+                if (bool == 0) {
+                $(""+delement+" li").not(".selected").addClass("disabled");     
+                }
+                else {
+                    $(""+delement+" li").not(".selected").addClass("disabled");
+                    }                 
+            }
+            if ((tsval >0)||(teval>0)) {
+                if ((te)&&(ts)) {
+                    if (tsval > teval) {
+                        ts.removeClass("selected");
+                        $(".time-start li").next("[data-value="+(teval)+"]").addClass("selected");
+                        $(".time-start span").delay(1000).text(""+teval+":00");
+                        disabler(".time-start",(teval-1),0);
+                        te.removeClass("selected");
+                        $(".time-end li").next("[data-value="+tsval+"]").addClass("selected"); 
+                        $(".time-end span").delay(1000).text(""+tsval+":00");
+                        disabler(".time-end",(tsval-1),1);                   
+                    }
+                }
+                // else if (summlen == 1) {
+                //     console.log("hmm no action e");
+                //     console.log("summlen - ",summlen);
+                //     var disableonecol = (tslen == 1)?(disabler(tsstr,tsind,0)):(disabler(testr,(teind),1));
+                // } 
+                console.log("hmm no action");
+            }
+        });
+    }
+    zapisTimePickDisabler();
 
 });
