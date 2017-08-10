@@ -67,7 +67,7 @@
     -ms-transform: scale(1) translateY(0);
     transform: scale(1) translateY(0);
     /* overflow: visible; */
-    max-height: 200px;
+    max-height: 250px;
     overflow-y: auto;
   }
   .nice-select .list:after {
@@ -135,7 +135,7 @@
     z-index: 9;
     width: 100%;
     overflow-y: auto;
-    height: 200px;
+    height: 250px;
     }
     .nice-select .list:hover .option:not(:hover) {
       /* background-color: transparent !important; */
@@ -156,6 +156,7 @@
     background-color: rgba(255,255,255,0.9);
     color: #484848;
     text-align: left;
+    white-space: normal;
     }
     .nice-select .option:hover, .nice-select .option.focus, .nice-select .option.selected.focus {
       background-color: rgba(117, 193, 186, 0.4);
@@ -164,12 +165,18 @@
       font-weight: bold;
       }
     .nice-select .option.disabled {
-      background-color: transparent;
+      background-color: rgba(224, 223, 223, 0.8);
       color: #999;
-      cursor: default; }
+      cursor: default;
+      }
 
 .no-csspointerevents .nice-select .list {
   display: none; }
 
 .no-csspointerevents .nice-select.open .list {
   display: block; }
+.current {
+  width: 88%;
+  overflow: hidden;
+  display: block;
+}

@@ -354,6 +354,55 @@ h2.b-title{
 	box-sizing: border-box;
 }
 .slick-arrow-right:before {padding-left: 33px;}
+.ui-icon.ui-icon-circle-triangle-e {
+	content: "\e900" !important;
+	
+	box-sizing: border-box;
+}
+.ui-datepicker-next.ui-corner-all {
+	background-color: rgba(255,255,255,0.8);
+}
+.ui-datepicker-next.ui-corner-all:after {
+	background-color: rgba(255,255,255,0.8);
+	content: "\e902" !important;
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 14px;
+	color: #484848;
+	display: block;
+	margin: 8px;
+}
+.ui-datepicker-prev.ui-corner-all {
+	background-color: rgba(255,255,255,0.8);
+}
+.ui-datepicker-prev.ui-corner-all:after {
+	background-color: rgba(255,255,255,0.8);
+	content: "\e903" !important;
+	font-family: 'icomoon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	font-size: 14px;
+	color: #484848;
+	display: block;
+	margin: 8px;
+}
+.ui-datepicker-current {
+	display: none;
+}
+.ui-datepicker.ui-widget.ui-widget-content.ui-helper-clearfix.ui-corner-all {
+}
+.ui-datepicker-year {
+	display: none;
+}
 .b-header{
 	
 }
@@ -2465,8 +2514,8 @@ div.b-popup{
 			  text-align: left;
 			}
 			.nice-select.half-width ul{
-			  width: 50%;
-			 text-align: left;
+			  width: 60%;
+			  text-align: left;
 			}
 .b-recommendations {
 
