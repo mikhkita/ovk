@@ -1000,72 +1000,95 @@ $(document).ready(function(){
             'hideOnContentClick': true
         }); 
         if (isMobile==false) {
-            //$('#service').niceSelect();
+            $('#service').niceSelect();
             $('#time-end').niceSelect();  
             $('#time-start').niceSelect();
 
         }  
+        // $('.icon-calendar').datepicker({
+        //     altField: '#date',
+        //     altFormat: 'dd/mm/yy',
+        //     showButtonPanel: true,
+        //     minDate: 0,
+        //     maxDate: "+3m +1w",
+        //         range: 'multiple', // режим - выбор нескольких дат 
+        //         range_multiple_max: '5',
+        // });
+        $.datepicker.regional['ru'] = {
+            closeText: 'Готово', // set a close button text
+            currentText: 'Сегодня', // set today text
+            monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'], // set month names
+            monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'], // set short month names
+            dayNames: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'], // set days names
+            dayNamesShort: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set short day names
+            dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
+            dateFormat: 'dd/mm/yy' // set format date
+        };        
+         $.datepicker.setDefaults($.datepicker.regional["ru"]);
         $(function() {
           $('#date').datepicker({
+            showButtonPanel: true,
             minDate: 0,
-            range: 'multiple', // режим - выбор нескольких дат 
-            range_multiple_max: '15', // макимальное число выбираемых дат
-            onSelect: function(dateText, inst, extensionRange) {
-              // extensionRange - объект расширения
-              $('[name=multipleDate]').val(extensionRange.datesText.join(','));
-            }
-          });
+            maxDate: "+3m +1w",
+                range: 'multiple', // режим - выбор нескольких дат 
+                range_multiple_max: '5', // макимальное число выбираемых дат
+                onSelect: function(dateText, inst, extensionRange) {
+                  // extensionRange - объект расширения
+                  $('[name=date]').val(extensionRange.datesText.join(','));
+                }
+              });
 
-          // выделить послезавтра и следующие 2 дня
-          $('#date_range').datepicker('setDate', ['+2d', '+3d', '+4d']);
+              // выделить послезавтра и следующие 2 дня
+              $('#date').datepicker('setDate', ['+2d', '+3d', '+4d']);
 
-          // объект расширения (хранит состояние календаря)
-          var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
-          if (extensionRange.datesText) $('[name=multipleDate]').val(extensionRange.datesText.join(','));
+              // объект расширения (хранит состояние календаря)
+              var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');
+              if (extensionRange.datesText) $('[name=date]').val(extensionRange.datesText.join(','));
         });              
     }     
 
     function zapisTimePickDisabler() {
         $(".option").click(function(event){
             //console.log("clicked");
-            var ts = $(".time-start .selected").not("[data-value='service-default']");
-            if (ts) {
-                tsval = Number($(".time-start span").text().split(":")[0]);
-            }
-            else {ts=0} 
-            var te = $(".time-end .selected").not("[data-value='service-default']");
-            if (te) {
-                teval = Number($(".time-end span").text().split(":")[0]);
-            } 
-            else {te=0} 
-            function disabler(delement,pcs,bool){ //bool = 0 - fill start ..= 2 - fill end
-                console.log("disabler - start");
-                if (bool == 0) {
-                $(""+delement+" li").not(".selected").addClass("disabled");     
+            $(this).parents(".nice-select").find("[data-value='service-default']").addClass("disabled");
+            if (($(this).parents(".popup-service").length)&&($(this).not("[data-value='service-default']").length)) {
+                $(this).parents(".popup-service").find(".current").text($(this).text());
+            }            
+            if (!$(this).hasClass("disabled")) {
+                var  $this = ($(this).parents(".time-start").length)?(0):(1);
+                var thisvalue = Number($(this).attr("data-value"));
+                var ts = $(".time-start .selected").not("[data-value='service-default']");
+                if (ts) {
+                    tscurrent = $(".time-start span").text();
+                    tsval = Number(tscurrent.split(":")[0]);
+                    console.log(tsval,ts);
                 }
-                else {
-                    $(""+delement+" li").not(".selected").addClass("disabled");
-                    }                 
-            }
-            if ((tsval >0)||(teval>0)) {
-                if ((te)&&(ts)) {
-                    if (tsval > teval) {
-                        ts.removeClass("selected");
-                        $(".time-start li").next("[data-value="+(teval)+"]").addClass("selected");
-                        $(".time-start span").delay(1000).text(""+teval+":00");
-                        disabler(".time-start",(teval-1),0);
-                        te.removeClass("selected");
-                        $(".time-end li").next("[data-value="+tsval+"]").addClass("selected"); 
-                        $(".time-end span").delay(1000).text(""+tsval+":00");
-                        disabler(".time-end",(tsval-1),1);                   
+                else {ts=0} 
+
+                var te = $(".time-end .selected").not("[data-value='service-default']");
+                if (te) {
+                    tecurrent =$(".time-end span").text();
+                    teval = Number(tecurrent.split(":")[0]);
+                    console.log(teval,te);
+                } 
+                else {te=0}
+
+                if (!$(this).is("[data-value='service-default']")) {
+                    //$(this).addClass("selected");
+                    $(this).parents(".time-start").find(".current").text($(this).attr("data-value")+":00");
+                    $(this).parents(".time-end").find(".current").text($(this).attr("data-value")+":00");                
+                }
+                if ((thisvalue>0)) {
+                    console.log("second");
+                    if ($this == 0) {
+                        $(".time-end li").removeClass("disabled");
+                        $(".time-end [data-value="+(thisvalue+1)+"]").prevAll().addClass("disabled");
+                    }
+                    else if ($this == 1) {
+                        $(".time-start li").removeClass("disabled");
+                        $(".time-start [data-value="+(thisvalue-1)+"]").nextAll().addClass("disabled");
                     }
                 }
-                // else if (summlen == 1) {
-                //     console.log("hmm no action e");
-                //     console.log("summlen - ",summlen);
-                //     var disableonecol = (tslen == 1)?(disabler(tsstr,tsind,0)):(disabler(testr,(teind),1));
-                // } 
-                console.log("hmm no action");
             }
         });
     }

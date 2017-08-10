@@ -119,9 +119,10 @@
       
       $dropdown.find('.selected').removeClass('selected');
       $option.addClass('selected');
-      
-      var text = $option.data('display') || $option.text();
-      $dropdown.find('.current').text(text);
+      //--закоменнтировал ибо перебивает кастомний скрипт для заполнения этого поля
+      //var text = $option.data('display') || $option.text();
+      //$dropdown.find('.current').text(text);
+      //--------
       
       $dropdown.prev('select').val($option.data('value')).trigger('change');
     });
