@@ -1041,10 +1041,10 @@ $(document).ready(function(){
             function disabler(delement,pcs,bool){ //bool = 0 - fill start ..= 2 - fill end
                 console.log("disabler - start");
                 if (bool == 0) {
-                $(""+delement+" li").not(".selected").addClass("disabled");     
+                $(""+delement+" .selected").nextAll().addClass("disabled");     
                 }
                 else {
-                    $(""+delement+" li").not(".selected").addClass("disabled");
+                    $(""+delement+" .selected").nextAll().addClass("disabled");
                     }                 
             }
             if ((tsval >0)||(teval>0)) {
