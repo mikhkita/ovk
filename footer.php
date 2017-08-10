@@ -111,6 +111,24 @@
 	</div><!-- /perspective -->
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
+		<div class="b-popup-zapis" id="b-popup-zapis-id">
+			<div class="b-popup-close icon-cross"></div>
+			<h2><span>Подобрать</span><br>Запись на прием</h2>
+			<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
+			<form action="kitsend.php" class="">
+				<div class="b-popup-zapis-fields clearfix">
+					<input type="text" id="name" name="name" placeholder="Валентин *" required>
+					<input type="text" id="name" name="name" placeholder="Валентин *" required>
+					<input type="text" id="name" name="name" placeholder="Валентин *" required>
+					<input type="text" name="name" placeholder="Валентин *" id="date">
+					<input type="text" id="name" name="name" placeholder="Валентин *" class="time-start" required>
+					<input type="text" id="name" name="name" placeholder="Валентин *" class="time-end" required>
+				</div>
+				<div class="b-popup-zapis-btn-cont">
+					<button type="submit" class="b-btn b-green-btn right ajax">Отправить</button>
+				</div>
+			</form>
+		</div>
 		<div class="b-popup" id="b-popup-1">
 			<h3>Подбор записи на прием</h3>
 			<h4>Выберите удобное для Вас время</h4>
