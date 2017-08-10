@@ -62,7 +62,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 	<?$APPLICATION->ShowHead();?>
 </head>
-<body>
+<body <?if($isMain || $GLOBALS["page"] == "reviews") echo 'class="mobile-reset"';?>>
 <?$APPLICATION->ShowPanel();?>
 	<div id="perspective" class="perspective effect-moveleft">
 		<div class="b-top-fixed"<? if($isDoctor): ?> style="background-image: url('<?=$doctor["IMAGE"]?>');"<? endif; ?>></div>
@@ -145,7 +145,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 					</div>
 					<? endif; ?>
 				</div>
-				<? if( !$isMain ): ?>
+				<? if( !$isMain && $GLOBALS["page"] != "reviews" ): ?>
 				<div class="b b-content">
 					<div class="b-wide-block">
 						<div class="b-block <?if(!$notBText):?>b-text<?endif;?>">
