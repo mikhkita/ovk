@@ -2,7 +2,7 @@
 <? 
 
 $prevLevel = 1;
-
+//var_dump($arResult);
 ?>
 <?if (!empty($arResult)):?>
 	<ul class="<?=$arParams["CLASS"]?>">
@@ -17,14 +17,22 @@ $prevLevel = 1;
 				<? endif; ?>
 			<? endif; ?>
 			<? if($arItem["DEPTH_LEVEL"] > $prevLevel): ?>
-				<ul class="header_dropdown_menu">
+				<ul class="header_dropdown_menu b-submenu">
 			<? elseif( $i != 0 ): ?>
 				</li>
 			<? endif; ?>
 			<?if($arItem["SELECTED"]):?>
-				<li class="active"><a href="<?=$arItem["LINK"]?>" class="active"><?=$arItem["TEXT"]?></a>
+				<li <?if($arItem["IS_PARENT"]):?>
+						class="active b-menu-with-submenu"
+					<?else:?>
+						class="active"
+					<?endif;?>
+				><a href="<?=$arItem["LINK"]?>" class="active"><?=$arItem["TEXT"]?></a>
 			<?else:?>
-				<li><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
+				<li <?if($arItem["IS_PARENT"]):?>
+						class="b-menu-with-submenu"
+					<?endif;?>
+				><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a>
 			<?endif?>
 
 			<? $prevLevel = $arItem["DEPTH_LEVEL"]; ?>

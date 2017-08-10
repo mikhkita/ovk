@@ -20,7 +20,7 @@ if( $isDoctor ){
 
 $arPage = ( isset($arPages[$urlArr[2]]) )?$arPages[$urlArr[2]]:$arPages[$urlArr[1]];
 
-$notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "questions", "services", "doctors", "actions", "works", "search", "contacts")))?true: false;
+$notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "questions", "services", "doctors", "actions", "works", "search", "contacts", "recommendations")))?true: false;
 
 ?><!DOCTYPE html>
 <html>
@@ -88,7 +88,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 										"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
 											0 => "",
 										),
-										"MAX_LEVEL" => "1",	// Уровень вложенности меню
+										"MAX_LEVEL" => "2",	// Уровень вложенности меню
 										"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
 										"USE_EXT" => "N",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
 										"DELAY" => "N",	// Откладывать выполнение шаблона меню
@@ -102,7 +102,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 						<div class="b-phone-cont">
 							<div class="b-phone-wrap">
 								<div class="b-phone"><?=includeArea("phone")?></div>
-								<a href="#" class="b-btn b-white-btn"><span>Записаться на прием</span></a>
+								<a href="#b-popup-zapis-id" class="b-btn b-white-btn fancy"><span>Записаться на прием</span></a>
 								<a href="#" class="b-burger icon-menu" id="showMenu"></a>
 							</div>
 						</div>
