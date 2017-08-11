@@ -2299,7 +2299,7 @@ div.b-popup{
 							}	
 							.b-marker-1 .b-problem-bubble {
 								width: var(--width-1);
-								--width-1: 278px;
+								--width-1: 530px;
 								top: -51px;
 								left: calc(var(--width-1)*(-1) - 65px);
 							}
@@ -2310,7 +2310,7 @@ div.b-popup{
 							}
 							.b-marker-2 .b-problem-bubble {
 								top: -51px;
-								width: 278px;
+								width: 700px;
 								left: 65px;
 							}		
 							.b-marker-3 {
@@ -2342,7 +2342,7 @@ div.b-popup{
 								left: 6%;
 							}
 							.b-marker-5 .b-problem-bubble {
-								width: 305px;
+								width: 450px;
 								top: -57px;
 								left: 65px;
 							}
@@ -2351,10 +2351,25 @@ div.b-popup{
 								left: 73%;
 							}
 							.b-marker-6 .b-problem-bubble {
-								width: 300px;
-								left: -150px;
-								top: calc(-112px - 65px);
+								width: 530px;
+								left: -265px;
+								top: calc(-250px - 65px);
 							}
+							.b-marker-7 {
+								top: 32%;
+								left: 73%;
+							}
+							.b-marker-7.b .b-problem-bubble {
+								width: 500px;
+								left: -250px;
+								top: 70px;
+							}
+							.b-marker-7.b .b-problem-bubble span{
+							border-color: transparent;
+							border-bottom-color: rgba(255,255,255,0.8);
+							top: -48px;
+							left: 225px;
+							}								
 							.b-tour .b-problem {
 								margin-left: 19px;
 								margin-top: 0px;
@@ -2389,7 +2404,7 @@ div.b-popup{
 								top: 28px;
 								}	
 								.b-tour .v .b-problem-bubble span {
-								left: 126px;
+								left: 240px;
 								}
 								.b-pin-cont {
 									height: 100%;
