@@ -1226,9 +1226,9 @@ h2.b-title{
 								opacity: 0;
 							}
 							.mobile-reset .b-tour-nav .active+span{
-								opacity: 0;
-								transition-property: opacity;
-								transition-delay: 2.5s;
+								opacity: 1;
+								/* transition-property: opacity; */
+								/* transition-delay: 2.5s; */
 							}	
 							.b-tour .b-problem {
 								margin-left: 10px;
