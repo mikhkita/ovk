@@ -1229,6 +1229,19 @@ div.b-popup{
 			animation: fadeOutDown 300ms ease-out forwards;
 }
 
+/*******************************/
+#b-popup-zapis-href{
+	padding: 3px 12px;
+}
+
+.b-menu li a{
+	padding: 5px 8px;
+}
+
+.b-top-fixed{
+	background-size: auto;
+}
+/*******************************/
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
 	.b-header-block{

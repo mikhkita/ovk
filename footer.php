@@ -102,33 +102,79 @@
 		<nav class="outer-nav right vertical">
 			<a href="/">Главная</a>
 			<a href="/about/">О компании</a>
+			<a href="/about/reviews/">Отзывы</a>
+			<a href="/about/mass-media/">СМИ о нас</a>
 			<a href="/services/">Услуги</a>
 			<a href="/doctors/">Специалисты</a>
-			<a href="/reviews/">Отзывы</a>
+			<a href="/recommendations/">Рекомендации</a>
 			<a href="/job/">Вакансии</a>
 			<a href="/contacts/">Контакты</a>
 		</nav>
 	</div><!-- /perspective -->
+	<div class="b-popup-zapis b-popup" id="b-popup-zapis" style="display:none;">
+		<!-- <div class="b-popup-close icon-cross"></div> -->
+		<h2><span>Подобрать</span><br>Запись на прием</h2>
+		<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
+		<form action="<?=SITE_TEMPLATE_PATH?>/kitsend.php?>" method="post" class="">
+			<div class="b-popup-zapis-fields  clearfix">
+				<div><input type="text" id="name" name="name" placeholder="Ваше имя *" required></div>
+				<div><input type="text" id="phone" name="phone" placeholder="Ваш телефон *" required></div>
+				<div>
+					<select type="text" name="service" id="service" class="popup-service full-width" required>
+						<option value="service-default" data-display="Выберите услугу *">Выберите услугу*</option>
+						<option value="Прием специалистов">Прием специалистов</option>
+						<option value="Мануальная терапия">Мануальная терапия</option>
+						<option value="Медицинский массаж">Медицинский массаж</option>
+						<option value="Физиотерапевтические процедуры">Физиотерапевтические процедуры</option>
+						<option value="Подбор ортопедических стелек">Подбор ортопедических стелек</option>
+						<option value="Комплексное реабилитационное восстановление">Комплексное реабилитационное восстановление</option>
+					</select>
+				</div>
+				<div class="icon-calendar">
+					<input type="text" name="date" placeholder="Выберите даты *" id="date" required>
+				</div>
+				<div>
+					<select type="text" name="time-start" id="time-start" class="time-start half-width">
+						<option value="service-default" data-display="Со скольки удобно" style="color:#484848;">Выберите время</option>
+						<option value="9">9:00</option>
+						<option value="10">10:00</option>
+						<option value="11">11:00</option>
+						<option value="12">12:00</option>
+						<option value="13">13:00</option>
+						<option value="14">14:00</option>
+						<option value="15">15:00</option>
+						<option value="16">16:00</option>
+						<option value="17">17:00</option>
+						<option value="18">18:00</option>
+						<option value="19">19:00</option>
+						<option value="20">20:00</option>
+					</select>
+				</div>			
+				<div>
+					<select type="text" name="time-end" id="time-end" class="time-end half-width">
+						<option value="service-default" data-display="До скольки удобно">Выберите время</option>
+						<option value="10">10:00</option>
+						<option value="11">11:00</option>
+						<option value="12">12:00</option>
+						<option value="13">13:00</option>
+						<option value="14">14:00</option>
+						<option value="15">15:00</option>
+						<option value="16">16:00</option>
+						<option value="17">17:00</option>
+						<option value="18">18:00</option>
+						<option value="19">19:00</option>
+						<option value="20">20:00</option>
+						<option value="21">21:00</option>
+					</select>
+				</div>					
+			</div>
+			<div class="b-popup-zapis-btn-cont">
+				<button type="submit" class="b-btn b-green-btn right ajax">Отправить</button>
+			</div>
+		</form>	
+	</div>	
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
-		<div class="b-popup-zapis" id="b-popup-zapis-id">
-			<div class="b-popup-close icon-cross"></div>
-			<h2><span>Подобрать</span><br>Запись на прием</h2>
-			<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
-			<form action="kitsend.php" class="">
-				<div class="b-popup-zapis-fields clearfix">
-					<input type="text" id="name" name="name" placeholder="Валентин *" required>
-					<input type="text" id="name" name="name" placeholder="Валентин *" required>
-					<input type="text" id="name" name="name" placeholder="Валентин *" required>
-					<input type="text" name="name" placeholder="Валентин *" id="date">
-					<input type="text" id="name" name="name" placeholder="Валентин *" class="time-start" required>
-					<input type="text" id="name" name="name" placeholder="Валентин *" class="time-end" required>
-				</div>
-				<div class="b-popup-zapis-btn-cont">
-					<button type="submit" class="b-btn b-green-btn right ajax">Отправить</button>
-				</div>
-			</form>
-		</div>
 		<div class="b-popup" id="b-popup-1">
 			<h3>Подбор записи на прием</h3>
 			<h4>Выберите удобное для Вас время</h4>
@@ -174,5 +220,9 @@
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/classie.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/menu.js"></script>
 	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/main.js"></script>
+
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.nice-select.js"></script>
+	<script type="text/javascript" src="<?=SITE_TEMPLATE_PATH?>/js/jquery.datepicker.extension.range.min.js"></script>	
 </body>
 </html>

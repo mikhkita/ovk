@@ -36,6 +36,9 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/component.css" type="text/css">
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/slick.css" type="text/css">
 	<!-- <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/menu_cornerbox_nested.css" type="text/css"> -->
+	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/nice-select.css" type="text/css">
+	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/jquery-ui.css" type="text/css">
+
 	<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/layout.css" type="text/css">
 	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 
@@ -62,7 +65,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 	<?$APPLICATION->ShowHead();?>
 </head>
-<body <?if($isMain || $GLOBALS["page"] == "reviews") echo 'class="mobile-reset"';?>>
+<body <?if($isMain || $GLOBALS["page"] == "about") echo 'class="mobile-reset"';?>>
 <?$APPLICATION->ShowPanel();?>
 	<div id="perspective" class="perspective effect-moveleft">
 		<div class="b-top-fixed"<? if($isDoctor): ?> style="background-image: url('<?=$doctor["IMAGE"]?>');"<? endif; ?>></div>
@@ -102,7 +105,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 						<div class="b-phone-cont">
 							<div class="b-phone-wrap">
 								<div class="b-phone"><?=includeArea("phone")?></div>
-								<a href="#b-popup-zapis-id" class="b-btn b-white-btn fancy"><span>Записаться на прием</span></a>
+								<a href="#b-popup-zapis" class="b-btn b-white-btn" id="b-popup-zapis-href"><span>Записаться на прием</span></a>
 								<a href="#" class="b-burger icon-menu" id="showMenu"></a>
 							</div>
 						</div>
@@ -145,7 +148,7 @@ $notBText = $GLOBALS["notBText"] = (in_array($page, array("reviews", "about", "q
 					</div>
 					<? endif; ?>
 				</div>
-				<? if( !$isMain && $GLOBALS["page"] != "reviews" ): ?>
+				<? if( !$isMain ): ?>
 				<div class="b b-content">
 					<div class="b-wide-block">
 						<div class="b-block <?if(!$notBText):?>b-text<?endif;?>">
