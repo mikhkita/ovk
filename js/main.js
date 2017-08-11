@@ -1039,7 +1039,7 @@ $(document).ready(function(){
               });
 
               // выделить послезавтра и следующие 2 дня
-              $('#date').datepicker('setDate', ['+2d', '+3d', '+4d']);
+              //$('#date').datepicker('setDate', ['+2d', '+3d', '+4d']);
 
               // объект расширения (хранит состояние календаря)
               var extensionRange = $('#date').datepicker('widget').data('datepickerExtensionRange');

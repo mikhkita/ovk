@@ -542,7 +542,7 @@ h2.b-title{
 						width: 202px;
 						height: 47px;
 						background-size: 202px;
-						margin-right: 36px;
+						margin-right: 29px;
 					}
 						.b-logo .b-img{
 							position: absolute;
@@ -623,7 +623,7 @@ h2.b-title{
 								display: block;
 								line-height: 28px;
 								text-transform: uppercase;
-								padding: 5px 18px 5px 19px;
+								padding: 5px 15px 5px 16px;
 							}
 
 
@@ -2430,6 +2430,7 @@ div.b-popup{
 			right: 15px;			
 		}
 			.b-popup-close:before {
+				color: #484848;
 				display: block;
 				width: 50px;
 				height: 50px;
@@ -2599,13 +2600,18 @@ div.b-popup{
 			.b-recommendation .b-green-btn {
 				border-radius: 100px;
 				font-family: "ubuntu-regular";
-				padding: 13px 40px 15px;
-				line-height: 48px;
+				padding: 9px 40px 11px;
+				line-height: 28px;
 			}
 .container{
 	overflow: hidden;
 	background: #fafafa;
 }
+/*******************************/
+.icon-calendar input, .b-popup-zapis-btn-cont button{
+	cursor: pointer;
+}
+/*******************************/
 
 @-webkit-keyframes fadeUp {
 	100% {
