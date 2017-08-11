@@ -797,17 +797,21 @@ h2.b-title{
 					text-align: center;
 				}
 					.b-review-left{
-						width: 176px;
-						padding-right: 32px;
+						width: 276px;
+						padding-right: 0;
+						float: none !important;
+						display: block;
+						margin: 0 auto;
 					}
 					.b-review-right{
-						width: calc(100% - 176px - 32px);
+						width: 100%;
 					}
 					.b-review .b-img{
-						width: 176px;
-						height: 176px;
+						width: 276px;
+						height: 276px;
 						margin-bottom: 16px;
 						display: inline-block;
+						border-radius: 50%;
 					}
 					.b-review h3{
 						font-size: 24px;
@@ -1240,13 +1244,6 @@ h2.b-title{
 								box-sizing: border-box;
 								background-color: #ffffff;
 							}
-							.mobile-reset .b-problem-bubble h3 {
-							    margin-top: -3px;
-							    font-size: 32px;
-							    line-height: 40px;
-							    font-family: "ubuntu-medium";
-							    margin-bottom: 10px;
-							}
 							.mobile-reset .b-problem-bubble span {
 								border: none;
 							}
@@ -1377,7 +1374,7 @@ h2.b-title{
 				right: 15px;
 				width: 20px;
 				height: 20px;
-				color: #484848;
+				border: none;
 				}
 			.fancybox-close-small:hover:after {
 			  }			

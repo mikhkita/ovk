@@ -2576,10 +2576,11 @@ div.b-popup{
 		margin-bottom: 11px;
 	}
 		.b-recommendation .b-img {
-			background-position: 50% 0;
-			background-repeat: no-repeat;
-			background-size: cover;
-			width: 276px;height: 91px;
+			/* background-position: 50% 0; */
+			/* background-repeat: no-repeat; */
+			/* background-size: cover; */
+			width: 276px;
+			height: 91px;
 			display: inline-block;
 			vertical-align: top;
 			margin-right: 24px;
