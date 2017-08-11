@@ -1240,6 +1240,13 @@ h2.b-title{
 								box-sizing: border-box;
 								background-color: #ffffff;
 							}
+							.mobile-reset .b-problem-bubble h3 {
+							    margin-top: -3px;
+							    font-size: 32px;
+							    line-height: 40px;
+							    font-family: "ubuntu-medium";
+							    margin-bottom: 10px;
+							}
 							.mobile-reset .b-problem-bubble span {
 								border: none;
 							}
@@ -1370,7 +1377,7 @@ h2.b-title{
 				right: 15px;
 				width: 20px;
 				height: 20px;
-				border: none;
+				color: #484848;
 				}
 			.fancybox-close-small:hover:after {
 			  }			
