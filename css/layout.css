@@ -305,6 +305,23 @@ input:-moz-placeholder {
 	.b-green-btn:before{
 		background: #7cb5af;
 	}
+.b-popup-zapis.b-thanks.b-popup .b-btn.b-white-btn {
+	height: 48px;
+	line-height: 44px;
+	padding: 0;
+}
+
+.b-popup-input-white-btn{
+	border: none;
+	background: transparent;
+	color: #9dd0cb;
+	font-family: "ubuntu-regular";
+	font-size: 16px;
+	line-height: 48px;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 40px;
+}
 h2.b-title{
 	padding-top: 64px;
 	margin-bottom: 32px;
@@ -2065,6 +2082,21 @@ h2.b-title{
 	/*overflow: visible !important;*/
 	/*box-shadow: 0px 20px 45px rgba(0,0,0,0.2);*/
 }
+.b-popup-zapis.b-thanks.b-popup {
+    color: #ffffff;
+    min-height: 229px;
+    height: 229px;
+}
+.b-popup-zapis.b-thanks.b-popup h3{
+    color: #ffffff;
+    font-family: "Ubuntu-bold";
+    font-size: 36px;
+    margin-bottom: 24px;
+}
+.b-popup-zapis.b-thanks.b-popup h4{
+    color: #ffffff;
+    margin-bottom: 24px;
+}
 .b-popup-close{
 	position: absolute;
 	top: 10px;
@@ -2500,7 +2532,7 @@ div.b-popup{
 				right: 15px;
 				width: 20px;
 				height: 20px;
-				color: #484848;
+				color: #ffffff;
 				border: none;
 				background: transparent;
 				box-sizing: border-box;
