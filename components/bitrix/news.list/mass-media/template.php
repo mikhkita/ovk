@@ -12,7 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?//var_dump($arResult["ITEMS"]);?>
 <div class="b-recommendations clearfix">
 	<?foreach($arResult["ITEMS"] as $arItem):?>
 		<? $arImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"], Array("width" => 552, "height" => 552), BX_RESIZE_IMAGE_EXECUTE ); ?>
