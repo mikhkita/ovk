@@ -321,6 +321,7 @@ input:-moz-placeholder {
 	display: inline-block;
 	box-sizing: border-box;
 	padding: 0 40px;
+	cursor: pointer;
 }
 h2.b-title{
 	padding-top: 64px;
