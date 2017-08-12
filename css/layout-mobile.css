@@ -664,11 +664,11 @@ h2.b-title{
 						top: 0px;
 						width: 583px;
 						height: 673px;
-						-webkit-transition: transform 100ms ease-out, opacity 100ms ease-out;
-						   -moz-transition: transform 100ms ease-out, opacity 100ms ease-out;
-						    -ms-transition: transform 100ms ease-out, opacity 100ms ease-out;
-						   	 -o-transition: transform 100ms ease-out, opacity 100ms ease-out;
-								transition: transform 100ms ease-out, opacity 100ms ease-out;
+						-webkit-transition: transform 0ms ease-out, opacity 0ms ease-out;
+						   -moz-transition: transform 0ms ease-out, opacity 0ms ease-out;
+						    -ms-transition: transform 0ms ease-out, opacity 0ms ease-out;
+						   	 -o-transition: transform 0ms ease-out, opacity 0ms ease-out;
+								transition: transform 0ms ease-out, opacity 0ms ease-out;
 					}
 						.b-doctor .b-img,
 						.b-doctor .b-img-blur{
@@ -771,11 +771,11 @@ h2.b-title{
 					-ms-transform-origin: 50% 90px;
 					transform-origin: 50% 90px;
 					width: 100%;
-					-webkit-transition: opacity 100ms ease-out, transform 100ms ease-out;
-					-moz-transition: opacity 100ms ease-out, transform 100ms ease-out;
-					-ms-transition: opacity 100ms ease-out, transform 100ms ease-out;
-					-o-transition: opacity 100ms ease-out, transform 100ms ease-out;
-					transition: opacity 100ms ease-out, transform 100ms ease-out;
+					-webkit-transition: opacity 0ms ease-out, transform 0ms ease-out;
+					-moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
+					-ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
+					-o-transition: opacity 0ms ease-out, transform 0ms ease-out;
+					transition: opacity 0ms ease-out, transform 0ms ease-out;
 				}
 				.b-popup .b-review{
 					width: 100%;
@@ -1062,11 +1062,11 @@ h2.b-title{
 		top: 0px;
 		width: 100%;
 		text-align: center;
-		-webkit-transition: opacity 100ms ease-out, transform 100ms ease-out;
-		-moz-transition: opacity 100ms ease-out, transform 100ms ease-out;
-		-ms-transition: opacity 100ms ease-out, transform 100ms ease-out;
-		-o-transition: opacity 100ms ease-out, transform 100ms ease-out;
-		transition: opacity 100ms ease-out, transform 100ms ease-out;
+		-webkit-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-o-transition: opacity 0ms ease-out, transform 0ms ease-out;
+		transition: opacity 0ms ease-out, transform 0ms ease-out;
 	}
 	.b-doc:nth-child(3n){
 		margin-right: 0px;
@@ -1250,6 +1250,15 @@ h2.b-title{
 							.mobile-reset .b-problem-bubble {
 
 							}
+
+							.mobile-reset .b-problem-bubble h3 {
+							    margin-top: -3px;
+							    font-size: 32px;
+							    line-height: 40px;
+							    font-family: "ubuntu-medium";
+							    margin-bottom: 10px;
+							}
+							
 								.mobile-reset .b-problem-bubble .b-img {
 									background-position: 50% 50%;
 									background-size: cover;
@@ -1375,6 +1384,7 @@ h2.b-title{
 				width: 20px;
 				height: 20px;
 				border: none;
+				color: #484884;
 				}
 			.fancybox-close-small:hover:after {
 			  }			
