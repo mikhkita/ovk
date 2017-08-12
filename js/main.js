@@ -950,9 +950,11 @@ $(document).ready(function(){
                 $('.b-tour-nav .active').removeClass('active');
                 $(this).addClass('active');
                 if (isMobile) {
-                    $(this).delay(2500).queue(function() {
-                        $(this).removeClass('active').dequeue();
-                    });
+                    $(this).next("span").fadeIn();
+                    $(this).next("span").delay(2000).fadeOut();
+                    // $(this).delay(2500).queue(function() {
+                    //     $(this).removeClass('active').dequeue();
+                    // });
                 }
             }
             var dataVal = $(event.target).attr("tab-id");
