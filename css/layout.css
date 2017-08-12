@@ -2085,14 +2085,15 @@ h2.b-title{
 }
 .b-popup-zapis.b-thanks.b-popup {
     color: #ffffff;
-    min-height: 229px;
-    height: 229px;
+    min-height: initial;
+    height: initial;
 }
 .b-popup-zapis.b-thanks.b-popup h3{
     color: #ffffff;
     font-family: "Ubuntu-bold";
-    font-size: 36px;
-    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 50px;
+    margin-bottom: 14px;
 }
 .b-popup-zapis.b-thanks.b-popup h4{
     color: #ffffff;

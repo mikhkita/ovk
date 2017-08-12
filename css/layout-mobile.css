@@ -797,7 +797,7 @@ h2.b-title{
 					text-align: center;
 				}
 					.b-review-left{
-						width: 276px;
+						width: 176px;
 						padding-right: 0;
 						float: none !important;
 						display: block;
@@ -807,8 +807,8 @@ h2.b-title{
 						width: 100%;
 					}
 					.b-review .b-img{
-						width: 276px;
-						height: 276px;
+						width: 176px;
+						height: 176px;
 						margin-bottom: 16px;
 						display: inline-block;
 						border-radius: 50%;
@@ -948,6 +948,7 @@ h2.b-title{
 			height: 600px;
 		}
 		.b-map-text{
+			display: none;
 			left: 50%;
 			margin-left: -122px;
 			top: 103px;
@@ -1258,7 +1259,7 @@ h2.b-title{
 							    font-family: "ubuntu-medium";
 							    margin-bottom: 10px;
 							}
-							
+
 								.mobile-reset .b-problem-bubble .b-img {
 									background-position: 50% 50%;
 									background-size: cover;
