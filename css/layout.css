@@ -2353,8 +2353,8 @@ div.b-popup{
 							}
 							.b-marker-6 .b-problem-bubble {
 								width: 530px;
-								left: -265px;
-								top: calc(-250px - 65px);
+								left: -600px;
+								top: -125px;
 							}
 							.b-marker-7 {
 								top: 32%;
@@ -2402,7 +2402,7 @@ div.b-popup{
 									max-width: 100%
 								}			
 								.b-tour .g .b-problem-bubble span {
-								top: 28px;
+								top: 101px;
 								}	
 								.b-tour .v .b-problem-bubble span {
 								left: 240px;
