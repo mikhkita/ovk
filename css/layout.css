@@ -313,7 +313,9 @@ input:-moz-placeholder {
 	line-height: 44px;
 	padding: 0;
 }
-
+.b-popup-zapis .icon-calendar input {
+	padding-right: 50px;
+}
 .b-popup-input-white-btn{
 	border: none;
 	background: transparent;
@@ -2485,7 +2487,13 @@ div.b-popup{
 				vertical-align: top;
 				position: relative;
 			}
-			.b-popup-zapis-fields .icon-calendar:before {display: block;position: absolute;font-size: 21px;right: 21px;top: 15px;}	
+			.b-popup-zapis-fields .icon-calendar:before {
+				display: block;
+				position: absolute;
+				font-size: 21px;
+				right: 21px;top: 15px;
+				z-index: -1;
+			}	
 			.b-popup-zapis-fields .nice-select, select {
 				width: 100%;
 				font-family: "ubuntu-light";
