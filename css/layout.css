@@ -2098,10 +2098,19 @@ h2.b-title{
 }
 .b-popup-zapis.b-thanks.b-popup h3{
     color: #ffffff;
+    font-family: "Ubuntu-light";
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+.b-popup-zapis.b-thanks.b-popup h3 span{
+    color: #ffffff;
     font-family: "Ubuntu-bold";
     font-size: 48px;
     line-height: 50px;
     margin-bottom: 14px;
+    text-transform: uppercase;
 }
 .b-popup-zapis.b-thanks.b-popup h4{
     color: #ffffff;

@@ -91,7 +91,7 @@
 							<div class="b-limit"><?=includeArea("protiv")?></div>
 							<div class="b-footer-bottom clearfix">
 								<div class="b-footer-copy left"><?=includeArea("copy")?></div>
-								<a href="#" class="b-footer-conf left">Политика конфиденциальности</a>
+								<!-- <a href="#" class="b-footer-conf left">Политика конфиденциальности</a> -->
 								<a href="http://redder.pro/" class="b-redder right" target="_blank">Redder</a>
 							</div>
 						</div>
@@ -115,19 +115,31 @@
 		<!-- <div class="b-popup-close icon-cross"></div> -->
 		<h2><span>Подобрать</span><br>Запись на прием</h2>
 		<p>Вы можете выбрать удобные для Вас дни и часы для посещения наших специалистов</p>
-		<form action="<?=SITE_TEMPLATE_PATH?>/kitsend.php?>" method="post" class="">
+		<form action="<?=SITE_TEMPLATE_PATH?>/kitsend.php" method="post" class="">
 			<div class="b-popup-zapis-fields  clearfix">
 				<div><input type="text" id="name" name="name" placeholder="Ваше имя *" required></div>
 				<div><input type="text" id="phone" name="phone" placeholder="Ваш телефон *" required></div>
 				<div>
 					<select type="text" name="service" id="service" class="popup-service full-width" required>
-						<option value="service-default" data-display="Выберите услугу *">Выберите услугу*</option>
-						<option value="Прием специалистов">Прием специалистов</option>
+						<option value="service-default" data-display="Выберите услугу">Выберите услугу</option>
+						<option value="Прием травмотолога-ортопеда">Прием травмотолога-ортопеда</option>
+						<option value="Прием мануального терапевта">Прием мануального терапевта</option>
+						<option value="Прием терапевта">Прием терапевта</option>
+						<option value="Прием невролога">Прием невролога</option>
 						<option value="Мануальная терапия">Мануальная терапия</option>
-						<option value="Медицинский массаж">Медицинский массаж</option>
-						<option value="Физиотерапевтические процедуры">Физиотерапевтические процедуры</option>
 						<option value="Подбор ортопедических стелек">Подбор ортопедических стелек</option>
-						<option value="Комплексное реабилитационное восстановление">Комплексное реабилитационное восстановление</option>
+						<option value="Лечебная физкультура">Лечебная физкультура</option>
+						<option value="Электрофорез">Электрофорез</option>
+						<option value="Парафинотерапия">Парафинотерапия</option>
+						<option value="СМТ-терапия">СМТ-терапия</option>
+						<option value="Миостимуляция">Миостимуляция</option>
+						<option value="Магнитотерапия">Магнитотерапия</option>
+						<option value="Ультрозвуковая терапия">Ультрозвуковая терапия</option>
+						<option value="Лазерная терапия">Лазерная терапия</option>
+						<option value="Медицинский массаж">Медицинский массаж</option>
+						<option value="Антицеллютный массаж">Антицеллютный массаж</option>
+						<option value="Медовый массаж">Медовый массаж</option>
+						<option value="Баночный массаж">Баночный массаж</option>
 					</select>
 				</div>
 				<div class="icon-calendar">
@@ -194,7 +206,7 @@
 			</form>
 		</div>
 		<div class="b-popup-zapis b-thanks b-popup" id="b-popup-success">
-			<h3>Спасибо!</h3>
+			<h3>Спасибо <span><br>За заявку</span></h3>
 			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
 			<a href="#" class="b-btn b-white-btn">
 				<span>
