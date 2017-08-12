@@ -168,6 +168,9 @@ input.error,textarea.error{
 .icon-calendar:before {
   content: "\e908";
 }
+.icon-zapis:before {
+  content: "\e909";
+}
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -749,6 +752,9 @@ h2.b-title{
 								text-align: center;
 								line-height: 50px;
 							}
+						.b-burger.icon-zapis {
+							display: none;
+						}
 	.b-header-inner{
 		background-position: 50% 0%;
 		background-repeat: no-repeat;

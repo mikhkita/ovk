@@ -258,7 +258,7 @@ h2.b-title{
 					vertical-align: middle;
 				}
 					.b-phone-wrap{
-						width: 100%;
+						width: 104px;
 					}
 						.b-phone{
 							font-size: 18px;
@@ -279,6 +279,29 @@ h2.b-title{
 						.b-burger{
 							display: inline-block;
 						}
+						.b-phone-wrap .b-btn.b-white-btn {
+							width: initial;
+							height: initial;
+							padding:0;
+							margin: 0;
+							display: inline-block;
+							border: 0px;
+						}
+						.b-phone-wrap .b-btn.b-white-btn:before {
+							display: none;
+						}
+						.b-phone-wrap .b-btn.b-white-btn:hover {
+							box-shadow: none;
+						}	
+						.b-phone-wrap .b-btn.b-white-btn:active {
+							box-shadow: none;
+						}																			
+						.b-phone-wrap .b-btn.b-white-btn span {
+							display: none;
+						}
+						.b-burger.icon-zapis {
+							display: inline-block;
+						}						
 	.b-header-inner{
 	}
 		.b-header-inner .b-block{
@@ -1342,7 +1365,7 @@ h2.b-title{
 				/* background-color: rgba(255,255,255,0.2); */
 			}	
 			.b-popup-zapis-fields div select {
-			margin: 0 13px;
+			/* margin: 0 13px; */
 			}
 			.b-popup-zapis-fields .nice-select {
 				width: 100%;
