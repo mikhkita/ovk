@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 			$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 			$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 			?>
-			<div class="b-popup" id="b-popup-review-<?=$arItem["ID"]?>">
+			<div class="b-popup b-popup-dark-btn" id="b-popup-review-<?=$arItem["ID"]?>">
 				<div class="b-review clearfix" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
 					<div class="b-review-left left">
 						<div class="b-img" style="background-image: url('<?=$arImage["src"]?>')"></div>

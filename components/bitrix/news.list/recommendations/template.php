@@ -20,7 +20,8 @@ $this->setFrameMode(true);
 		$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 		?>
 		<div class="b-recommendation" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-			<div class="b-img" style="background-image: url('<?=$arImage["src"]?>')"></div>
+			<!--<div class="b-img" style="background-image: url('<?=$arImage["src"]?>')"></div>-->
+			<img src="<?=$arImage["src"]?>" alt="" class="b-img" style="height: auto;">
 			<div class="b-recommendation-text">
 				<h3><?=$arItem["NAME"]?></h3>
 				<p><?=$arItem["PREVIEW_TEXT"]?></p>
