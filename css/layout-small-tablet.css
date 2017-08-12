@@ -740,11 +740,11 @@ h2.b-title{
 			}
 				.b-review{
 					width: calc(100%/2 - 12px);
-					-webkit-transition: opacity 0ms ease-out, transform 0ms ease-out;
-					   -moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
-					    -ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
-					   	 -o-transition: opacity 0ms ease-out, transform 0ms ease-out;
-							transition: opacity 0ms ease-out, transform 0ms ease-out;
+					-webkit-transition: opacity 100ms ease-out, transform 100ms ease-out;
+					   -moz-transition: opacity 100ms ease-out, transform 100ms ease-out;
+					    -ms-transition: opacity 100ms ease-out, transform 100ms ease-out;
+					   	 -o-transition: opacity 100ms ease-out, transform 100ms ease-out;
+							transition: opacity 100ms ease-out, transform 100ms ease-out;
 				}
 				.b-popup .b-review{
 					width: 100%;
@@ -1018,11 +1018,11 @@ h2.b-title{
 	.b-doc-slider .b-doc{
 		left: 0px;
 		top: 0px;
-		-webkit-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		   -moz-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		    -ms-transition: opacity 0ms ease-out, transform 0ms ease-out;
-		   	 -o-transition: opacity 0ms ease-out, transform 0ms ease-out;
-				transition: opacity 0ms ease-out, transform 0ms ease-out;
+		-webkit-transition: opacity 100ms ease-out, transform 100ms ease-out;
+		   -moz-transition: opacity 100ms ease-out, transform 100ms ease-out;
+		    -ms-transition: opacity 100ms ease-out, transform 100ms ease-out;
+		   	 -o-transition: opacity 100ms ease-out, transform 100ms ease-out;
+				transition: opacity 100ms ease-out, transform 100ms ease-out;
 	}
 	.b-doc:nth-child(3n){
 		margin-right: 0px;
