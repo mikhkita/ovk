@@ -1259,14 +1259,15 @@ h2.b-title{
 							}
 					.b-services-sub{
 						/*display: none;*/
-						overflow: hidden;
+						/* overflow: hidden; */
 					}
 					.b-services-sub.show{
 						
 					}
 						.b-services-sub li{
-							margin-left: 18px;
+							/* margin-left: 18px; */
 							color: #75c1ba;
+							list-style-position: inside;
 						}
 							.b-services-sub a{
 								font-size: 18px;
@@ -1460,6 +1461,7 @@ h2.b-title{
 }
 	.b-main-reviews .b-wide-block{
 		padding-bottom: 76px;
+		overflow: hidden;
 	}
 		.b-main-reviews .b-block{
 			

@@ -625,7 +625,7 @@ h2.b-title{
 						
 					}
 						.b-services-sub li{
-							margin-left: 21px;
+							/* margin-left: 21px; */
 						}
 							.b-services-sub a{
 								font-size: 14px;
@@ -1317,6 +1317,9 @@ h2.b-title{
 		height: 600px;
 		padding: 34px 48px 48px;
 	}	
+	.b-popup-zapis .fancybox-close-small:after {
+		color: #ffffff;
+	}
 		.b-popup-close {
 			top: 13px;
 			right: 15px;			
