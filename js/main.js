@@ -832,8 +832,23 @@ $(document).ready(function(){
             scrollwheel: false,
             zoomControl: true,
             fullscreenControl: true
-        }
-        var map = new google.maps.Map(document.getElementById("map"), myOptions); 
+        } 
+        var myOptionsMobile = {
+            zoom: 17,
+            center: new google.maps.LatLng(56.465708, 84.960029),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            scrollwheel: false,
+            zoomControl: true,
+            fullscreenControl: true
+        }       
+        if (isMobile) {
+            var map = new google.maps.Map(document.getElementById("map"), myOptionsMobile); 
+        }    
+        else {
+            var map = new google.maps.Map(document.getElementById("map"), myOptions); 
+        }   
+        
 
         var marker = new google.maps.Marker({
             position: myPlace,
@@ -974,7 +989,7 @@ $(document).ready(function(){
                 $("body").unbind('mousedown');            
                 $(".b-problem-bubble").each(function() {
                     $(this).addClass("b-popup fancytrigger");
-                    $(this).css({"top":"initial","left":"initial","display":"none"});
+                    $(this).css({"top":"initial","left":"initial"});
                 });                            
                 $(".b-pin").fancybox({              
                 });

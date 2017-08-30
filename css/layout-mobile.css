@@ -258,7 +258,7 @@ h2.b-title{
 					vertical-align: middle;
 				}
 					.b-phone-wrap{
-						width: 100%;
+						width: 104px;
 					}
 						.b-phone{
 							font-size: 18px;
@@ -279,6 +279,29 @@ h2.b-title{
 						.b-burger{
 							display: inline-block;
 						}
+						.b-phone-wrap .b-btn.b-white-btn {
+							width: initial;
+							height: initial;
+							padding:0;
+							margin: 0;
+							display: inline-block;
+							border: 0px;
+						}
+						.b-phone-wrap .b-btn.b-white-btn:before {
+							display: none;
+						}
+						.b-phone-wrap .b-btn.b-white-btn:hover {
+							box-shadow: none;
+						}	
+						.b-phone-wrap .b-btn.b-white-btn:active {
+							box-shadow: none;
+						}																			
+						.b-phone-wrap .b-btn.b-white-btn span {
+							display: none;
+						}
+						.b-burger.icon-zapis {
+							display: inline-block;
+						}						
 	.b-header-inner{
 	}
 		.b-header-inner .b-block{
@@ -797,7 +820,7 @@ h2.b-title{
 					text-align: center;
 				}
 					.b-review-left{
-						width: 276px;
+						width: 176px;
 						padding-right: 0;
 						float: none !important;
 						display: block;
@@ -807,8 +830,8 @@ h2.b-title{
 						width: 100%;
 					}
 					.b-review .b-img{
-						width: 276px;
-						height: 276px;
+						width: 176px;
+						height: 176px;
 						margin-bottom: 16px;
 						display: inline-block;
 						border-radius: 50%;
@@ -950,6 +973,7 @@ h2.b-title{
 			height: 600px;
 		}
 		.b-map-text{
+			display: none;
 			left: 50%;
 			margin-left: -122px;
 			top: 103px;
@@ -1260,7 +1284,7 @@ h2.b-title{
 							    font-family: "ubuntu-medium";
 							    margin-bottom: 10px;
 							}
-							
+
 								.mobile-reset .b-problem-bubble .b-img {
 									background-position: 50% 50%;
 									background-size: cover;
@@ -1276,7 +1300,7 @@ h2.b-title{
 								.mobile-reset .b-problem-bubble .b-text-width h3 {
 									font-family: "ubuntu-bold";
 									font-size: 20px;
-									max-width: 100%;
+									max-width: 90%;
 									margin-bottom: 0;
 								}
 								.mobile-reset .b-problem-bubble .b-text-width p {
@@ -1343,7 +1367,7 @@ h2.b-title{
 				/* background-color: rgba(255,255,255,0.2); */
 			}	
 			.b-popup-zapis-fields div select {
-			margin: 0 13px;
+			/* margin: 0 13px; */
 			}
 			.b-popup-zapis-fields .nice-select {
 				width: 100%;

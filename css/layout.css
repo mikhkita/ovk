@@ -168,6 +168,9 @@ input.error,textarea.error{
 .icon-calendar:before {
   content: "\e908";
 }
+.icon-zapis:before {
+  content: "\e909";
+}
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -310,7 +313,9 @@ input:-moz-placeholder {
 	line-height: 44px;
 	padding: 0;
 }
-
+.b-popup-zapis .icon-calendar input {
+	padding-right: 50px;
+}
 .b-popup-input-white-btn{
 	border: none;
 	background: transparent;
@@ -749,6 +754,9 @@ h2.b-title{
 								text-align: center;
 								line-height: 50px;
 							}
+						.b-burger.icon-zapis {
+							display: none;
+						}
 	.b-header-inner{
 		background-position: 50% 0%;
 		background-repeat: no-repeat;
@@ -2085,14 +2093,24 @@ h2.b-title{
 }
 .b-popup-zapis.b-thanks.b-popup {
     color: #ffffff;
-    min-height: 229px;
-    height: 229px;
+    min-height: initial;
+    height: initial;
 }
 .b-popup-zapis.b-thanks.b-popup h3{
     color: #ffffff;
-    font-family: "Ubuntu-bold";
+    font-family: "Ubuntu-light";
     font-size: 36px;
-    margin-bottom: 24px;
+    line-height: 40px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+.b-popup-zapis.b-thanks.b-popup h3 span{
+    color: #ffffff;
+    font-family: "Ubuntu-bold";
+    font-size: 48px;
+    line-height: 50px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
 }
 .b-popup-zapis.b-thanks.b-popup h4{
     color: #ffffff;
@@ -2478,7 +2496,13 @@ div.b-popup{
 				vertical-align: top;
 				position: relative;
 			}
-			.b-popup-zapis-fields .icon-calendar:before {display: block;position: absolute;font-size: 21px;right: 21px;top: 15px;}	
+			.b-popup-zapis-fields .icon-calendar:before {
+				display: block;
+				position: absolute;
+				font-size: 21px;
+				right: 21px;top: 15px;
+				z-index: -1;
+			}	
 			.b-popup-zapis-fields .nice-select, select {
 				width: 100%;
 				font-family: "ubuntu-light";
