@@ -909,11 +909,13 @@ h2.b-title{
 	}
 	.b-why img {
 	position: absolute;
+	left: 0px;
 	top: 0px;
 	width: 276px;
 	height: 276px;
 	}	
 		.b-why {
+			position: relative;
 			margin-bottom: 24px;
 		}
 			.b-why .b-valign {
