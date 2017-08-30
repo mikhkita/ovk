@@ -313,6 +313,20 @@ input:-moz-placeholder {
 	line-height: 44px;
 	padding: 0;
 }
+.icon-calendar {
+	position: relative;
+}
+.hidden-datepicker {
+	width: 100%;
+	position: absolute !important;
+	line-height: 30px;
+	left: -10px;
+}
+.ui-datepicker {
+    position:absolute !important;
+    top:-20px !important;
+    left:5px !important;
+}
 .b-popup-zapis .icon-calendar input {
 	padding-right: 50px;
 }
@@ -403,7 +417,7 @@ h2.b-title{
 	font-size: 14px;
 	color: #fefefe;
 	display: block;
-	margin: 8px 0 8px 2px;
+	margin: 8px 0 8px 11px;
 }
 .ui-datepicker-prev.ui-corner-all {
 	background-color: rgb(170, 203, 205);
@@ -2502,7 +2516,7 @@ div.b-popup{
 				margin-bottom: 24px;
 				color: #ffffff;
 			}
-			.b-popup-zapis-fields div {
+			.b-popup-zapis-fields>div {
 				width: calc((100% - 27px)/2);
 				display: inline-block;
 				vertical-align: top;
@@ -2532,7 +2546,7 @@ div.b-popup{
 				height: 100%;
 				-webkit-appearance: none;
 			}
-			.b-popup-zapis-fields div:nth-child(odd) {
+			.b-popup-zapis-fields>div:nth-child(odd) {
 				margin-right: 23px;
 			}
 			.b-popup-zapis-fields input::-webkit-input-placeholder {

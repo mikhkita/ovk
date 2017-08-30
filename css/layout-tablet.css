@@ -1158,10 +1158,10 @@ h2.b-title{
 				width: 100%;
 				margin-bottom: 24px;
 			}
-			.b-popup-zapis-fields div {
+			.b-popup-zapis-fields>div {
 				width: calc((100% - 27px)/2);
 			}	
-			.b-popup-zapis-fields div:nth-child(odd) {
+			.b-popup-zapis-fields>div:nth-child(odd) {
 				margin-right: 23px;
 			}
 			.b-popup-zapis-fields input::-webkit-input-placeholder {

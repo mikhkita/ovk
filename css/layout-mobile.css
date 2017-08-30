@@ -152,6 +152,9 @@ h2.b-title{
 	h2.b-title b{
 		font-size: 30px;
 	}
+.ui-datepicker {
+	width: 100%;
+}
 .slick-arrow-left,.slick-arrow-right {
 	bottom: 20px;
 	left: 20px;
@@ -1360,7 +1363,7 @@ h2.b-title{
 				border: 1px solid #ffffff;
 				background-color: rgba(255,255,255,0.2);
 			}
-			.b-popup-zapis-fields div {
+			.b-popup-zapis-fields>div {
 				width: 100%;
 				/* height: 51px; */
 				/* margin-bottom: 14px; */
@@ -1383,7 +1386,7 @@ h2.b-title{
 				margin-bottom: 20px;
 				height: 100%;
 			}
-			.b-popup-zapis-fields div:nth-child(odd) {
+			.b-popup-zapis-fields>div:nth-child(odd) {
 				margin-right: 0;
 			}
 			.b-popup-zapis-fields input::-webkit-input-placeholder {

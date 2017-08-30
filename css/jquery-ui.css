@@ -92,7 +92,7 @@
 }
 .ui-datepicker {
 	padding: 3px .2em 0;
-	width: 326px;
+	width: 100%;
 	display: none;
 	box-shadow: 0px 10px 24px 0px rgba(0,0,0,0.15);
 }
@@ -148,7 +148,7 @@
 }
 .ui-datepicker table {
 	width: 100%;
-	font-size: .9em;
+	font-size: 16px;
 	border-collapse: collapse;
 	margin: 0 0 .4em;
 }
@@ -187,6 +187,7 @@
 	border: none;
 	background-color: #ffffff;
 	color: #9DD0CB;
+	font-size: 16px;
 }
 .ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
 	float: left;
