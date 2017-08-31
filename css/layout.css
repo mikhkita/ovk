@@ -313,6 +313,20 @@ input:-moz-placeholder {
 	line-height: 44px;
 	padding: 0;
 }
+.icon-calendar {
+	position: relative;
+}
+.hidden-datepicker {
+	width: 100%;
+	position: absolute !important;
+	line-height: 30px;
+	left: -10px;
+}
+.ui-datepicker {
+    position:absolute !important;
+    top:-20px !important;
+    left:5px !important;
+}
 .b-popup-zapis .icon-calendar input {
 	padding-right: 50px;
 }
@@ -382,11 +396,16 @@ h2.b-title{
 	
 	box-sizing: border-box;
 }
+.ui-datepicker .b-btn:before {
+	background-color: rgba(124,181,175,0.2);
+}
 .ui-datepicker-next.ui-corner-all {
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgb(170, 203, 205);
+	border-radius: 50%;
+	margin: 4px;
 }
 .ui-datepicker-next.ui-corner-all:after {
-	background-color: rgba(255,255,255,0.8);
+	/* background-color: rgba(255,255,255,0.8); */
 	content: "\e902" !important;
 	font-family: 'icomoon' !important;
 	speak: none;
@@ -396,15 +415,19 @@ h2.b-title{
 	text-transform: none;
 	line-height: 1;
 	font-size: 14px;
-	color: #484848;
+	color: #fefefe;
 	display: block;
-	margin: 8px;
+	margin: 8px 0 8px 11px;
 }
 .ui-datepicker-prev.ui-corner-all {
-	background-color: rgba(255,255,255,0.8);
+	background-color: rgb(170, 203, 205);
+	border-radius: 50%;
+	margin: 4px;
 }
+
+a.ui-datepicker-prev.ui-corner-all.ui-state-disabled {}
 .ui-datepicker-prev.ui-corner-all:after {
-	background-color: rgba(255,255,255,0.8);
+	/* background-color: rgba(255,255,255,0.8); */
 	content: "\e903" !important;
 	font-family: 'icomoon' !important;
 	speak: none;
@@ -414,9 +437,10 @@ h2.b-title{
 	text-transform: none;
 	line-height: 1;
 	font-size: 14px;
-	color: #484848;
+	color: #fefefe;
 	display: block;
-	margin: 8px;
+	margin: 8px 0px 8px -3px;
+	text-align: center;
 }
 .ui-datepicker-current {
 	display: none;
@@ -1259,14 +1283,15 @@ h2.b-title{
 							}
 					.b-services-sub{
 						/*display: none;*/
-						overflow: hidden;
+						/* overflow: hidden; */
 					}
 					.b-services-sub.show{
 						
 					}
 						.b-services-sub li{
-							margin-left: 18px;
+							/* margin-left: 18px; */
 							color: #75c1ba;
+							list-style-position: inside;
 						}
 							.b-services-sub a{
 								font-size: 18px;
@@ -1460,6 +1485,7 @@ h2.b-title{
 }
 	.b-main-reviews .b-wide-block{
 		padding-bottom: 76px;
+		overflow: hidden;
 	}
 		.b-main-reviews .b-block{
 			
@@ -2490,7 +2516,7 @@ div.b-popup{
 				margin-bottom: 24px;
 				color: #ffffff;
 			}
-			.b-popup-zapis-fields div {
+			.b-popup-zapis-fields>div {
 				width: calc((100% - 27px)/2);
 				display: inline-block;
 				vertical-align: top;
@@ -2520,7 +2546,7 @@ div.b-popup{
 				height: 100%;
 				-webkit-appearance: none;
 			}
-			.b-popup-zapis-fields div:nth-child(odd) {
+			.b-popup-zapis-fields>div:nth-child(odd) {
 				margin-right: 23px;
 			}
 			.b-popup-zapis-fields input::-webkit-input-placeholder {

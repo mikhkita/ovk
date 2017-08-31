@@ -1046,19 +1046,28 @@ $(document).ready(function(){
             dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'], // set more short days names
             dateFormat: 'dd/mm/yy' // set format date
         };        
-         $.datepicker.setDefaults($.datepicker.regional["ru"]);
+        $.datepicker.setDefaults($.datepicker.regional["ru"]);
         $(function() {
           $('#date').datepicker({
             showButtonPanel: true,
             minDate: 0,
             maxDate: "+3m +1w",
-                range: 'multiple', // режим - выбор нескольких дат 
-                range_multiple_max: '5', // макимальное число выбираемых дат
-                onSelect: function(dateText, inst, extensionRange) {
-                  // extensionRange - объект расширения
-                  $('[name=date]').val(extensionRange.datesText.join(','));
-                }
-              });
+            range: 'multiple', // режим - выбор нескольких дат 
+            range_multiple_max: '5', // макимальное число выбираемых дат
+            onSelect: function(dateText, inst, extensionRange) {
+              // extensionRange - объект расширения
+              $('[name=date]').val(extensionRange.datesText.join(','));
+            },
+            beforeShow:function(input, inst){
+                $('.hidden-datepicker').append($('#ui-datepicker-div'));
+                $('#ui-datepicker-div').hide();                 
+                $('#ui-datepicker-div').css({
+                    "position": "absolute !important",
+                    "top":"-20px !important",
+                    "left":"5px !important"                
+                });     
+            }
+          });
 
               // выделить послезавтра и следующие 2 дня
               //$('#date').datepicker('setDate', ['+2d', '+3d', '+4d']);
